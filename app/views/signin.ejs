@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%=title%>
+    </title>
+</head>
+
+<body>
+    <!--Mostrar el mensaje flash -->
+    <% for (var i in messages){%>
+        <div class='flash'>
+            <%messages[i] %>
+        </div>
+        <% } %>
+
+            <form action="/signin" method="post">
+                <div>
+                    <label>Usuario:</label>
+                    <input type="text" name="username" />
+                </div>
+                <div>
+                    <label>Contaseña:</label>
+                    <input type="text" name="password" />
+                </div>
+                <div>
+                    <input type="submit" name="Identificarse" />
+                </div>
+            </form>
+
+</body>
+
+</html>
