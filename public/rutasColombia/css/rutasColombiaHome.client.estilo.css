@@ -1,4 +1,9 @@
 /* Define the body style */
+*{
+  margin: 0px;
+  padding: 0px
+}
+
 html {
     height: 100%;
 }
@@ -15,9 +20,10 @@ body {
 }
 
 #menuwrapper {
-    margin-top: 50px;
-    height: 894px;
-    width: 811px;
+    margin-top: 70px;
+    /*height: 894px;*/
+    height: 100%;
+    width: 791px;
 
 }
 
@@ -39,7 +45,7 @@ body {
 /* We apply the background hover color when user hover the mouse over of the li component */
 #menuwrapper ul li:hover{
     /*position:relative;*/
-    
+
 }
 #comollego .input-group-addon {
     font-weight: 700;
@@ -57,7 +63,7 @@ body {
 }
 
 #menuwrapper ul li a.selected{
-    color:#ddd;   
+    color:#ddd;
 }
 #menuwrapper ul li a:hover{
     color:#fff;
@@ -75,8 +81,8 @@ body {
     margin-bottom: 0;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-} 
- 
+}
+
 #ingreseDestino {
     position: relative;
     z-index: 2;
@@ -127,7 +133,7 @@ body {
     width:0px;
     color:#000;
     position: fixed;
-    
+
 }
 
 #botones {
@@ -181,7 +187,7 @@ h4 {
 #menuwrapper ul li:active ul,
 #menuwrapper ul li:hover ul{
     left:70px;
-    top:50px;
+    top:70px;
     display:block;
     visibility:visible;
     width:300px;
@@ -191,5 +197,5 @@ h4 {
     -o-transition:background-color 0.5s ease;
     -webkit-transition:background-color 0.5s ease;
     -moz-transition:background-color 0.5s ease;
-    
+
 }
