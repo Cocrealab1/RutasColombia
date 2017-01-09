@@ -8,7 +8,7 @@ var db = mongoose();
 var app = express();
 var passport = passport();
 
-app.listen(8080, function(){
+app.listen(8080 , function(){
   console.log('Sevidor ejecutándose en http://localhost:8080');
 });
 

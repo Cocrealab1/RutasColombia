@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   //cambiar puesto que es un palabra secreta
   db: 'mongodb://localhost/mean',

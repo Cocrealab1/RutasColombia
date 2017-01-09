@@ -5,19 +5,21 @@
     <title><%= title %></title>
   </head>
   <body>
-      <% if(userFullName) { %>
-        <h2>hola<%=userFullName%></h2>
-        <a href="/signout">CerrarSesion</a>
-      <% } else {%>
-        <a href="/signup">Crear Cuenta</a>
-        <a href="/signin">Identificarse</a>
-      <% } %>
-      <br>
 
-
-    <img src="img/logo.png" alt="Logo"><!--se busca automaticamente debido a el public de express-->
     <h1><%= title %></h1>
 
+    <!--incluir las vistas-->
+    <!--<section ng-include="'rutasColombia/views/rutasColombia.client.view.html'"></section>-->
+
+    <!--incluir las views definidas por el config-->
+    <section ng-view></section>
+
     <script type="text/JavaScript" src="lib/angular/angular.js"></script>
+    <script type="text/JavaScript" src="lib/angular-route/angular-route.js"></script>
+    <script type="text/JavaScript" src="lib/angular-resource/angular-resource.js"></script>
+    <script type="text/JavaScript" src="rutasColombia/rutasColombia.client.module.js"></script>
+    <script type="text/JavaScript" src="rutasColombia/controllers/rutasColombia.client.controller.js"></script>
+    <script type="text/JavaScript" src="rutasColombia/config/rutasColombia.client.routes.js"></script>
+    <script type="text/JavaScript" src="application.js"></script>
   </body>
 </html>
