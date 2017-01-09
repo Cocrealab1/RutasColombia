@@ -20,10 +20,10 @@ body {
 }
 
 #menuwrapper {
-    margin-top: 50px;
+    margin-top: 70px;
     /*height: 894px;*/
     height: 100%;
-    width: 811px;
+    width: 791px;
 
 }
 
@@ -187,7 +187,7 @@ h4 {
 #menuwrapper ul li:active ul,
 #menuwrapper ul li:hover ul{
     left:70px;
-    top:50px;
+    top:70px;
     display:block;
     visibility:visible;
     width:300px;
