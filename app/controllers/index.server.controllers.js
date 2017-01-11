@@ -10,7 +10,7 @@ exports.render = function (req, res){
   req.session.lastVisit = new Date();*/
 
   res.render('index',{
-    title:'hola Mundo',
+    title:'Rutas por Colombia',
     userFullName: req.user ? req.user.fullName: ''
     //user: JSON.stringify(req.user)
   });
