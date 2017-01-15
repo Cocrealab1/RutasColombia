@@ -1,4 +1,4 @@
-angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
+angular.module('rutasColombia').controller('rutasColombiaMapaCtrl',['$scope',
             function($scope) {
                 $scope.buscar = function() {
                     //funcion por el cual se calcula el medio de transporte
@@ -17,7 +17,7 @@ angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
                             lng: -74.166030
                         }
                     });
-                    
+
                     mostrarMedTransporte.setMap(mapa);
                     var calcularRuta = function() {
                         calcularRuta(calcularMedTransporte, mostrarMedTransporte);
@@ -51,8 +51,8 @@ angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
                         geocodeAddress(geocoder, map);
                     };
 
-                }]
-        }; -
+                }];
+        }; 
         angular.module('rutasColombia').controller('rutasColombiaBarCtrl', ['$scope',
             function($scope) {
                 $scope.name = 'aplicacion Mean';
