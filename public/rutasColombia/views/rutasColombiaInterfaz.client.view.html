@@ -59,41 +59,26 @@
 
 <section ng-controller='rutasColombiaBarCtrl'>
     <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
-    <div class="container" style="padding-top: 5em;">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-1">
-        <span class="sr-only">Menu</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-        </button>
-                <a class="navbar-brand" href="#"><img src="rutasColombia/img/logo.png"></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Ingresar<span class="glyphicon glyphicon-user"></span>  </a></li>
-                    <li><a href="#">Registrarse<span class="glyphicon glyphicon-user"></span>  </a></li>
-                    <li></li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          Seleccione idioma<span class="caret"></span>
-        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">English</a></li>
-                            <!--<li class="divider"></li> -->
-                            <li><a href="#">Spanish</a></li>
-
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
-    </div>
+    <header class="header">
+		<div class="wrapper">
+			<div class="logo"><img src="rutascolombia/img/logo.svg"></div>
+			<nav>
+				<a href="interfaz/login.html">Ingresar <span class="icon-users"></span></a>
+				<a href="interfaz/registro.html">Registrarse <span class="icon-pencil"></span></a>
+				<ul class="nav">
+				<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Idioma<span class="caret"></span></a>
+				<ul class="dropdown-menu idioma">
+                <li><a href="#">English</a></li>
+                <li><a href="#">Spanish</a></li>
+              </ul>
+				</li>
+				</ul>
+			</nav>
+		
+		
+		</div>
+	</header>
+   
     <!-- Final Barra de navegacion fija parte superior de la pagina -->
 </section>
