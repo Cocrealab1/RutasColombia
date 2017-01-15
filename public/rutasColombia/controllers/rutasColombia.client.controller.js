@@ -25,6 +25,10 @@ angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
             $scope.buscar = function() {
                 geocodeAddress(geocoder, mapa); //Da formato y geolocaliza
             };
+
+            $scope.origen.addEventListener('change', llamadaCalcularRuta);
+            $scope.destino.addEventListener('change', llamadaCalcularRuta);
+
         }
 
         function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
