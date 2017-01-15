@@ -14,24 +14,26 @@ angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
                 }
             });
 
+            
             mostrarMedTransporte.setMap(mapa);
 
             var llamadaCalcularRuta = function() {
                 calcularRuta(calcularMedTransporte, mostrarMedTransporte);
             };
-
+        }
             //Convierte el destino y origen en coordendas
             var geocoder = new google.maps.Geocoder()
-            $scope.buscar = function() {
+            $scope.buscar=function() {
                 geocodeAddress(geocoder, mapa); //Da formato y geolocaliza
             };
 
-            $scope.origen.addEventListener('change', llamadaCalcularRuta);
-            $scope.destino.addEventListener('change', llamadaCalcularRuta);
-
-        }
+            $scope.origen=function(){llamadaCalcularRuta()}
+            $scope.destino=function() {llamadaCalcularRuta()}
+           
+        
 
         function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
+            console.log ("hola");
             calcularMedTransporte.route({
                 origin: $scope.origen, //document.getElementById('origen').value,
                 destination: $scope.destino,
@@ -62,9 +64,8 @@ angular.module('rutasColombia').controller('rutasColombiaBarCtrl', ['$scope',
 
 angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
     function($scope) {
-        $scope.jei = function() {
-            console.log($scope.origen);
-        }
+        
+        
 
     }
 ]);
