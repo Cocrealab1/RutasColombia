@@ -1,5 +1,4 @@
 angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
-    //funcion por el cual se calcula el recorrido entre 2 puntos
     function($scope) {
         $scope.inicializarMapa = function() {
             //funcion por el cual se calcula el medio de transporte
