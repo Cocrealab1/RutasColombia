@@ -21,6 +21,18 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
             $scope.buscar = function() {
                 calcularRuta(calcularMedTransporte, mostrarMedTransporte);
             };
+
+             $scope.moto = function() {
+                calcularRutaMoto(calcularMedTransporte, mostrarMedTransporte);
+            };
+
+             $scope.carro = function() {
+                calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte);
+            };
+
+             $scope.bus = function() {
+                calcularRutaBus(calcularMedTransporte, mostrarMedTransporte);
+            };
         }
 
         function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
@@ -36,6 +48,58 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
                 }
             });
         }
+
+
+
+        function calcularRutaMoto(calcularMedTransporte, mostrarMedTransporte) {
+            calcularMedTransporte.route({
+                origin: $scope.origen, //document.getElementById('origen').value,
+                destination: $scope.destino,
+                travelMode: google.maps.TravelMode.WALKING
+            }, function(respuesta, estado) {
+                if (estado === google.maps.DirectionsStatus.OK) {
+                    mostrarMedTransporte.setDirections(respuesta);
+                } else {
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
+                }
+            });
+        }
+
+
+
+function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
+            calcularMedTransporte.route({
+                origin: $scope.origen, //document.getElementById('origen').value,
+                destination: $scope.destino,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function(respuesta, estado) {
+                if (estado === google.maps.DirectionsStatus.OK) {
+                    mostrarMedTransporte.setDirections(respuesta);
+                } else {
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
+                }
+            });
+        }
+
+
+
+        function calcularRutaBus(calcularMedTransporte, mostrarMedTransporte) {
+            calcularMedTransporte.route({
+                origin: $scope.origen, //document.getElementById('origen').value,
+                destination: $scope.destino,
+                travelMode: google.maps.TravelMode.TRANSIT
+            }, function(respuesta, estado) {
+                if (estado === google.maps.DirectionsStatus.OK) {
+                    mostrarMedTransporte.setDirections(respuesta);
+                } else {
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
+                }
+            });
+        }
+
+
+
+
     }
 ]);
 
