@@ -48,6 +48,46 @@
             <li><a href="#">in</a>
                 <ul>
                     <li>
+                         <div class="form-group">
+                                 <label class="control-label col-xs-12">Contactenos</label>
+                                 <div class="col-xs-12">
+                                    <h5>Puedes enviar un mensaje utilizando el siguiente formulario</h5>
+                                </div>
+                        </div>
+                            <br>
+                      <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-xs-1">Nombre:</label>
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" placeholder="Ingrese aquí su nombre">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                 <label class="control-label col-xs-1">Email:</label>
+                                <div class="col-xs-12">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese aquí su email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-1">Asunto:</label>
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" placeholder="Ingrese aquí el asunto">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-xs-1">Mensaje:</label>
+                                <div class="col-xs-12">
+                                    <textarea rows="3" class="form-control" placeholder="Ingrese aquí su mensaje"></textarea>
+                                    <br>
+                                    <div class="col-xs-offset-8 col-xs-10">
+                                    <input type="submit" class="btn btn-warning" value="Enviar">
+                                    </div>
+                                </div>
+                            </div>
+                               <br>
+                           
+                      </form>
+                        
 
                     </li>
                 </ul>
@@ -59,33 +99,26 @@
 
 <section ng-controller='rutasColombiaBarCtrl'>
     <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          
-		  <a class="navbar-brand" href="#"><img src="rutascolombia/img/logo.jpg"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Ingresar <span class="glyphicon glyphicon-user"></span>  </a></li>
-			<li><a href="#">Registrarse <span class="glyphicon glyphicon-list-alt"></span>  </a></li>
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Seleccione idioma<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">English <span class="glyphicon glyphicon-globe"></span></a></li>
-                <li><a href="#">Spanish <span class="glyphicon glyphicon-globe"></span></a></li>
+    <header class="header">
+		<div class="wrapper">
+			<div class="logo"><img src="rutascolombia/img/logo.svg"></div>
+			<nav>
+				<a href="interfaz/login.html">Ingresar <span class="icon-users"></span></a>
+				<a href="interfaz/registro.html">Registrarse <span class="icon-pencil"></span></a>
+				<ul class="nav">
+				<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Idioma<span class="caret"></span></a>
+				<ul class="dropdown-menu idioma">
+                <li><a href="#">English</a></li>
+                <li><a href="#">Spanish</a></li>
               </ul>
-            </li>
-			</ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+				</li>
+				</ul>
+			</nav>
+		
+		
+		</div>
+	</header>
    
     <!-- Final Barra de navegacion fija parte superior de la pagina -->
 </section>
