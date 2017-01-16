@@ -1,4 +1,5 @@
 angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
+
     function($scope) {
         $scope.inicializarMapa = function() {
             //funcion por el cual se calcula el medio de transporte
@@ -69,3 +70,4 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
 
     }
 ]);
+
