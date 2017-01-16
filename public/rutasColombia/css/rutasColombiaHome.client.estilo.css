@@ -1,8 +1,4 @@
 /* Define the body style */
-*{
-  margin: 0px;
-  padding: 0px
-}
 
 html {
     height: 100%;
@@ -32,14 +28,16 @@ body {
     width:65px;
     height:95%;
     position: fixed;
-
+    text-align:center;
 }
 /* We apply background color and border bottom white and width to 150px */
 #menuwrapper ul li{
     background-color:#373833;
-    width:65px;
-    cursor:pointer;
-    text-align:center;
+    width:100%;
+}
+
+#menuwrapper ul li form{
+    text-align: left;
 }
 
 /* We apply the background hover color when user hover the mouse over of the li component */
@@ -55,7 +53,7 @@ body {
 
 /* We apply the link style */
 #menuwrapper ul li a{
-    padding-top:20px;
+    padding-top:15px;
     padding-bottom:20px;
     color:#555555;
     display:inline-block;
@@ -92,13 +90,13 @@ body {
 }
 
 .form-group{
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 
 #menuwrapper ul li a:hover:after {
     content: "  ";
-    visibility: visible;;
+    visibility: visible;
     display: inline-block;
     border-bottom: 0.8em solid transparent;
     border-left: 0.8em solid transparent;
@@ -107,7 +105,7 @@ body {
     height: 0px;
     margin-top: -2px;
     position: absolute;
-    left: 48px;
+    left: 43px;
     width: 1px;
     transition:border-right 1s ease;
     -o-transition:border-right 1s ease;
@@ -130,7 +128,7 @@ body {
     visibility:hidden;
     height:100%;
     background-color:transaprent;
-    width:0px;
+    width:300px;
     color:#000;
     position: fixed;
 
@@ -172,10 +170,10 @@ button.btn.btn-warning{
     margin-left: 162px;
 }
 
-h4 {
+/*h4 {
     width: 200px;
     margin-top: 500px;
-}
+}*/
 
 #menuwrapper ul li ul li{
     color:#000;
@@ -186,7 +184,7 @@ h4 {
 
 #menuwrapper ul li:active ul,
 #menuwrapper ul li:hover ul{
-    left:70px;
+    left:65px;
     top:70px;
     display:block;
     visibility:visible;
@@ -204,7 +202,7 @@ h4 {
 .icon-Carro,
 .icon-Bus,
 .icon-Subir_Fotos{
-    font-size: 30px;
+    font-size: 25px;
     display: flex;
     justify-content: center;
 
