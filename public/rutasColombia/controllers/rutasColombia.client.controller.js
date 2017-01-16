@@ -1,5 +1,4 @@
-angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
-
+angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
     function($scope) {
         $scope.inicializarMapa = function() {
             //funcion por el cual se calcula el medio de transporte
@@ -15,45 +14,29 @@ angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
                 }
             });
 
-            
             mostrarMedTransporte.setMap(mapa);
 
-            var llamadaCalcularRuta = function() {
+            //Convierte el destino y origen en coordendas
+            var geocoder = new google.maps.Geocoder();
+            $scope.buscar = function() {
                 calcularRuta(calcularMedTransporte, mostrarMedTransporte);
             };
         }
-            //Convierte el destino y origen en coordendas
-            var geocoder = new google.maps.Geocoder()
-            $scope.buscar=function() {
-                geocodeAddress(geocoder, mapa); //Da formato y geolocaliza
-            };
-
-            $scope.origen=function(){llamadaCalcularRuta()}
-            $scope.destino=function() {llamadaCalcularRuta()}
-           
-        
 
         function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
-            console.log ("hola");
             calcularMedTransporte.route({
                 origin: $scope.origen, //document.getElementById('origen').value,
                 destination: $scope.destino,
                 travelMode: google.maps.TravelMode.DRIVING
-
             }, function(respuesta, estado) {
                 if (estado === google.maps.DirectionsStatus.OK) {
                     mostrarMedTransporte.setDirections(respuesta);
                 } else {
-                    // window.alert('Directions request failed due to ' + status);
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
                 }
             });
         }
-        $scope.buscar = function() {
-            geocodeAddress(geocoder, map);
-        };
-
     }
-
 ]);
 
 
@@ -62,12 +45,3 @@ angular.module('rutasColombia').controller('rutasColombiaBarCtrl', ['$scope',
         $scope.name = 'aplicacion Mean';
     }
 ]);
-
-angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
-    function($scope) {
-        
-        
-
-    }
-]);
-
