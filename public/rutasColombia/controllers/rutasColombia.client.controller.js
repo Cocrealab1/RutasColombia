@@ -33,12 +33,33 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
              $scope.bus = function() {
                 calcularRutaBus(calcularMedTransporte, mostrarMedTransporte);
             };
-        }
+
+             $scope.localizacion = function() {
+               var infoWindow = new google.maps.InfoWindow({map: map});
+               if (navigator.geolocation) {
+                 navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                    };
+                    
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location found.');
+                    map.setCenter(pos);
+                    }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                    } else {
+    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                            }
+                }
+
 
         function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
             calcularMedTransporte.route({
-                origin: $scope.origen, //document.getElementById('origen').value,
-                destination: $scope.destino,
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
                 travelMode: google.maps.TravelMode.DRIVING
             }, function(respuesta, estado) {
                 if (estado === google.maps.DirectionsStatus.OK) {
@@ -53,8 +74,8 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
 
         function calcularRutaMoto(calcularMedTransporte, mostrarMedTransporte) {
             calcularMedTransporte.route({
-                origin: $scope.origen, //document.getElementById('origen').value,
-                destination: $scope.destino,
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
                 travelMode: google.maps.TravelMode.WALKING
             }, function(respuesta, estado) {
                 if (estado === google.maps.DirectionsStatus.OK) {
@@ -69,8 +90,8 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
 
 function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
             calcularMedTransporte.route({
-                origin: $scope.origen, //document.getElementById('origen').value,
-                destination: $scope.destino,
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
                 travelMode: google.maps.TravelMode.DRIVING
             }, function(respuesta, estado) {
                 if (estado === google.maps.DirectionsStatus.OK) {
@@ -85,8 +106,8 @@ function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
 
         function calcularRutaBus(calcularMedTransporte, mostrarMedTransporte) {
             calcularMedTransporte.route({
-                origin: $scope.origen, //document.getElementById('origen').value,
-                destination: $scope.destino,
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
                 travelMode: google.maps.TravelMode.TRANSIT
             }, function(respuesta, estado) {
                 if (estado === google.maps.DirectionsStatus.OK) {
