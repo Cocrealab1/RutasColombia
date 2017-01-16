@@ -199,3 +199,13 @@ h4 {
     -moz-transition:background-color 0.5s ease;
 
 }
+
+.icon-Motocicleta,
+.icon-Carro,
+.icon-Bus,
+.icon-Subir_Fotos{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+
+}
