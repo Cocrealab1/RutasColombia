@@ -148,7 +148,7 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
                 for (var i = 0; i <= res.data.length; i++) {
                     //coloca el marcador
                     marker = new google.maps.Marker({
-                        //
+                        //me muestra las coordenadas graficadas
                         position: new google.maps.LatLng(res.data[i].coords.lat,res.data[i].coords.lng ),
                         map: mapa
                     });
