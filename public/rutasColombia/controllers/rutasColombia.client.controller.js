@@ -1,4 +1,4 @@
-angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
+angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
     function($scope) {
         $scope.inicializarMapa = function() {
             //funcion por el cual se calcula el medio de transporte
@@ -16,55 +16,117 @@ angular.module('rutasColombia').controller('rutasColombiaMapaCtrl', ['$scope',
 
             mostrarMedTransporte.setMap(mapa);
 
-            var llamadaCalcularRuta = function() {
+            //Convierte el destino y origen en coordendas
+            var geocoder = new google.maps.Geocoder();
+            $scope.buscar = function() {
                 calcularRuta(calcularMedTransporte, mostrarMedTransporte);
             };
 
-            //Convierte el destino y origen en coordendas
-            var geocoder = new google.maps.Geocoder()
-            $scope.buscar = function() {
-                geocodeAddress(geocoder, mapa); //Da formato y geolocaliza
+             $scope.moto = function() {
+                calcularRutaMoto(calcularMedTransporte, mostrarMedTransporte);
             };
 
-            $scope.origen.addEventListener('change', llamadaCalcularRuta);
-            $scope.destino.addEventListener('change', llamadaCalcularRuta);
+             $scope.carro = function() {
+                calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte);
+            };
 
-        }
+             $scope.bus = function() {
+                calcularRutaBus(calcularMedTransporte, mostrarMedTransporte);
+            };
+
+             $scope.localizacion = function() {
+               var infoWindow = new google.maps.InfoWindow({mapa: mapa});
+               if (navigator.geolocation) {
+                 navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                    };
+                    
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location found.');
+                    mapa.setCenter(pos);
+                    }, function() {
+                    handleLocationError(true, infoWindow, mapa.getCenter());
+                    });
+                    } else {
+    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, mapa.getCenter());
+                            }
+                }
+
 
         function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
             calcularMedTransporte.route({
-                origin: $scope.origen, //document.getElementById('origen').value,
-                destination: $scope.destino,
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
                 travelMode: google.maps.TravelMode.DRIVING
-
             }, function(respuesta, estado) {
                 if (estado === google.maps.DirectionsStatus.OK) {
                     mostrarMedTransporte.setDirections(respuesta);
                 } else {
-                    // window.alert('Directions request failed due to ' + status);
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
                 }
             });
         }
-        $scope.buscar = function() {
-            geocodeAddress(geocoder, map);
-        };
 
+
+
+        function calcularRutaMoto(calcularMedTransporte, mostrarMedTransporte) {
+            calcularMedTransporte.route({
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
+                travelMode: google.maps.TravelMode.WALKING
+            }, function(respuesta, estado) {
+                if (estado === google.maps.DirectionsStatus.OK) {
+                    mostrarMedTransporte.setDirections(respuesta);
+                } else {
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
+                }
+            });
+        }
+
+
+
+function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
+            calcularMedTransporte.route({
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function(respuesta, estado) {
+                if (estado === google.maps.DirectionsStatus.OK) {
+                    mostrarMedTransporte.setDirections(respuesta);
+                } else {
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
+                }
+            });
+        }
+
+
+
+        function calcularRutaBus(calcularMedTransporte, mostrarMedTransporte) {
+            calcularMedTransporte.route({
+                origin: $scope.origen+",colombia", //document.getElementById('origen').value,
+                destination: $scope.destino+",colombia",
+                travelMode: google.maps.TravelMode.TRANSIT
+            }, function(respuesta, estado) {
+                if (estado === google.maps.DirectionsStatus.OK) {
+                    mostrarMedTransporte.setDirections(respuesta);
+                } else {
+                    window.alert('Direccion no encotrada ' /*+  estado*/);
+                }
+            });
+        }
+
+
+
+      }
     }
-
 ]);
 
 
 angular.module('rutasColombia').controller('rutasColombiaBarCtrl', ['$scope',
     function($scope) {
         $scope.name = 'aplicacion Mean';
-    }
-]);
-
-angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
-    function($scope) {
-        $scope.jei = function() {
-            console.log($scope.origen);
-        }
-
     }
 ]);
