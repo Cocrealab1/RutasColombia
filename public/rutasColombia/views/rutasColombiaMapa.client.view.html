@@ -1,0 +1,45 @@
+<section ng-controller="geoCtrl">
+<div id="mapCanvas">
+	 <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3976.3025889766404!2d-74.07613278569451!3d4.717408896573663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1483753775656" style=" width: 700px; height: 500px" frameborder="0" allowfullscreen></iframe> 
+</div>
+<section>
+	<script type="text/javascript">
+
+    function initialize() {
+      var marcadores = [
+        ['peaje puente nacional',  5.696203, -73.761180],
+        ['peaje oiba', 6.178335, -73.333377],
+        ['peaje san gil',  6.617670, -73.080450]
+      ];
+      
+      var map = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 6,
+        center: new google.maps.LatLng(4.776735, -74.166030),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var infowindow = new google.maps.InfoWindow();
+      var marker, i;
+      for (i = 0; i < marcadores.length; i++) {  
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(marcadores[i][1], marcadores[i][2]),
+          map: map
+        });
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(marcadores[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</section>
+<ul>
+
+  <li ng-repeat="x in datos">
+  //
+    {{ x.coords.lng + ', ' + x.coords.lat }}
+  </li>
+</ul>
+</section>
