@@ -1,43 +1,47 @@
-<section>
-    <div id="mapCanvas">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3976.3025889766404!2d-74.07613278569451!3d4.717408896573663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1483753775656" style=" width: 100%; height: 100%" frameborder="0" allowfullscreen></iframe>
-    </div>
-</section>
 
 <section ng-controller='rutasColombiaHomeCtrl'>
+
+  <div id="mapa" ng-init="inicializarMapa()">
+      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3976.3025889766404!2d-74.07613278569451!3d4.717408896573663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1483753775656" style=" width: 100%; height: 100%" frameborder="0" allowfullscreen></iframe>-->
+  </div>
+
     <div id="menuwrapper">
         <ul id="sidemenu">
 
-            <li><a href="#">v</a>
+            <li><a href="#"><span class="icon-Carro"></a>
                 <ul>
                     <li>
                         <form class="form-horizonal">
                             <div id="botones" class="form-group btn-group btn-group-lg modo-transporte" aria-label="transporte">
-                                <button tabindex="4" title="moto" type="button" data-engine="2" class="btn btn-default icon-pie engine"></button>
-                                <button tabindex="5" title="carro" type="button" data-engine="1" class="btn btn-default icon-bici engine"></button>
-                                <button tabindex="6" title="bus" data-engine="3" type="button" class="btn btn-default icon-transporte engine"></button>
+                              <button ng-click="moto()" tabindex="4" title="moto" type="button" data-engine="2" class="btn btn-default icon-pie engine"><span class="icon-Motocicleta"></button>
+                              <button ng-click="carro()" tabindex="5" title="carro" type="button" data-engine="1" class="btn btn-default icon-bici engine"><span class="icon-Carro"></button>
+                              <button ng-click="bus()" tabindex="6" title="bus" data-engine="3" type="button" class="btn btn-default icon-transporte engine"> <span class="icon-Bus"></button>
+                              <button ng-click="localizacion()" tabindex="6" title="geolocalizacion" data-engine="3" type="button" class="btn btn-default icon-transporte engine"> <span class="icon-Bus"></button>
+
                             </div>
                             <div class="form-group">
                                 <div class="input-group" id="origen">
-                                    <div class="input-group-addon" id="PuntoA">A</div>
-                                    <input type="text" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen" tabindex="1" autocomplete="off">
+                                    <div class="input-group-addon" id="Punto A">A</div>
+
+                                    <input ng-model="origen" type="text" placeholder="Ingrese origen"  class="form-control input-lg" id="ingreseOrigen" tabindex="1" autocomplete="off">
                                     <div id="gui-delete-source" class="iconic-button cancel-marker input-delete"></div>
                                 </div>
 
 
                                 <div class="input-group" id="Destino">
-                                    <div class="input-group-addon" id="PuntoB">B</div>
-                                    <input type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" tabindex="2" autocomplete="off">
+                                    <div class="input-group-addon" id="Punto B">B</div>
+
+                                    <input ng-model="destino" type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" tabindex="2" autocomplete="off">
                                 </div>
 
 
                             </div>
                         </form>
-                        <button type="button" class="btn btn-warning">Buscar</button>
+                        <button ng-click="buscar()" type="button" class="btn btn-warning">Buscar</button>
                     </li>
                 </ul>
             </li>
-            <li><a href="#">im</a>
+            <li><a href="#"><span class="icon-Subir_Fotos"></a>
                 <ul>
                     <li>
                         <h4 align="center">Para poder utilizar esta opción debes estar registrado en la aplicación </h4>
@@ -49,6 +53,46 @@
                 <ul>
                     <li>
 
+                      <div class="form-group">
+                              <label class="control-label col-xs-12">Contactenos</label>
+                              <div class="col-xs-12">
+                                 <h5>Puedes enviar un mensaje utilizando el siguiente formulario</h5>
+                             </div>
+                     </div>
+                         <br>
+                   <form class="form-horizontal">
+                         <div class="form-group">
+                             <label class="control-label col-xs-1">Nombre:</label>
+                             <div class="col-xs-12">
+                                 <input type="text" class="form-control" placeholder="Ingrese aquí su nombre">
+                             </div>
+                         </div>
+                         <div class="form-group">
+                              <label class="control-label col-xs-1">Email:</label>
+                             <div class="col-xs-12">
+                                 <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese aquí su email">
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label class="control-label col-xs-1">Asunto:</label>
+                             <div class="col-xs-12">
+                                 <input type="text" class="form-control" placeholder="Ingrese aquí el asunto">
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label class="control-label col-xs-1">Mensaje:</label>
+                             <div class="col-xs-12">
+                                 <textarea rows="3" class="form-control" placeholder="Ingrese aquí su mensaje"></textarea>
+                                 <br>
+                                 <div class="col-xs-offset-8 col-xs-10">
+                                 <input type="submit" class="btn btn-warning" value="Enviar">
+                                 </div>
+                             </div>
+                         </div>
+                            <br>
+
+                   </form>
+
                     </li>
                 </ul>
             </li>
@@ -59,33 +103,27 @@
 
 <section ng-controller='rutasColombiaBarCtrl'>
     <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          
-		  <a class="navbar-brand" href="#"><img src="rutascolombia/img/logo.jpg"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Ingresar <span class="glyphicon glyphicon-user"></span>  </a></li>
-			<li><a href="#">Registrarse <span class="glyphicon glyphicon-list-alt"></span>  </a></li>
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Seleccione idioma<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">English <span class="glyphicon glyphicon-globe"></span></a></li>
-                <li><a href="#">Spanish <span class="glyphicon glyphicon-globe"></span></a></li>
-              </ul>
-            </li>
-			</ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-   
+
+        <header class="header">
+    		<div class="wrapper">
+    			<div class="logo"><img src="rutascolombia/img/logo.svg"></div>
+    			<nav>
+    				<a href="interfaz/login.html">Ingresar <span class="icon-users"></span></a>
+    				<a href="interfaz/registro.html">Registrarse <span class="icon-pencil"></span></a>
+    				<ul class="nav">
+    				<li class="dropdown">
+    				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Idioma<span class="caret"></span></a>
+    				<ul class="dropdown-menu idioma">
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Spanish</a></li>
+                  </ul>
+    				</li>
+    				</ul>
+    			</nav>
+
+
+    		</div>
+    	</header>
+
     <!-- Final Barra de navegacion fija parte superior de la pagina -->
 </section>
