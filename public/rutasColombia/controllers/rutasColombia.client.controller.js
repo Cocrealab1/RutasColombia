@@ -120,7 +120,7 @@ function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
 
 
 
-
+      }
     }
 ]);
 
