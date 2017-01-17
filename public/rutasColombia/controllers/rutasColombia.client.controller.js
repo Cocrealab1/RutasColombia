@@ -34,26 +34,40 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
                 calcularRutaBus(calcularMedTransporte, mostrarMedTransporte);
             };
 
+
+            //Función para hallar la geolocalización
              $scope.localizacion = function() {
-               var infoWindow = new google.maps.InfoWindow({mapa: mapa});
+               var infoWindow = new google.maps.InfoWindow({map: mapa});
                if (navigator.geolocation) {
                  navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
+                    var pocision = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                     };
                     
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('Location found.');
-                    mapa.setCenter(pos);
+                    //Muestra la ubicación en forma de ventana
+                    //infoWindow.setPosition(pocision);
+                    //infoWindow.setContent('Localización encontrada');
+                    //mapa.setCenter(pocision);
+
+                    //Muestra la ubicación en un marcador (Globo)
+                    var marker = new google.maps.Marker({
+                      position: pocision,
+                      map: mapa,
+                      title: 'Ubicación actual'
+                    });
+                    marker.setMap(mapa);
+
                     }, function() {
                     handleLocationError(true, infoWindow, mapa.getCenter());
                     });
                     } else {
-    // Browser doesn't support Geolocation
+                   // El navegador no admite Geolocalización
+                   //window.alert('El navegador no admite Geolocalización ');
                     handleLocationError(false, infoWindow, mapa.getCenter());
                             }
                 }
+
 
 
         function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
@@ -119,7 +133,7 @@ function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
         }
 
 
-
+  
       }
     }
 ]);
