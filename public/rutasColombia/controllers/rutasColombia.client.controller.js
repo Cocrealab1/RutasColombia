@@ -35,7 +35,7 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
             };
 
              $scope.localizacion = function() {
-               var infoWindow = new google.maps.InfoWindow({map: map});
+               var infoWindow = new google.maps.InfoWindow({mapa: mapa});
                if (navigator.geolocation) {
                  navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = {
@@ -45,13 +45,13 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope',
                     
                     infoWindow.setPosition(pos);
                     infoWindow.setContent('Location found.');
-                    map.setCenter(pos);
+                    mapa.setCenter(pos);
                     }, function() {
-                    handleLocationError(true, infoWindow, map.getCenter());
+                    handleLocationError(true, infoWindow, mapa.getCenter());
                     });
                     } else {
     // Browser doesn't support Geolocation
-                    handleLocationError(false, infoWindow, map.getCenter());
+                    handleLocationError(false, infoWindow, mapa.getCenter());
                             }
                 }
 
