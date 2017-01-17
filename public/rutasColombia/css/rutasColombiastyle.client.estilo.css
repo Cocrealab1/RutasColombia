@@ -1,15 +1,10 @@
 /* Define the body style */
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/master
 html {
     height: 100%;
 }
 
 body {
     font-family:Arial;
-
 }
 
 /* We remove the margin, padding, and list style of UL and LI components */
@@ -20,10 +15,9 @@ body {
 }
 
 #menuwrapper {
-   margin-top: 70px;
-    /*height: 894px;*/
-    height: 100%;
-    width: 791px;
+    margin-top: 50px;
+    height: 894px;
+    width: 811px;
 
 }
 
@@ -32,25 +26,14 @@ body {
     width:65px;
     height:95%;
     position: fixed;
-    text-align:center;
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/master
 }
 /* We apply background color and border bottom white and width to 150px */
 #menuwrapper ul li{
     background-color:#373833;
-    width:100%;
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> refs/remotes/origin/master
-}
-
-#menuwrapper ul li form{
-    text-align: left;
+    width:65px;
+    cursor:pointer;
+    text-align:center;
 }
 
 /* We apply the background hover color when user hover the mouse over of the li component */
@@ -66,7 +49,7 @@ body {
 
 /* We apply the link style */
 #menuwrapper ul li a{
-    padding-top:15px;
+    padding-top:20px;
     padding-bottom:20px;
     color:#555555;
     display:inline-block;
@@ -103,13 +86,13 @@ body {
 }
 
 .form-group{
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 
 #menuwrapper ul li a:hover:after {
     content: "  ";
-    visibility: visible;
+    visibility: visible;;
     display: inline-block;
     border-bottom: 0.8em solid transparent;
     border-left: 0.8em solid transparent;
@@ -118,7 +101,7 @@ body {
     height: 0px;
     margin-top: -2px;
     position: absolute;
-    left: 43px;
+    left: 48px;
     width: 1px;
     transition:border-right 1s ease;
     -o-transition:border-right 1s ease;
@@ -140,11 +123,8 @@ body {
     display:block;
     visibility:hidden;
     height:100%;
-<<<<<<< HEAD
-=======
     background-color:transaprent;
->>>>>>> refs/remotes/origin/master
-    width:300px;
+    width:0px;
     color:#000;
     position: fixed;
     
@@ -186,14 +166,10 @@ button.btn.btn-warning{
     margin-left: 162px;
 }
 
-<<<<<<< HEAD
-
-=======
-/*h4 {
+h4 {
     width: 200px;
     margin-top: 500px;
-}*/
->>>>>>> refs/remotes/origin/master
+}
 
 #menuwrapper ul li ul li{
     color:#000;
@@ -204,8 +180,8 @@ button.btn.btn-warning{
 
 #menuwrapper ul li:active ul,
 #menuwrapper ul li:hover ul{
-    left:65px;
-    top:70px;
+    left:70px;
+    top:50px;
     display:block;
     visibility:visible;
     width:300px;
@@ -217,17 +193,3 @@ button.btn.btn-warning{
     -moz-transition:background-color 0.5s ease;
     
 }
-
-<<<<<<< HEAD
-
-=======
-.icon-Motocicleta,
-.icon-Carro,
-.icon-Bus,
-.icon-Subir_Fotos{
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-
-}
->>>>>>> refs/remotes/origin/master
