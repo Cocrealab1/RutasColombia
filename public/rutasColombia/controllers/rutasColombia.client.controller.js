@@ -143,13 +143,13 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
         $http.get('rutasColombia/json/geo.json')
             .then(function(res) {
                 //
-                
 
-                for (var i = 0; i <= res.data.length; i++) {
+
+                for (var i = 0; i < res.data.length; i++) {
                     //coloca el marcador
                     marker = new google.maps.Marker({
                         //me muestra las coordenadas graficadas
-                        position: new google.maps.LatLng(res.data[i].coords.lat,res.data[i].coords.lng ),
+                        position: new google.maps.LatLng(res.data[i].coords.lat, res.data[i].coords.lng ),
                         map: mapa
                     });
                 }
