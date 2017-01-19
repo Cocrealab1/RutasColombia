@@ -1,31 +1,25 @@
 <section ng-controller='rutasColombiaBarCtrl'>
     <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          
-		  <a class="navbar-brand" href="#"><img src="rutascolombia/img/logo.jpg"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-           <ul class="nav navbar-nav navbar-right">
-            <li><a href="rutascolombia/views/interfaz/rutasColombia.login.html">Ingresar <span class="glyphicon glyphicon-user"></span>  </a></li>
-			<li><a href="#">Registrarse <span class="glyphicon glyphicon-list-alt"></span>  </a></li>
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Seleccione idioma<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">English <span class="glyphicon glyphicon-globe"></span></a></li>
-                <li><a href="#">Spanish <span class="glyphicon glyphicon-globe"></span></a></li>
-              </ul>
-            </li>
-			</ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <header class="header">
+    
+    <ul class="flex-container">
+    <li class="item1"><img src="img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></li>
+    <li class="item" ></li>
+    <li class="item" >
+    <button>
+    <a href="login.html">Ingresar </a>
+    </button></li>
+    <li class="item">
+    <button>
+    <a href="registro.html">Registrarse</span></a>
+    </button></li>
+    <li class="item" id="item4"><button>
+    <a href="registro.html">Idioma <span class="icon-bici engine"></span></a>
+    </button></li>
+  
+  </ul>
 
+        
+    
+  </header>
     
