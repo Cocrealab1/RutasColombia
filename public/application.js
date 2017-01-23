@@ -1,6 +1,6 @@
 var rutasColombiaPrincipal = 'rutasColombiaPrincipal';
 
-var rutasColombiaModulo = angular.module(rutasColombiaPrincipal, ['ngResource', 'ngRoute','rutasColombia']);
+var rutasColombiaModulo = angular.module(rutasColombiaPrincipal, ['ngResource', /*'ngRoute',*/ 'ui.router' ,'rutasColombia']);
 
 rutasColombiaModulo.config(['$locationProvider',
   function($locationProvider){

@@ -1,449 +1,64 @@
 [{
-    "name": "Estación de autobuses Fuengirola, Avda.Ramón y Caja l",
-    "type": "Estacion de autobus",
+    "name": "Peaje Puente Nacional",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -4.62295,
-        "lat": 36.54154
+        "lng": -73.761180,
+        "lat": 5.696203
     }
 }, {
-    "name": "Isma. Torremolinos.Deposito grua municipal",
-    "type": "Estacion de autobus",
+    "name": "Peaje San Gil",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -4.51139,
-        "lat": 36.63139
+        "lng": -73.761180,
+        "lat": 5.696203
     }
 }, {
-    "name": "Isma.Estación-Bus Malaga.Paseo de los Tilos.Telf.952350061",
-    "type": "Estacion de autobus",
+    "name": "Peaje Oiba",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -4.43583,
-        "lat": 36.71222
+        "lng": -73.333377,
+        "lat":  6.178335
     }
 }, {
-    "name": "Isma.Huelva P,Damas.Vigilado.extracaro",
-    "type": "Estacion de autobus",
+    "name": "Peaje Casablanca",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -6.99056,
-        "lat": 37.25806
+        "lng": -73.912866,
+        "lat": 5.104225
     }
 }, {
-    "name": "Isma.Sevilla.Avda de Holanda .Vigilado.(H.Alandalus)",
-    "type": "Estacion de autobus",
+    "name": "Peaje Andes",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -5.98167,
-        "lat": 37.35361
+        "lng": -74.033086,
+        "lat": 4.829844
     }
 }, {
-    "name": "Isma.Sevilla.Carga y Descar.10 Min.Max.",
-    "type": "Estacion de autobus",
+    "name": "Peaje Rio Negro",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -5.99222,
-        "lat": 37.37861
+        "lng": -73.149440,
+        "lat": 7.239430
     }
 }, {
-    "name": "Isma.Estación-Bus Sevilla.Prado de San Sebastian",
-    "type": "Estacion de autobus",
+    "name": "Peaje Rio Blanco",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -5.98444,
-        "lat": 37.38167
+        "lng": -73.23098,
+        "lat": 7.554150
     }
 }, {
-    "name": "Isma.Sevilla.Avda Carlos III (A.49)",
-    "type": "Estacion de autobus",
+    "name": "Peaje Morrison",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -6.01444,
-        "lat": 37.39167
+        "lng": -73.559948,
+        "lat": 8.092100
     }
 }, {
-    "name": "Isma.Estación-Bus Sevilla.Plaza de Armas",
-    "type": "Estacion de autobus",
+    "name": "Peaje Platanal",
+    "type": "Peaje Colombia",
     "coords": {
-        "lng": -6.00444,
-        "lat": 37.39278
-    }
-}, {
-    "name": "Isma.Estación-Bus Cordoba.(AVE)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.79028,
-        "lat": 37.87278
-    }
-}, {
-    "name": "Isma. Cordoba(Cementerio)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.78694,
-        "lat": 37.875
-    }
-}, {
-    "name": "Isma. Cordoba (Lonja.Enfrente Arcangel)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.76417,
-        "lat": 37.875
-    }
-}, {
-    "name": "Isma.Cordoba. Día .Sin Vigilar (enfrente Eroski)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.76694,
-        "lat": 37.87611
-    }
-}, {
-    "name": "Estación Autobuses. Don Benito - C/ Piscinas",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.86314,
-        "lat": 38.96174
-    }
-}, {
-    "name": "Estacion Bus-Bejar",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.76109,
-        "lat": 40.38436
-    }
-}, {
-    "name": "Isma.Estación-Bus Avila- Av. de Madrid, 2 - 920220154",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.68806,
-        "lat": 40.65722
-    }
-}, {
-    "name": "Isma.Segovia.Plaza estacion de autobuses 1.921427705 - 427706 (Estación de Autobuses)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.12417,
-        "lat": 40.94667
-    }
-}, {
-    "name": "Estacion Bus-Salamanca",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.67451,
-        "lat": 40.97038
-    }
-}, {
-    "name": "Isma. Salamanca.Calzada de Toro",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.65028,
-        "lat": 40.98167
-    }
-}, {
-    "name": "Isma.Estación-Bus Zamora.Av Alfonso Peña,  980521281  ",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.74028,
-        "lat": 41.51278
-    }
-}, {
-    "name": "Isma Valladolid.C/Del Puente colgante.Teléfono: 983236308.(Estación de autobuses)  ",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.73194,
-        "lat": 41.64139
-    }
-}, {
-    "name": "Isma.Estación-Bus Palencia.C/Jardinillos de la Estación S/N.979743222 ",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.53194,
-        "lat": 42.00806
-    }
-}, {
-    "name": "Isma.Vigo.Día",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -8.7375,
-        "lat": 42.22917
-    }
-}, {
-    "name": "Isma.Vigo.E.Renfe",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -8.71361,
-        "lat": 42.23389
-    }
-}, {
-    "name": "Estacion Bus-Orense",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -6.99474,
-        "lat": 42.41804
-    }
-}, {
-    "name": "Isma.Pontevedra.Día.",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -8.65333,
-        "lat": 42.42833
-    }
-}, {
-    "name": "Isma.Pontevedra.Carga y Descar.10 Min.Max",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -8.65,
-        "lat": 42.43028
-    }
-}, {
-    "name": "Isma.Estación-Bus León. Av Ingeniero Saenz de Miera, s/n. 987211000 ",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.57889,
-        "lat": 42.59333
-    }
-}, {
-    "name": "Estacion Autobuses (Leon)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.57898,
-        "lat": 42.59358
-    }
-}, {
-    "name": "Isma.Oviedo.Día.P.Deportes.Tenderina baja",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.83,
-        "lat": 43.36667
-    }
-}, {
-    "name": "Isma.A.Coruña.Día.No Vigilado",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -8.39417,
-        "lat": 43.36833
-    }
-}, {
-    "name": "Isma.Oviedo (C.Transporte).Cerdeño",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -5.80833,
-        "lat": 43.38306
-    }
-}, {
-    "name": "Isma.Estación-Bus Segovia.Plaza de la estacion de autobuses.1.921427705 - 427706 ",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.12222,
-        "lat": 40.93722
-    }
-}, {
-    "name": "Estacion Autobuses (Ciudad Real)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -4.10879,
-        "lat": 38.69537
-    }
-}, {
-    "name": "Estacion de Autobuses de Ciudad Real",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.93039,
-        "lat": 38.97953
-    }
-}, {
-    "name": "Estacion Bus (Alcala la Real)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.9219,
-        "lat": 37.45567
-    }
-}, {
-    "name": "Isma.Santander.Día.C.Futbol.",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.79111,
-        "lat": 43.47667
-    }
-}, {
-    "name": "Isma.estación-Bus Jaen.Pza.Coca la Piñera .Telf. 953250106",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.78722,
-        "lat": 37.77
-    }
-}, {
-    "name": "Estacion de Autobuses (Mora de Toledo-Toledo)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.7734,
-        "lat": 39.68856
-    }
-}, {
-    "name": "Isma.Madrid.Parkig-Bus Vicente Calderon",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.72056,
-        "lat": 40.40278
-    }
-}, {
-    "name": "Isma.Estación-Bus Burgos.Miranda, 3 - 947265565",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.70139,
-        "lat": 42.33833
-    }
-}, {
-    "name": "Isma.P-Bus Madrid Sur.C/ Méndez Alvaro, nº 83 - 914684200",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.6775,
-        "lat": 40.39361
-    }
-}, {
-    "name": "Isma.Madrid.Parging Bus carretera burgos",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.67417,
-        "lat": 40.49444
-    }
-}, {
-    "name": "Estacion Autobus (Linares)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.63754,
-        "lat": 38.09827
-    }
-}, {
-    "name": "Isma,Granada.P.Nevada.Vigilado",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.61972,
-        "lat": 37.17667
-    }
-}, {
-    "name": "Isma.Granada.Est.Autobuses",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.61472,
-        "lat": 37.2
-    }
-}, {
-    "name": "Isma.Granada.P.Vigilado Alhambra",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.58,
-        "lat": 37.17167
-    }
-}, {
-    "name": "Isma.Granada.Espera Visita Alhambra",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.57583,
-        "lat": 37.16361
-    }
-}, {
-    "name": "Calle De San José Málaga 12",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -3.37826,
-        "lat": 38.01231
-    }
-}, {
-    "name": "El Ejido (Almeria)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -2.80701,
-        "lat": 36.77316
-    }
-}, {
-    "name": "Isma.Estación-Bus Soria.Avda.Valladolid. 40. 975225160 ",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -2.48,
-        "lat": 41.75028
-    }
-}, {
-    "name": "Plaza De La Estación",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -2.45596,
-        "lat": 36.83517
-    }
-}, {
-    "name": "Isma.Almeria.R.Del.Pino.Vigilado",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -2.45389,
-        "lat": 36.25222
-    }
-}, {
-    "name": "Isma.Almeria.Vigilado",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -2.4525,
-        "lat": 36.84556
-    }
-}, {
-    "name": "Estación Bus-Logroño",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -2.44532,
-        "lat": 42.4606
-    }
-}, {
-    "name": "Estacion de Autobuses (Murcia)",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -1.13956,
-        "lat": 37.98611
-    }
-}, {
-    "name": "Estacion Central Bus Zaragoza",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -0.91136,
-        "lat": 41.6598
-    }
-}, {
-    "name": "Isma.Valencia.Est.Autobuses",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -0.38972,
-        "lat": 39.48139
-    }
-}, {
-    "name": "Estación Bus-Valencia",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": -0.38571,
-        "lat": 39.48146
-    }
-}, {
-    "name": "IsmaTarragona.Est.Autobuses",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": 1.24611,
-        "lat": 41.11972
-    }
-}, {
-    "name": "Isma.Barcelona.P.Español.Vigilado",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": 2.14667,
-        "lat": 41.3675
-    }
-}, {
-    "name": "Isma.Barcelona.(Puerto)Vigilado",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": 2.17361,
-        "lat": 41.37167
-    }
-}, {
-    "name": "Isma.Barcelona.Est.Autobuses del Norte",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": 2.1825,
-        "lat": 41.39472
-    }
-}, {
-    "name": "Isma.SevillaAVE.Avda Kansas City",
-    "type": "Estacion de autobus",
-    "coords": {
-        "lng": 5.97333,
-        "lat": 37.39194
+        "lng": -73.498612,
+        "lat":  8.230954
     }
 }]
