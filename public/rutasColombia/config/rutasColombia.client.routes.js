@@ -7,6 +7,10 @@ angular.module('rutasColombia').config(['$routeProvider',
                 /*templateUrl:'rutasColombia/views/interfaz/rutasColombiaHome.client.view.html'*/
                 templateUrl:'rutasColombia/views/rutasColombiaInterfaz.client.view.html'
             })
+            .when('/mapa',{
+                
+                templateUrl:'rutasColombia/views/rutasColombiaMapa.client.view.html'
+            })
             .otherwise({
               redirectTo: '/'
             })

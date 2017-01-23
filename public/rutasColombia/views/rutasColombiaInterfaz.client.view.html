@@ -1,12 +1,10 @@
-<section ng-controller='rutasColombiaMapaCtrl'>
-
-    <div id="mapa" ng-init="inicializarMapa()">
-
-        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3976.3025889766404!2d-74.07613278569451!3d4.717408896573663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1483753775656" style=" width: 100%; height: 100%" frameborder="0" allowfullscreen></iframe>-->
-    </div>
-</section>
 
 <section ng-controller='rutasColombiaHomeCtrl'>
+
+  <div id="mapa" ng-init="inicializarMapa()">
+      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3976.3025889766404!2d-74.07613278569451!3d4.717408896573663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1483753775656" style=" width: 100%; height: 100%" frameborder="0" allowfullscreen></iframe>-->
+  </div>
+
     <div id="menuwrapper">
         <ul id="sidemenu">
 
@@ -15,10 +13,11 @@
                     <li>
                         <form class="form-horizonal">
                             <div id="botones" class="form-group btn-group btn-group-lg modo-transporte" aria-label="transporte">
+                              <button ng-click="moto()" tabindex="4" title="moto" type="button" data-engine="2" class="btn btn-default icon-pie engine"><span class="icon-Motocicleta"></button>
+                              <button ng-click="carro()" tabindex="5" title="carro" type="button" data-engine="1" class="btn btn-default icon-bici engine"><span class="icon-Carro"></button>
+                              <button ng-click="bus()" tabindex="6" title="bus" data-engine="3" type="button" class="btn btn-default icon-transporte engine"> <span class="icon-Bus"></button>
+                              <button ng-click="localizacion()" tabindex="6" title="geolocalizacion" data-engine="3" type="button" class="btn btn-default icon-transporte engine"> <span class="icon-Bus"></button>
 
-                              <button tabindex="4" title="moto" type="button" data-engine="2" class="btn btn-default icon-pie engine"><span class="icon-Motocicleta"></button>
-                              <button tabindex="5" title="carro" type="button" data-engine="1" class="btn btn-default icon-bici engine"><span class="icon-Carro"></button>
-                              <button tabindex="6" title="bus" data-engine="3" type="button" class="btn btn-default icon-transporte engine"> <span class="icon-Bus"></button>
                             </div>
                             <div class="form-group">
                                 <div class="input-group" id="origen">
@@ -125,10 +124,6 @@
 
     		</div>
     	</header>
-
-    >>>>>>> master
-
-
 
     <!-- Final Barra de navegacion fija parte superior de la pagina -->
 </section>
