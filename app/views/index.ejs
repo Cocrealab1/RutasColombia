@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="rutasColombia/css/rutasColombiaHome.client.estilo.css">
     <link rel="stylesheet" href="rutasColombia/css/rutasColombiaBar.client.estilo.css">
     <link rel="stylesheet" href="rutasColombia/rutasColombiaiconos.client.estilo.css">
     <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
-    <title><%= title %></title>
-  </head>
-  <body>
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
     <!--incluir las vistas-->
     <section ng-include="rutasColombia/views/rutasColombiaInterfaz.client.view.html"></section>
     <!--incluir las views definidas por el config-->
-    <section ng-view></section>
+    <section ui-view></section>
 
     <script type="text/JavaScript" src="rutasColombia/js/rutasColombia.client.script.js"></script>
     <script type="text/JavaScript" src="lib/angular/angular.js"></script>
-    <script type="text/JavaScript" src="lib/angular-route/angular-route.js"></script>
+    <!--<<script type="text/JavaScript" src="lib/angular-router/angular-route.js"></script>-->
+    <script type="text/JavaScript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script type="text/JavaScript" src="lib/angular-resource/angular-resource.js"></script>
     <script type="text/JavaScript" src="rutasColombia/rutasColombia.client.module.js"></script>
     <script type="text/JavaScript" src="rutasColombia/controllers/rutasColombia.client.controller.js"></script>
@@ -34,5 +39,6 @@
 
     <script type="text/JavaScript" src="application.js"></script>
 
-  </body>
+</body>
+
 </html>

@@ -8,4 +8,8 @@ module.exports=function(app){
   /*tipos de enrutamiento express
   app.router(path).verb(callback)
   app.verb(path, callback)*/
+
+  /*app.get('*', function(req, res) {
+       res.sendfile(index);
+   });*/
 }
