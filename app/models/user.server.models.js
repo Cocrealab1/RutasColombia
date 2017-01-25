@@ -6,6 +6,13 @@ var mongoose = require ('mongoose'),
     crypto = require('crypto'),
     Schema = mongoose.Schema;
 
+    // var password_validation = {
+    //   validator: function(p){
+    //     return this.password_confirmation == p;
+    //   },
+    //   message: "las contraseñas no son iguales"
+    // }
+
 /*Definir un nuevo UserSchema*/
 var UserSchema = new Schema ({
   nombre: String,
@@ -25,11 +32,18 @@ var UserSchema = new Schema ({
   },
   password: {
     type: String,
-    validate: [
-      function (password) {
-          return password && password.length > 6;
-      }, 'La contraseña debe ser mas larga'
-    ]
+     minlength:[6,"la contraseña es muy corta"],
+     validate: {
+      validator: function(p){
+        return 123456789 == p;
+          },
+      message: "las contraseñas no son iguales"
+        }
+    // validate: [
+    //   function (password) {
+    //       return password && password.length > 6;
+    //   }, 'La contraseña debe ser mas larga'
+    // ]
   },
   salt:{
     type: String,
