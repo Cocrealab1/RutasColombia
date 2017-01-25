@@ -35,7 +35,7 @@ var UserSchema = new Schema ({
      minlength:[6,"la contraseña es muy corta"],
      validate: {
       validator: function(p){
-        return 123456789 == p;
+        return this.confirmacionContrasenia == p;
           },
       message: "las contraseñas no son iguales"
         }
@@ -60,6 +60,11 @@ var UserSchema = new Schema ({
   }
 },{collection : 'users'}); ///cambiar por cualquier base de datos
 
+UserSchema.virtual("confirmacionContrasenia").get(function(){
+  return this.c_C;
+}).set(function(password){
+  this.c_C = password;
+});
 //usar middleware pre-save para hash la contaseña
 UserSchema.pre('save', function(next){
   if(this.password){
