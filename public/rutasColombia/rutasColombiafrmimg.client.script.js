@@ -1,4 +1,6 @@
+
       /*  $(document).ready(function() {
+
             $('#btnAdd').click(function() {
                 var num     = $('.clonedInput').length;
                 var newNum  = new Number(num + 1);

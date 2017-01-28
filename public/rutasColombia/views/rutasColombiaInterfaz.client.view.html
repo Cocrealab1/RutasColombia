@@ -1,6 +1,4 @@
 <section ng-controller='rutasColombiaHomeCtrl'>
-
-    <!--mapa-->
     <div id="mapa" ng-init="inicializarMapa()">
     </div>
 
@@ -72,9 +70,8 @@
         </div>
     </div>
 
+
     <div id="menuwrapper">
-
-
         <ul id="sidemenu">
 
 
@@ -106,7 +103,9 @@
                                 <div class="form-group">
                                     <div class="input-group" id="origen">
                                         <div class="input-group-addon" id="PuntoA">A</div>
-                                        <input type="text" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen" ng-click="BtnUA1()">
+
+                                        <input ng-model="origen" type="text" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen" ng-click="BtnUA1()">
+
                                     </div>
 
                                     <button ng-show="BtnUA" class="btn-warning btn-xs" ng-click="BtnUA2();localizacion()"> <span class="icon-Bus"></button>
@@ -114,14 +113,18 @@
 
                                     <div class="input-group" id="Destino">
                                         <div class="input-group-addon" id="PuntoB">B</div>
-                                        <input type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" ng-click="BtnUAD1()">
+
+                                        <input ng-model="destino" type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" ng-click="BtnUAD1()">
                                     </div>
                                     <button ng-show="BtnUAD" class="btn-warning btn-xs" ng-click="BtnUAD2();localizacion()"> <span class="icon-Bus"></button>
+
                                     <br>
 
                                 </div>
                             </form>
-                            <button type="button" class="btn btn-warning">Buscar</button>
+
+                            <button ng-clic="buscar()" type="button" class="btn btn-warning">Buscar</button>
+
                         </li>
 
                     </ul>
@@ -219,6 +222,7 @@
                             <form class="form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-xs-1">Nombre:</label>
+
                                     <div class="col-xs-12">
                                         <input type="text" class="form-control" placeholder="Ingrese aquí su nombre">
                                     </div>
@@ -229,6 +233,7 @@
                                     <div class="col-xs-12">
                                         <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese aquí su email">
                                     </div>
+
                                 </div>
 
                                 <div class="form-group">
@@ -267,21 +272,21 @@
 <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
 
 <!--<header class="header">
-
         <ul class="flex-container">
-        <li class="item1"><img src="rutascolombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></li>
-        <li class="item" ></li>
-        <li class="item" >
-        <button>
+            <li class="item1"><img src="rutascolombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></li>
+            <li class="item"></li>
+            <li class="item">
+                <button>
         <a href="login.html">Ingresar <span class="icon-user"></a>
         </button></li>
-        <li class="item">
-        <button>
+            <li class="item">
+                <button>
         <a href="registro.html">Registrarse <span class="icon-User"></a>
         </button></li>
-        <li class="item" id="item4"><button>
+            <li class="item" id="item4"><button>
         <a href="registro.html">Idioma <span class="icon-Español"></a>
         </button></li>
+
 
     </ul>
 
@@ -291,3 +296,4 @@
 
 <!-- Final Barra de navegacion fija parte superior de la pagina -->
 <!--</section>-->
+
