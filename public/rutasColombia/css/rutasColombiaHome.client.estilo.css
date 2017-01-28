@@ -1,71 +1,64 @@
-
 html {
     height: 100%;
 }
 
 body {
-    font-family:roboto;
-
+    font-family: roboto;
 }
 
 @media (min-width: 1200px) {
     body {
-        color: red ;
+        color: red;
     }
-    
 }
 
 @media (min-width: 768px) {
-   body {
-    color: green ;
-   } 
+    body {
+        color: green;
+    }
 }
+
 @media (max-width: 767px) {
-   body {
-    color: blue ;
-   } 
+    body {
+        color: blue;
+    }
 }
+
 @media (max-width: 480px) {
-   body {
-    color: yellow ;
-   } 
+    body {
+        color: yellow;
+    }
 }
 
-
-#menuwrapper ul, #menuwrapper ul li{
-    margin:0;
-    padding:0;
-    list-style:none;
+#menuwrapper ul, #menuwrapper ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 #menuwrapper {
-   margin-top: 70px;
+    /*margin-top: 70px;*/
     /*height: 894px;*/
     height: 100%;
     width: 791px;
-
 }
 
-#sidemenu{
-    background:#000;
-    width:65px;
-    height:95%;
+#sidemenu {
+    background: #000;
+    width: 65px;
+    height: 95%;
     position: fixed;
-    text-align:center;
-
+    text-align: center;
 }
 
-#menuwrapper ul li{
-    background-color:#000;
-    width:100%;
-    
-    
+#menuwrapper ul li {
+    background-color: #000;
+    width: 100%;
 }
 
-#menuwrapper ul li form{
+#menuwrapper ul li form {
     text-align: left;
 }
-
 
 #comollego .input-group-addon {
     font-weight: 700;
@@ -74,23 +67,25 @@ body {
 
 
 /* We apply the link style */
-#menuwrapper ul li a{
-    padding-top:20px;
-    padding-bottom:15px;
-    color:#fff;
-    display:inline-block;
-    text-decoration:none;
+
+#menuwrapper ul li a {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
 }
 
-#menuwrapper ul li a.selected{
-    color:#ddd;   
+#menuwrapper ul li a.selected {
+    color: #ddd;
 }
-#menuwrapper ul li a:hover{
-    color:#fff;
-    transition:color 0.3s ease;
-    -o-transition:color 0.3s ease;
-    -webkit-transition:color 0.3s ease;
-    -moz-transition:color 0.3s ease;
+
+#menuwrapper ul li a:hover {
+    color: #fff;
+    transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
 }
 
 #ingreseOrigen {
@@ -101,8 +96,8 @@ body {
     margin-bottom: 0;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-} 
- 
+}
+
 #ingreseDestino {
     position: relative;
     z-index: 2;
@@ -111,12 +106,12 @@ body {
     margin-bottom: 0;
 }
 
-.form-group{
+.form-group {
     margin-top: 25px;
 }
 
-
-#menuwrapper a:hover:after {     /*este es el apuntador*/
+#menuwrapper a:hover:after {
+    /*este es el apuntador*/
     content: "  ";
     visibility: visible;
     display: inline-block;
@@ -129,40 +124,38 @@ body {
     position: fixed;
     left: 43px;
     width: 1px;
-    transition:border-right 1s ease;
-    -o-transition:border-right 1s ease;
-    -webkit-transition:border-right 1s ease;
-    -moz-transition:border-right 1s ease;
+    transition: border-right 1s ease;
+    -o-transition: border-right 1s ease;
+    -webkit-transition: border-right 1s ease;
+    -moz-transition: border-right 1s ease;
 }
 
-#menuwrapper  a:hover{     /*es el hover de color amarillo*/
+#menuwrapper a:hover {
+    /*es el hover de color amarillo*/
     background: #E3C83A;
-
-    
 }
 
- #menuwrapper  a {  /*se ajusta el tamaño al 100% para que el hover aparezca alrededor de todo el icono*/
-    width: 100%;   
+#menuwrapper a {
+    /*se ajusta el tamaño al 100% para que el hover aparezca alrededor de todo el icono*/
+    width: 100%;
 }
-
 
 #menuwrapper ul li a.noflyout:hover:after {
     border-right: 0.8em solid transparent;
-    transition:none;
-    -o-transition:none;
-    -webkit-transition:none;
-    -moz-transition:none;
+    transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
 }
 
-#menuwrapper ul li ul{
-    position:absolute;
-    display:block;
-    visibility:hidden;
-    height:100%;
-    width:300px;
-    color:#000;
+#menuwrapper ul li ul {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    height: 100%;
+    width: 300px;
+    color: #000;
     position: fixed;
-    
 }
 
 .btn-file {
@@ -171,6 +164,7 @@ body {
     float: left;
     margin-left: 5%;
 }
+
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
@@ -186,9 +180,6 @@ body {
     cursor: inherit;
     display: block;
 }
-
-
-
 
 .botones {
     width: 300px
@@ -209,7 +200,6 @@ body {
     margin-left: 27px;
 }
 
-
 #option3 {
     border-radius: 4px;
     width: 60px;
@@ -218,85 +208,80 @@ body {
     margin-left: 27px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-
 }
 
-button.btn.btn-warning{ 
+button.btn.btn-warning {
     margin-top: 20px;
     margin-left: 162px;
 }
 
-button.btn-warning{   /* boton de ubicacion actual en formulario seleccionar vehiculo*/
+button.btn-warning {
+    /* boton de ubicacion actual en formulario seleccionar vehiculo*/
     margin-top: 2%;
     margin-left: 79%;
     margin-bottom: 2%;
-
 }
 
-label{
+label {
     font-family: roboto;
 }
 
-#menuwrapper ul li ul li{
-    color:#000;
-    background:transparent;
-    padding:10%;
+#menuwrapper ul li ul li {
+    color: #000;
+    background: transparent;
+    padding: 10%;
 }
 
-
-#menuwrapper   
-
-#ul1{               /* Esta es la nube que contiene todo el fomulario del icono selecionar vehiculo*/
-    left:65px;
-    top:70px;
-    display:block;
-    visibility:visible;
-    width:300px;
+#menuwrapper #ul1 {
+    /* Esta es la nube que contiene todo el fomulario del icono selecionar vehiculo*/
+    left: 65px;
+    top: 70px;
+    display: block;
+    visibility: visible;
+    width: 300px;
     position: fixed;
-    background-color:#fff;
-    transition:background-color 0.5s ease;
-    -o-transition:background-color 0.5s ease;
-    -webkit-transition:background-color 0.5s ease;
-    -moz-transition:background-color 0.5s ease;
-    overflow:auto;
+    background-color: #fff;
+    transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    overflow: auto;
     height: 100%;
 }
 
-#menuwrapper   
-
-#u2{             /* Esta es la nube que contiene todo el fomulario del icono subir imagenes*/
-    left:65px;
-    top:70px;
-    visibility:visible;
-    width:300px;
+#menuwrapper #u2 {
+    /* Esta es la nube que contiene todo el fomulario del icono subir imagenes*/
+    left: 65px;
+    top: 70px;
+    visibility: visible;
+    width: 300px;
     position: fixed;
-    background-color:#fff;
-    transition:background-color 0.5s ease;
-    -o-transition:background-color 0.5s ease;
-    -webkit-transition:background-color 0.5s ease;
-    -moz-transition:background-color 0.5s ease;
-    overflow:auto;
+    background-color: #fff;
+    transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    overflow: auto;
     height: 100%;
 }
 
-#menuwrapper  
-
-#ul3{        /* Esta es la nube que contiene todo el fomulario del icono informacion*/
-    left:65px;
-    top:70px;
-    display:block;
-    visibility:visible;
-    width:300px;
+#menuwrapper #ul3 {
+    /* Esta es la nube que contiene todo el fomulario del icono informacion*/
+    left: 65px;
+    top: 70px;
+    display: block;
+    visibility: visible;
+    width: 300px;
     position: fixed;
-    background-color:#fff;
-    transition:background-color 0.5s ease;
-    -o-transition:background-color 0.5s ease;
-    -webkit-transition:background-color 0.5s ease;
-    -moz-transition:background-color 0.5s ease;
-    overflow:auto;
+    background-color: #fff;
+    transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    overflow: auto;
     height: 100%;
 }
 
-
-
-
+.imgSVG {
+    max-height: 52.17px;
+}

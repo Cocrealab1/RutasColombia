@@ -1,7 +1,75 @@
 <section ng-controller='rutasColombiaHomeCtrl'>
+    <div id="mapa" ng-init="inicializarMapa()">
+    </div>
 
-    <!--Mapa principal-->
-    <div id="mapa" ng-init="inicializarMapa()"></div>
+    <!--menu-->
+    <div class="menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#"><img src="rutasColombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ingresar</a>
+                    <ul>
+                        <li>
+                            <!--<formulario login -->
+                            <div class="container">
+                                <div class="jumbotron forlogin">
+                                    <form action="" method="POST" id="login" name="login">
+                                        <label> Usuario :</label>
+                                        <input type="email" required="required" id="usuario" name="usuario" size='20' placeholder="Nombre de usuario" class="form-control">
+                                        <label>Password:</label>
+                                        <input type="password" required="required" id="password" name="password" size='20' placeholder="password" class="form-control">
+                                        </br>
+                                        <div class="col-xs-offset-2 col-xs-12">
+                                            <input type="button" class="btn btn-default" name='boton' value="Limpiar">
+                                            <input type="submit" class="btn btn-warning" name='boton' value="Ingresar">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Registrarse</a>
+                    <ul>
+                        <li>
+                            <!--<formulario registro -->
+                            <div class="container">
+                                <div class="jumbotron formregistro">
+                                    <form action="" method="POST" id="form" name="form1">
+                                        <label>Nombres :</label>
+                                        <input type="text" required="required" id="nombres" name="nombres" class="form-control">
+                                        <label>Apellidos :</label>
+                                        <input type="text" required="required" id="apellidos" name="apellidos" class="form-control">
+                                        <label>Correo electronico :</label>
+                                        <input type="email" required="required" id="correo" name="correo" class="form-control">
+                                        <label>Contraseña :</label>
+                                        <input type="text" required="required" id="pass" name="pass" class="form-control">
+                                        <label>Repetir contraseña :</label>
+                                        <input type="text" required="required" id="password" name="password" class="form-control">
+                                        </br>
+                                        <div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
+                                        </br>
+                                        <label><input type="checkbox" value=""><a href="#" > Aceptar terminos y condiciones</a> </label>
+                                        </br>
+                                        </br>
+                                        <div class="col-xs-offset-2 col-xs-12">
+                                            <input type="button" class="btn btn-default" name='boton' value="Limpiar">
+                                            <input type="button" class="btn btn-warning" name='boton' value="Registrarse" onClick="comprobarClave()">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="idioma"><a href="#"><span class="icon-Ingles_path1"></span></a></li>
+
+            </ul>
+        </div>
+    </div>
+
 
     <div id="menuwrapper">
         <ul id="sidemenu">
@@ -35,7 +103,9 @@
                                 <div class="form-group">
                                     <div class="input-group" id="origen">
                                         <div class="input-group-addon" id="PuntoA">A</div>
+
                                         <input ng-model="origen" type="text" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen" ng-click="BtnUA1()">
+
                                     </div>
 
                                     <button ng-show="BtnUA" class="btn-warning btn-xs" ng-click="BtnUA2();localizacion()"> <span class="icon-Bus"></button>
@@ -43,14 +113,18 @@
 
                                     <div class="input-group" id="Destino">
                                         <div class="input-group-addon" id="PuntoB">B</div>
+
                                         <input ng-model="destino" type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" ng-click="BtnUAD1()">
                                     </div>
-                                    <button ng-show="BtnUAD" class="btn-warning btn-xs" ng-click="BtnUAD2(); localizacion()"> <span class="icon-Bus"></button>
+                                    <button ng-show="BtnUAD" class="btn-warning btn-xs" ng-click="BtnUAD2();localizacion()"> <span class="icon-Bus"></button>
+
                                     <br>
 
                                 </div>
                             </form>
+
                             <button ng-clic="buscar()" type="button" class="btn btn-warning">Buscar</button>
+
                         </li>
 
                     </ul>
@@ -148,6 +222,7 @@
                             <form class="form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-xs-1">Nombre:</label>
+
                                     <div class="col-xs-12">
                                         <input type="text" class="form-control" placeholder="Ingrese aquí su nombre">
                                     </div>
@@ -158,6 +233,7 @@
                                     <div class="col-xs-12">
                                         <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese aquí su email">
                                     </div>
+
                                 </div>
 
                                 <div class="form-group">
@@ -192,11 +268,10 @@
 </section>
 
 
-<section ng-controller='rutasColombiaBarCtrl'>
-    <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
+<!--<section ng-controller='rutasColombiaBarCtrl'>-->
+<!-- Inicio Barra de navegacion fija parte superior de la pagina -->
 
-    <header class="header">
-
+<!--<header class="header">
         <ul class="flex-container">
             <li class="item1"><img src="rutascolombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></li>
             <li class="item"></li>
@@ -212,11 +287,13 @@
         <a href="registro.html">Idioma <span class="icon-Español"></a>
         </button></li>
 
-        </ul>
+
+    </ul>
 
 
 
-    </header>
+    </header>-->
 
-    <!-- Final Barra de navegacion fija parte superior de la pagina -->
-</section>
+<!-- Final Barra de navegacion fija parte superior de la pagina -->
+<!--</section>-->
+
