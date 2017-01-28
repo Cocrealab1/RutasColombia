@@ -1,1 +1,1 @@
-angular.module('rutasColombia',[]);
+angular.module('rutasColombia',[ 'ui.router']);

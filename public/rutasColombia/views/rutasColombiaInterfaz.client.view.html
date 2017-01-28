@@ -1,132 +1,299 @@
-
 <section ng-controller='rutasColombiaHomeCtrl'>
+    <div id="mapa" ng-init="inicializarMapa()">
+    </div>
 
-  <div id="mapa" ng-init="inicializarMapa()">
-      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3976.3025889766404!2d-74.07613278569451!3d4.717408896573663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1483753775656" style=" width: 100%; height: 100%" frameborder="0" allowfullscreen></iframe>-->
-  </div>
+    <!--menu-->
+    <div class="menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#"><img src="rutasColombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ingresar</a>
+                    <ul>
+                        <li>
+                            <!--<formulario login -->
+                            <div class="container">
+                                <div class="jumbotron forlogin">
+                                    <form action="" method="POST" id="login" name="login">
+                                        <label> Usuario :</label>
+                                        <input type="email" required="required" id="usuario" name="usuario" size='20' placeholder="Nombre de usuario" class="form-control">
+                                        <label>Password:</label>
+                                        <input type="password" required="required" id="password" name="password" size='20' placeholder="password" class="form-control">
+                                        </br>
+                                        <div class="col-xs-offset-2 col-xs-12">
+                                            <input type="button" class="btn btn-default" name='boton' value="Limpiar">
+                                            <input type="submit" class="btn btn-warning" name='boton' value="Ingresar">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Registrarse</a>
+                    <ul>
+                        <li>
+                            <!--<formulario registro -->
+                            <div class="container">
+                                <div class="jumbotron formregistro">
+                                    <form action="" method="POST" id="form" name="form1">
+                                        <label>Nombres :</label>
+                                        <input type="text" required="required" id="nombres" name="nombres" class="form-control">
+                                        <label>Apellidos :</label>
+                                        <input type="text" required="required" id="apellidos" name="apellidos" class="form-control">
+                                        <label>Correo electronico :</label>
+                                        <input type="email" required="required" id="correo" name="correo" class="form-control">
+                                        <label>Contraseña :</label>
+                                        <input type="text" required="required" id="pass" name="pass" class="form-control">
+                                        <label>Repetir contraseña :</label>
+                                        <input type="text" required="required" id="password" name="password" class="form-control">
+                                        </br>
+                                        <div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
+                                        </br>
+                                        <label><input type="checkbox" value=""><a href="#" > Aceptar terminos y condiciones</a> </label>
+                                        </br>
+                                        </br>
+                                        <div class="col-xs-offset-2 col-xs-12">
+                                            <input type="button" class="btn btn-default" name='boton' value="Limpiar">
+                                            <input type="button" class="btn btn-warning" name='boton' value="Registrarse" onClick="comprobarClave()">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="idioma"><a href="#"><span class="icon-Ingles_path1"></span></a></li>
+
+            </ul>
+        </div>
+    </div>
+
 
     <div id="menuwrapper">
         <ul id="sidemenu">
 
-            <li><a href="#"><span class="icon-Carro"></a>
-                <ul>
-                    <li>
-                        <form class="form-horizonal">
-                            <div id="botones" class="form-group btn-group btn-group-lg modo-transporte" aria-label="transporte">
-                              <button ng-click="moto()" tabindex="4" title="moto" type="button" data-engine="2" class="btn btn-default icon-pie engine"><span class="icon-Motocicleta"></button>
-                              <button ng-click="carro()" tabindex="5" title="carro" type="button" data-engine="1" class="btn btn-default icon-bici engine"><span class="icon-Carro"></button>
-                              <button ng-click="bus()" tabindex="6" title="bus" data-engine="3" type="button" class="btn btn-default icon-transporte engine"> <span class="icon-Bus"></button>
-                              <button ng-click="localizacion()" tabindex="6" title="geolocalizacion" data-engine="3" type="button" class="btn btn-default icon-transporte engine"> <span class="icon-Bus"></button>
 
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group" id="origen">
-                                    <div class="input-group-addon" id="Punto A">A</div>
+            <!--Menu seleccione vehiculo-->
+            <li><a class="btn" ng-click="Panel1()"><span id="sp1" class="icon-Carro" ></a>
+                <!--icono de vehiculo con funcion que ejecuta que se vean las opciones de este menu-->
+                <div ng-show="Caja1">
+                    <!--div que contiene todas las opciones del menu vehiculo-->
+                    <ul id="ul1">
+                        <!-- id que controla el estilo de las opciones del menu vehiculo-->
 
-                                    <input ng-model="origen" type="text" placeholder="Ingrese origen"  class="form-control input-lg" id="ingreseOrigen" tabindex="1" autocomplete="off">
-                                    <div id="gui-delete-source" class="iconic-button cancel-marker input-delete"></div>
+                        <li>
+                            <form class="form-horizonal">
+
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default" ng-click="moto()">
+                                <input type="radio" name="options" id="option1" > <span class="icon-Bus">
+                                </label>
+
+                                    <label class="btn btn-default" ng-click="carro()">
+                                <input type="radio" name="options" id="option2" > <span class="icon-Carro">
+                                </label>
+
+                                    <label class="btn btn-default" ng-click="bus()">
+                                <input type="radio" name="options" id="option3" ><span class="icon-Bus">
+                                </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group" id="origen">
+                                        <div class="input-group-addon" id="PuntoA">A</div>
+
+                                        <input ng-model="origen" type="text" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen" ng-click="BtnUA1()">
+
+                                    </div>
+
+                                    <button ng-show="BtnUA" class="btn-warning btn-xs" ng-click="BtnUA2();localizacion()"> <span class="icon-Bus"></button>
+                                    <br>
+
+                                    <div class="input-group" id="Destino">
+                                        <div class="input-group-addon" id="PuntoB">B</div>
+
+                                        <input ng-model="destino" type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" ng-click="BtnUAD1()">
+                                    </div>
+                                    <button ng-show="BtnUAD" class="btn-warning btn-xs" ng-click="BtnUAD2();localizacion()"> <span class="icon-Bus"></button>
+
+                                    <br>
+
+                                </div>
+                            </form>
+
+                            <button ng-clic="buscar()" type="button" class="btn btn-warning">Buscar</button>
+
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Fin div que contiene todas las opciones del menu vehiculo-->
+            </li>
+            <!-- Fin menu seleccione vehiculo -->
+
+            <li><a href="#" class="btn active" ng-click="Panel2()"><span class="icon-Subir_Fotos" ></a>
+                <div ng-show="Caja2">
+                    <ul id="u2">
+
+                        <li>
+                            <!--
+                        <div class="container">
+                    <form enctype="multipart/form-data">
+                     <div class="form-group">
+                    <input id="file-3" type="file" multiple=true>
+                    </div> -->
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div>
+                                        <label class="btn btn-warning btn-file">
+                                      Browse <input type="file" multiple="true">
+                                  </label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <label class="control-label col-xs-8">Titulo de la imagen</label>
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Ingrese aquí el titulo">
+                                    </div>
+
+                                    <label class="control-label col-xs-8">Donde tomaste la foto</label>
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUF1()"></input>
+                                    </div>
+                                    <button ng-show="BtnUF" class="btn-warning btn-xs" ng-click="BtnUF2();localizacion()"> <span class="icon-Bus"></button>
                                 </div>
 
 
-                                <div class="input-group" id="Destino">
-                                    <div class="input-group-addon" id="Punto B">B</div>
 
-                                    <input ng-model="destino" type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" tabindex="2" autocomplete="off">
+
+                                <select class="form-control">
+                            <option value="" disabled selected>Tipo de sitio turistico</option>
+                            <option>1.Monumentos historicos<span class="icon-Carro"></option>
+                            <button>2.Gastronómico <span class="icon-Carro" ></button>
+                            <option>3.Folclórico</option>
+                            <option>4.Estadios</option>
+                            <option>5.Parques de atracción</option>
+                            <option>6.Aventura</option>
+                            <option>7.Naturaleza</option>
+                            <option>8.Etnografico</option>
+                            <option>9.Cinematografico</option>
+                            <option>10.Cultural</option>
+                            <option>11.Ecoturismo</option>
+                            <option>12.Deportivo</option>
+                            <option>13.Religioso</option>
+                            <option>14.Mochilero</option>
+
+                        </select>
+
+                                <br>
+                                <div id="input1" class="clonedInput ">
+                                    <input type="text" class="form-control" name="name1">
+                                    <br>
                                 </div>
 
+                                <input type="button" class="btn btn-warning" id="btnAdd" value="+">
+                                <input type="button" class="btn btn-warning" id="btnDel" value="-">
 
-                            </div>
-                        </form>
-                        <button ng-click="buscar()" type="button" class="btn btn-warning">Buscar</button>
-                    </li>
-                </ul>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-1">Teléfono</label>
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Ingrese aquí su Teléfono">
+                                    </div>
+
+                                    <label class="control-label col-xs-1">Descripción</label>
+                                    <div class="col-xs-12">
+                                        <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-warning"><span class="icon-Guardar"></button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </li>
-            <li><a href="#"><span class="icon-Subir_Fotos"></a>
-                <ul>
-                    <li>
-                        <h4 align="center">Para poder utilizar esta opción debes estar registrado en la aplicación </h4>
 
-                    </li>
-                </ul>
+            <li><a href="#" class="btn" ng-click="Panel3()"><span class="icon-Guardar" ></a>
+                <div ng-show="Caja3">
+                    <ul id="ul3">
+
+                        <li>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-1">Nombre:</label>
+
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Ingrese aquí su nombre">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-xs-1">Email:</label>
+                                    <div class="col-xs-12">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese aquí su email">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-xs-1">Asunto:</label>
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control" placeholder="Ingrese aquí el asunto">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-xs-1">Mensaje:</label>
+                                    <div class="col-xs-12">
+                                        <textarea rows="3" class="form-control" placeholder="Ingrese aquí su mensaje"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <div class="col-xs-offset-4 col-xs-9">
+                                        <input type="submit" class="btn btn-warning" value="Enviar">
+                                        <input type="reset" class="btn btn-warning" value="Limpiar">
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+
+                    </ul>
+                </div>
             </li>
-            <li><a href="#">in</a>
-                <ul>
-                    <li>
 
-                      <div class="form-group">
-                              <label class="control-label col-xs-12">Contactenos</label>
-                              <div class="col-xs-12">
-                                 <h5>Puedes enviar un mensaje utilizando el siguiente formulario</h5>
-                             </div>
-                     </div>
-                         <br>
-                   <form class="form-horizontal">
-                         <div class="form-group">
-                             <label class="control-label col-xs-1">Nombre:</label>
-                             <div class="col-xs-12">
-                                 <input type="text" class="form-control" placeholder="Ingrese aquí su nombre">
-                             </div>
-                         </div>
-                         <div class="form-group">
-                              <label class="control-label col-xs-1">Email:</label>
-                             <div class="col-xs-12">
-                                 <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese aquí su email">
-                             </div>
-                         </div>
-                         <div class="form-group">
-                             <label class="control-label col-xs-1">Asunto:</label>
-                             <div class="col-xs-12">
-                                 <input type="text" class="form-control" placeholder="Ingrese aquí el asunto">
-                             </div>
-                         </div>
-                         <div class="form-group">
-                             <label class="control-label col-xs-1">Mensaje:</label>
-                             <div class="col-xs-12">
-                                 <textarea rows="3" class="form-control" placeholder="Ingrese aquí su mensaje"></textarea>
-                                 <br>
-                                 <div class="col-xs-offset-8 col-xs-10">
-                                 <input type="submit" class="btn btn-warning" value="Enviar">
-                                 </div>
-                             </div>
-                         </div>
-                            <br>
-
-                   </form>
-
-                    </li>
-                </ul>
-            </li>
         </ul>
     </div>
 </section>
 
 
-<section ng-controller='rutasColombiaBarCtrl'>
-    <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
+<!--<section ng-controller='rutasColombiaBarCtrl'>-->
+<!-- Inicio Barra de navegacion fija parte superior de la pagina -->
 
-      <header class="header">
-        
+<!--<header class="header">
         <ul class="flex-container">
-        <li class="item1"><img src="rutascolombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></li>
-        <li class="item" ></li>
-        <li class="item" >
-        <button>
+            <li class="item1"><img src="rutascolombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></li>
+            <li class="item"></li>
+            <li class="item">
+                <button>
         <a href="login.html">Ingresar <span class="icon-user"></a>
         </button></li>
-        <li class="item">
-        <button>
+            <li class="item">
+                <button>
         <a href="registro.html">Registrarse <span class="icon-User"></a>
         </button></li>
-        <li class="item" id="item4"><button>
+            <li class="item" id="item4"><button>
         <a href="registro.html">Idioma <span class="icon-Español"></a>
         </button></li>
-    
+
+
     </ul>
 
-                
-        
-    </header>
 
-    <!-- Final Barra de navegacion fija parte superior de la pagina -->
-</section>
+
+    </header>-->
+
+<!-- Final Barra de navegacion fija parte superior de la pagina -->
+<!--</section>-->
 
