@@ -26,13 +26,21 @@
 
 .icon-Bus:before {
   content: "\e900";
+  font-size: 30px;
 }
 .icon-Camara:before {
   content: "\e901";
 }
 .icon-Carro:before {
   content: "\e902";
+  font-size: 30px;
+
 }
+
+.icon-Carro:visited {
+  color:yellow;
+ }
+
 .icon-Español:before {
   content: "\e903";
 }
@@ -41,9 +49,11 @@
 }
 .icon-Guardar:before {
   content: "\e905";
+  font-size: 200%;
 }
 .icon-Subir_Fotos:before {
   content: "\e906";
+  font-size: 30px;
 }
 .icon-Vehiculo:before {
   content: "\e907";

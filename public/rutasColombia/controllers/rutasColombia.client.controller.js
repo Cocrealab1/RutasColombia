@@ -1,6 +1,69 @@
 angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '$http',
     function($scope, $http) {
          var mapa;
+
+        $Caja1=false;
+        $Caja2=false;
+        $Caja3=false;
+        $BtnUA=false;
+        $BtnUAD=false;
+        $BtnUF=false;
+
+        $scope.Panel1= function() { 
+        
+        $scope.Caja1=true;
+        $scope.Caja2=false;
+        $scope.Caja3=false; 
+    };
+    $scope.Panel2= function() { 
+        
+        $scope.Caja2=true
+        $scope.Caja1=false;
+        $scope.Caja3=false;
+    };
+    $scope.Panel3= function() { 
+        
+        $scope.Caja3=true;
+        $scope.Caja2=false;
+        $scope.Caja1=false; 
+    };
+    $scope.BtnUA1= function() { 
+        
+        $scope.BtnUA=true;
+        $scope.BtnUAD=false;
+        
+    };
+    $scope.BtnUA2= function() { 
+        
+        $scope.BtnUA=false;
+        
+    };
+
+    $scope.BtnUAD1= function() { 
+        
+        $scope.BtnUAD=true;
+         $scope.BtnUA=false;
+        
+    };
+    $scope.BtnUAD2= function() { 
+        
+        $scope.BtnUAD=false;
+        
+    }; 
+    $scope.BtnUF1= function() { 
+        
+        $scope.BtnUF=true;
+        
+    };
+
+    $scope.BtnUF2= function() { 
+        
+        $scope.BtnUF=false;
+        
+    };                    
+
+
+
         $scope.inicializarMapa = function() {
             //funcion por el cual se calcula el medio de transporte
             var calcularMedTransporte = new google.maps.DirectionsService;
@@ -13,7 +76,8 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
                     lat: 4.776735,
                     lng: -74.166030
                 }
-            });
+
+          });
 
             mostrarMedTransporte.setMap(mapa);
 
@@ -143,13 +207,13 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
         $http.get('rutasColombia/json/geo.json')
             .then(function(res) {
                 //
-                
 
-                for (var i = 0; i <= res.data.length; i++) {
+
+                for (var i = 0; i < res.data.length; i++) {
                     //coloca el marcador
                     marker = new google.maps.Marker({
                         //me muestra las coordenadas graficadas
-                        position: new google.maps.LatLng(res.data[i].coords.lat,res.data[i].coords.lng ),
+                        position: new google.maps.LatLng(res.data[i].coords.lat, res.data[i].coords.lng ),
                         map: mapa
                     });
                 }
