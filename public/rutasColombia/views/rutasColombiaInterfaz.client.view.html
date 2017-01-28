@@ -2,7 +2,6 @@
 <section ng-controller='rutasColombiaHomeCtrl'>
 
   <div id="mapa" ng-init="inicializarMapa()">
-      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3976.3025889766404!2d-74.07613278569451!3d4.717408896573663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1483753775656" style=" width: 100%; height: 100%" frameborder="0" allowfullscreen></iframe>-->
   </div>
 <div class="menu">
 		<div class="container-fluid">
@@ -26,7 +25,7 @@
 												<input type="button" class="btn btn-default" name='boton' value="Limpiar" >
 												<input type="submit" class="btn btn-warning" name='boton' value="Ingresar" >
 												</div>
-												</form>	
+												</form>
 											</div>
 										</div>
 									</li>
@@ -35,7 +34,7 @@
 						<li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Registrarse</a>
 							<ul>
 								<li>
-								<!--<formulario registro -->		
+								<!--<formulario registro -->
 									<div class="container">
 										<div class="jumbotron formregistro">
 											<form  action="" method="POST" id="form" name="form1" >
@@ -59,32 +58,32 @@
 												<input type="button" class="btn btn-default" name='boton' value="Limpiar" >
 												<input type="button" class="btn btn-warning" name='boton' value="Registrarse" onClick="comprobarClave()" >
 												</div>
-											</form>	
+											</form>
 										</div>
 									</div>
 								</li>
 							</ul>
 						</li>
 							<li class="idioma"><a href="#"><span class="icon-Ingles_path1"></span></a></li>
-							
+
 				</ul>
 			</div>
 		</div>
-  
+
     <div id="menuwrapper">
 
 
         <ul id="sidemenu">
 
-           
+
             <!--Menu seleccione vehiculo-->
              <li><a class="btn" ng-click="Panel1()" ><span id="sp1" class="icon-Carro" ></a> <!--icono de vehiculo con funcion que ejecuta que se vean las opciones de este menu-->
                   <div ng-show="Caja1" >   <!--div que contiene todas las opciones del menu vehiculo-->
                   <ul id="ul1">            <!-- id que controla el estilo de las opciones del menu vehiculo-->
-                    
-                      <li> 
+
+                      <li>
                         <form class="form-horizonal">
-                    
+
                            <div class="btn-group" data-toggle="buttons" >
                                 <label class="btn btn-default" ng-click="moto()">
                                 <input type="radio" name="options" id="option1" > <span class="icon-Bus">
@@ -119,18 +118,18 @@
                         </form>
                                        <button type="button"  class="btn btn-warning">Buscar</button>
                       </li>
-                    
+
                   </ul>
                   </div><!-- Fin div que contiene todas las opciones del menu vehiculo-->
              </li>
            <!-- Fin menu seleccione vehiculo -->
 
             <li><a href="#" class="btn active" ng-click="Panel2()" ><span class="icon-Subir_Fotos" ></a>
-              <div ng-show="Caja2">  
+              <div ng-show="Caja2">
                 <ul id="u2">
-                  
-                    <li>                     
-                 <!-- 
+
+                    <li>
+                 <!--
                         <div class="container">
                     <form enctype="multipart/form-data">
                      <div class="form-group">
@@ -148,18 +147,18 @@
                                  <label class="control-label col-xs-8">Titulo de la imagen</label>
                                   <div class="col-xs-12">
                                     <input type="text" class="form-control" placeholder="Ingrese aquí el titulo">
-                                  </div>                          
-                          
+                                  </div>
+
                                 <label class="control-label col-xs-8">Donde tomaste la foto</label>
                                   <div class="col-xs-12">
                                     <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUF1()"></input>
                                   </div>
                                     <button  ng-show="BtnUF" class="btn-warning btn-xs" ng-click="BtnUF2();localizacion()"> <span class="icon-Bus"></button>
-                            </div> 
+                            </div>
 
 
-                        
-             
+
+
                           <select class="form-control" >
                             <option value="" disabled selected>Tipo de sitio turistico</option>
                             <option>1.Monumentos historicos<span class="icon-Carro"></option>
@@ -176,41 +175,41 @@
                             <option>12.Deportivo</option>
                             <option>13.Religioso</option>
                             <option>14.Mochilero</option>
-                            
+
                         </select>
-                          
+
                           <br>
                             <div id="input1"  class="clonedInput " >
                             <input type="text" class="form-control" name="name1" >
                             <br>
                            </div>
-                           
+
                                 <input type="button"  class="btn btn-warning" id="btnAdd"  value="+">
-                                <input type="button"  class="btn btn-warning" id="btnDel"  value="-">      
-                     
+                                <input type="button"  class="btn btn-warning" id="btnDel"  value="-">
+
                       <div class="form-group">
                                 <label class="control-label col-xs-1">Teléfono</label>
                                   <div class="col-xs-12">
                                     <input type="text" class="form-control" placeholder="Ingrese aquí su Teléfono">
-                                  </div>                          
-                          
+                                  </div>
+
                                 <label class="control-label col-xs-1">Descripción</label>
                                   <div class="col-xs-12">
                                     <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar"></textarea>
                                   </div>
-                            </div> 
+                            </div>
                             <button type="submit" class="btn btn-warning"><span class="icon-Guardar"></button>
                   </form>
-                    </li>                 
+                    </li>
                  </ul>
-              </div>    
+              </div>
             </li>
 
             <li><a href="#" class="btn" ng-click="Panel3()"><span class="icon-Guardar" ></a>
             <div ng-show="Caja3">
                 <ul id="ul3">
-                  
-                    <li> 
+
+                    <li>
                       <form class="form-horizontal">
                             <div class="form-group">
                                 <label class="control-label col-xs-1">Nombre:</label>
@@ -232,7 +231,7 @@
                                     <input type="text" class="form-control" placeholder="Ingrese aquí el asunto">
                                   </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label class="control-label col-xs-1">Mensaje:</label>
                                   <div class="col-xs-12">
@@ -248,9 +247,9 @@
                             </div>
                       </form>
                     </li>
-                   
+
                 </ul>
-              </div>   
+              </div>
             </li>
 
         </ul>
@@ -258,11 +257,11 @@
 </section>
 
 
-<section ng-controller='rutasColombiaBarCtrl'>
+<!--<section ng-controller='rutasColombiaBarCtrl'>-->
     <!-- Inicio Barra de navegacion fija parte superior de la pagina -->
 
-      <header class="header">
-        
+      <!--<header class="header">
+
         <ul class="flex-container">
         <li class="item1"><img src="rutascolombia/img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></li>
         <li class="item" ></li>
@@ -277,13 +276,12 @@
         <li class="item" id="item4"><button>
         <a href="registro.html">Idioma <span class="icon-Español"></a>
         </button></li>
-    
+
     </ul>
 
-                
-        
-    </header>
+
+
+    </header>-->
 
     <!-- Final Barra de navegacion fija parte superior de la pagina -->
-</section>
-
+<!--</section>-->

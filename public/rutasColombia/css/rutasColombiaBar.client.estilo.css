@@ -1,14 +1,10 @@
 @charset "utf-8";
 
-
-body{
-padding-top: 8px;
-
-}
 #mapa{
-  width: 100%;
-  height: 88%;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
+  overflow: hidden;
 }
 /*barra principal que contiene el logo y el menu principal*/
 
@@ -68,7 +64,7 @@ transition:color 0.3s ease;
     border-right: 1.5em solid transparent;
     border-top: 1.5em solid transparent;
     height: 0px;
-    margin-top: -2px; 	
+    margin-top: -2px;
     position: absolute;
     left: 30%;
     width: 1px;
@@ -101,7 +97,7 @@ text-decoration: none;
     background-color:transaprent;
     width:100%;
     color:#000;
-    
+
 }
 /*espacio desde el borde del formulario hasta el apuntador*/
 .menu ul li ul li{
@@ -142,20 +138,20 @@ color: #04A3ED;
 }
 
 .icon-Ingles_path1{
-    
+
 	font-size: 20px;
     display: flex;
     justify-content: center;
 	background-color:#bf0a30;
-	
+
 }
 .navbar-header {
     float: left;
 	width:20%;
-	
+
   }
- 
-  
+
+
 /*estilos para formulario de login*/
 .forlogin {
   width: 350px;
@@ -168,7 +164,7 @@ color: #04A3ED;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   line-height:normal;
-        
+
 }
 /*estilos para formulario de registro*/
 .formregistro {
@@ -181,29 +177,27 @@ color: #04A3ED;
   border-radius:4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-        
+
 }
 
 @media (min-width: 300px) {
   .navbar-header {
     float: left;
 	margin-top:15px;
-	
+
   }
 }
 
 @media (min-width: 300px) {
   .navbar-nav {
-    
-	
+
+
   }
   .navbar-nav > li {
     float: left;
   }
   .navbar-nav > li > a {
-    margin:5px 2px 5px 5px;	
+    margin:5px 2px 5px 5px;
 	font-size: 8px;
   }
 }
-
-
