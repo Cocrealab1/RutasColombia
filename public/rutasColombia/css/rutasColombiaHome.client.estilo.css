@@ -281,3 +281,6 @@ label {
     overflow: auto;
     height: 100%;
 }
+.imgSVG{
+  max-height: 52.17px;
+}
