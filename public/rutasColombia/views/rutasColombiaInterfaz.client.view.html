@@ -16,10 +16,10 @@
                             <div class="container">
                                 <div class="jumbotron forlogin">
                                     <form action="" method="POST" id="login" name="login">
-                                        <label> Usuario :</label>
-                                        <input type="email" required="required" id="usuario" name="usuario" size='20' placeholder="Nombre de usuario" class="form-control">
-                                        <label>Password:</label>
-                                        <input type="password" required="required" id="password" name="password" size='20' placeholder="password" class="form-control">
+                                        <label>Correo electronico:</label>
+                                        <input type="email" required="required" id="usuario" name="correo" size='20' placeholder="Correo electronico" class="form-control">
+                                        <label>Contraseña:</label>
+                                        <input type="password" required="required" id="password" name="contrasenia" size='20' placeholder="Contraseña" class="form-control">
                                         </br>
                                         <div class="col-xs-offset-2 col-xs-12">
                                             <input type="button" class="btn btn-default" name='boton' value="Limpiar">
@@ -37,17 +37,17 @@
                             <!--<formulario registro -->
                             <div class="container">
                                 <div class="jumbotron formregistro">
-                                    <form action="" method="POST" id="form" name="form1">
+                                    <form action="/registro" method="POST" id="form" name="form1">
                                         <label>Nombres :</label>
-                                        <input type="text" required="required" id="nombres" name="nombres" class="form-control">
+                                        <input type="text" required="required" id="nombres" name="nombre" class="form-control">
                                         <label>Apellidos :</label>
-                                        <input type="text" required="required" id="apellidos" name="apellidos" class="form-control">
+                                        <input type="text" required="required" id="apellidos" name="apellido" class="form-control">
                                         <label>Correo electronico :</label>
                                         <input type="email" required="required" id="correo" name="correo" class="form-control">
                                         <label>Contraseña :</label>
-                                        <input type="text" required="required" id="pass" name="pass" class="form-control">
+                                        <input type="password" required="required" id="pass" name="contrasenia" class="form-control">
                                         <label>Repetir contraseña :</label>
-                                        <input type="text" required="required" id="password" name="password" class="form-control">
+                                        <input type="password" required="required" id="password" name="confirmacionContrasenia" class="form-control">
                                         </br>
                                         <div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
                                         </br>
@@ -56,7 +56,9 @@
                                         </br>
                                         <div class="col-xs-offset-2 col-xs-12">
                                             <input type="button" class="btn btn-default" name='boton' value="Limpiar">
-                                            <input type="button" class="btn btn-warning" name='boton' value="Registrarse" onClick="comprobarClave()">
+                                            <input type="submit" class="btn btn-warning" name='boton' value="Registrarse">
+                                             <!--onClick="comprobarClave()"-->
+                                            
                                         </div>
                                     </form>
                                 </div>

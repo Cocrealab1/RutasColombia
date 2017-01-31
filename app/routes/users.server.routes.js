@@ -9,8 +9,8 @@ var users = require('../../app/controllers/users.server.controllers'),
 module.exports = function(app) {
     //Configura la ruta base para 'users'
 
-    app.route('/signup')
-        .get(users.renderSignup)
+    app.route('/registro')
+        //.get(users.renderSignup)
         .post(users.signup);
     app.route('/signin')
         .get(users.renderSignin)
