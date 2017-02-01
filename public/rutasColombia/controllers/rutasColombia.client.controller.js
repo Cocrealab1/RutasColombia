@@ -1,18 +1,82 @@
 angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '$http',
     function($scope, $http) {
-         var mapa;
+        var mapa;
+
+        $Caja1 = false;
+        $Caja2 = false;
+        $Caja3 = false;
+        $BtnUA = false;
+        $BtnUAD = false;
+        $BtnUF = false;
+
+        $scope.Panel1 = function() {
+
+            $scope.Caja1 = true;
+            $scope.Caja2 = false;
+            $scope.Caja3 = false;
+        };
+        $scope.Panel2 = function() {
+
+            $scope.Caja2 = true
+            $scope.Caja1 = false;
+            $scope.Caja3 = false;
+        };
+        $scope.Panel3 = function() {
+
+            $scope.Caja3 = true;
+            $scope.Caja2 = false;
+            $scope.Caja1 = false;
+        };
+        $scope.BtnUA1 = function() {
+
+            $scope.BtnUA = true;
+            $scope.BtnUAD = false;
+
+        };
+        $scope.BtnUA2 = function() {
+
+            $scope.BtnUA = false;
+
+        };
+
+        $scope.BtnUAD1 = function() {
+
+            $scope.BtnUAD = true;
+            $scope.BtnUA = false;
+
+        };
+        $scope.BtnUAD2 = function() {
+
+            $scope.BtnUAD = false;
+
+        };
+        $scope.BtnUF1 = function() {
+
+            $scope.BtnUF = true;
+
+        };
+
+        $scope.BtnUF2 = function() {
+
+            $scope.BtnUF = false;
+
+        };
+
+
+
         $scope.inicializarMapa = function() {
             //funcion por el cual se calcula el medio de transporte
             var calcularMedTransporte = new google.maps.DirectionsService;
             // Funcion que sirve para mostrar la ruta
             var mostrarMedTransporte = new google.maps.DirectionsRenderer;
             //genera un mapa en determina div
-             mapa = new google.maps.Map(document.getElementById('mapa'), {
+            mapa = new google.maps.Map(document.getElementById('mapa'), {
                 zoom: 6,
                 center: {
                     lat: 4.776735,
                     lng: -74.166030
                 }
+
             });
 
             mostrarMedTransporte.setMap(mapa);
@@ -75,7 +139,7 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
 
             function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
                 calcularMedTransporte.route({
-                    origin: $scope.origen + ",colombia", //document.getElementById('origen').value,
+                    origin: $scope.origen + ",colombia",
                     destination: $scope.destino + ",colombia",
                     travelMode: google.maps.TravelMode.DRIVING
                 }, function(respuesta, estado) {
@@ -91,7 +155,7 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
 
             function calcularRutaMoto(calcularMedTransporte, mostrarMedTransporte) {
                 calcularMedTransporte.route({
-                    origin: $scope.origen + ",colombia", //document.getElementById('origen').value,
+                    origin: $scope.origen + ",colombia",
                     destination: $scope.destino + ",colombia",
                     travelMode: google.maps.TravelMode.WALKING
                 }, function(respuesta, estado) {
@@ -107,7 +171,7 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
 
             function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
                 calcularMedTransporte.route({
-                    origin: $scope.origen + ",colombia", //document.getElementById('origen').value,
+                    origin: $scope.origen + ",colombia",
                     destination: $scope.destino + ",colombia",
                     travelMode: google.maps.TravelMode.DRIVING
                 }, function(respuesta, estado) {
@@ -123,7 +187,7 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
 
             function calcularRutaBus(calcularMedTransporte, mostrarMedTransporte) {
                 calcularMedTransporte.route({
-                    origin: $scope.origen + ",colombia", //document.getElementById('origen').value,
+                    origin: $scope.origen + ",colombia",
                     destination: $scope.destino + ",colombia",
                     travelMode: google.maps.TravelMode.TRANSIT
                 }, function(respuesta, estado) {
@@ -142,18 +206,14 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
         //llama el json que contine los peajes mediante una peticion get
         $http.get('rutasColombia/json/geo.json')
             .then(function(res) {
-                //
-
-
                 for (var i = 0; i < res.data.length; i++) {
                     //coloca el marcador
                     marker = new google.maps.Marker({
                         //me muestra las coordenadas graficadas
-                        position: new google.maps.LatLng(res.data[i].coords.lat, res.data[i].coords.lng ),
+                        position: new google.maps.LatLng(res.data[i].coords.lat, res.data[i].coords.lng),
                         map: mapa
                     });
                 }
-
             });
     }
 ]);
@@ -165,7 +225,6 @@ angular.module('rutasColombia').controller('rutasColombiaBarCtrl', ['$scope',
         $scope.name = 'aplicacion Mean';
     }
 ]);
-//
 
 angular.module('rutasColombia').controller('geoCtrl', ['$scope', '$http',
     function($scope, $http) {
