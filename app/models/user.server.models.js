@@ -17,20 +17,13 @@ var mongoose = require ('mongoose'),
 var UserSchema = new Schema ({
   nombre: String,
   apellido: String,
-  email: {
+  correo: {
     type: String,
+    unique: true,
     match: [/.\@.+\..+/, "POr favor escribe una direccion de email correcta"]
   },
-  usuario: {
-    type: String,
-    //Configurar un unico valor index 'usuario'
-    unique: true,
-    //validad que si se lleno el campo
-    required: 'Nombre de usuario es obiligatorio',
-    //trim el campo 'usuario' ej "  hello", or "hello  ", or "  hello  " = "hello"
-    trim: true
-  },
-  password: {
+
+  contrasenia: {
     type: String,
      minlength:[6,"la contraseña es muy corta"],
      validate: {
@@ -85,7 +78,7 @@ UserSchema.methods.authenticate = function(password){
 }
 
 //Encontrar posibles username no usados
-UserSchema.statics.findUniqueUsername = function(username, suffix, callback){
+/*UserSchema.statics.findUniqueUsername = function(username, suffix, callback){
   var _this = this;
 
   var possibleUsername = username + (suffix || '');
@@ -101,7 +94,7 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback){
       }
     }
   })
-}
+}*/
 
 /*crear el modelo 'user' a partir de 'UserSchema'*/
 mongoose.model('User', UserSchema);
