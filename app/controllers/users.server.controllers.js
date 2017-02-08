@@ -60,11 +60,12 @@ exports.signup = function(req, res, next) {
         user.save(function(err) {
             if (err) {
                 var messages = getErrorMessage(err);
-
+                console.log(messages);
 
                 req.flash('error', messages);
 
-                return res.redirect('/signup');
+                //return res.redirect('/signup');
+                return res.redirect('/');
             }
 
 
