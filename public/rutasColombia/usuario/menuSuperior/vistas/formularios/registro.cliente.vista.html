@@ -1,0 +1,61 @@
+<ul  ng-controller="menuSuperiorCtrl">
+    <li>
+        <!--<formulario registro -->
+        <div class="container">
+            <div class="jumbotron formregistro">
+                <form id="form">
+                    <!--<label>Nombres :</label>
+                    <input type="text" required="required" id="nombres" name="nombres" class="form-control">
+                    <label>Apellidos :</label>
+                    <input type="text" required="required" id="apellidos" name="apellidos" class="form-control">
+                    <label>Correo electronico :</label>
+                    <input type="email" required="required" id="correo" name="correo" class="form-control">
+                    <label>Contraseña :</label>
+                    <input type="text" required="required" id="pass" name="pass" class="form-control">
+                    <label>Repetir contraseña :</label>
+                    <input type="text" required="required" id="password" name="password" class="form-control">-->
+
+
+                    <label>Nombres :</label>
+                    <input type="text" id="nombres" name="nombre" class="form-control" ng-model="registrar.nombre" required>
+                    <!-- ng-show manda la alerta de que el campo esta vacio -->
+                    <div ng-show="!registrar.nombre && form1.$submitted " class="alert alert-warning">
+                        El Campo de Nombre es Obligatorio
+                    </div>
+                    <label>Apellidos :</label>
+                    <input type="text" id="apellidos" name="apellido" class="form-control" ng-model="registrar.apellido" required>
+                    <div ng-show="!registrar.apellido && form1.$submitted " class="alert alert-warning">
+                        El Campo de Apellido es Obligatorio
+                    </div>
+                    <label>Correo electronico :</label>
+                    <input type="email" id="correo" name="correo" class="form-control" ng-model="registrar.correo" required>
+                    <div ng-show="!registrar.correo && form1.$submitted " class="alert alert-warning">
+                        El Campo de Correo electronico es Obligatorio
+                    </div>
+                    <label>Contraseña :</label>
+                    <input type="password" id="pass" name="contrasenia" class="form-control" ng-model="registrar.contrasenia" required>
+                    <div ng-show="!registrar.contrasenia && form1.$submitted " class="alert alert-warning">
+                        El Campo de Contraseña es Obligatorio
+                    </div>
+                    <label>Repetir contraseña :</label>
+                    <input type="password" id="password" name="confirmacionContrasenia" class="form-control" ng-model="registrar.confirmacionContrasenia" required>
+                    <div ng-show="!registrar.confirmacionContrasenia && form1.$submitted " class="alert alert-warning">
+                        El Campo de Repetir contraseña es Obligatorio
+                    </div>
+                    </br>
+                    <div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
+                    </br>
+                    <label><input type="checkbox" value=""><a href="#" > Aceptar terminos y condiciones</a> </label>
+                    </br>
+                    </br>
+                    <div class="col-xs-offset-2 col-xs-12">
+                        <input type="button" class="btn btn-default" name='boton' value="Limpiar">
+                        <input type="submit" class="btn btn-warning" name='boton' value="Registrarse" ng-click="agregar()">
+                        <!--onClick="comprobarClave()-->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </li>
+</ul>
