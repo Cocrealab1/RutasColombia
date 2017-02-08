@@ -9,7 +9,11 @@ var users = require('../../app/controllers/users.server.controllers'),
 module.exports = function(app) {
     //Configura la ruta base para 'users'
 
+<<<<<<< HEAD
     app.route('/registro')
+=======
+    app.route('/registroUsuario')
+>>>>>>> refs/remotes/origin/master
         //.get(users.renderSignup)
         .post(users.signup);
     app.route('/signin')
