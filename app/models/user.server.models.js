@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
     crypto = require('crypto'),
     Schema = mongoose.Schema;
 
+
 // var password_validation = {
 //   validator: function(p){
 //     return this.password_confirmation == p;
@@ -59,6 +60,7 @@ UserSchema.virtual("confirmacionContrasenia").get(function() {
     return this.c_C;
 }).set(function(contrasenia) {
     this.c_C = contrasenia;
+
 });
 //usar middleware pre-save para hash la contaseña
 UserSchema.pre('save', function(next) {
