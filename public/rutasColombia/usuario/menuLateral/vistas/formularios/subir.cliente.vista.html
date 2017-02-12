@@ -19,10 +19,10 @@
                     <br>
                     <label class="control-label col-xs-8">Titulo de la imagen</label>
                     <div class="col-xs-12">
-                        <input type="text" class="form-control" placeholder="Ingrese aquí el titulo">
+                        <input type="text" class="form-control" placeholder="Ingrese aquí el titulo" name="titulo" ng-model="imagen.titulo" required>
                     </div>
 
-                    <label class="control-label col-xs-8">Donde tomaste la foto</label>
+                    <label class="control-label col-xs-8">Donde tomaste la foto</label><!-- preguntar -->
                     <div class="col-xs-12">
                         <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUF1()"></input>
                     </div>
@@ -34,8 +34,8 @@
 
                 <select class="form-control">
             <option value="" disabled selected>Tipo de sitio turistico</option>
-            <option>1.Monumentos historicos<span class="icon-Carro"></option>
-            <button>2.Gastronómico <span class="icon-Carro" ></button>
+            <option>1.Monumentos historicos<span class="icon-Carro"></option> <!-- preguntar -->
+            <button>2.Gastronómico <span class="icon-Carro" ></button> <!-- preguntar -->
             <option>3.Folclórico</option>
             <option>4.Estadios</option>
             <option>5.Parques de atracción</option>
@@ -52,26 +52,26 @@
         </select>
 
                 <br>
-                <div id="input1" class="clonedInput ">
+                <div id="input1" class="clonedInput "> <!-- preguntar -->
                     <input type="text" class="form-control" name="name1">
                     <br>
                 </div>
 
                 <input type="button" class="btn btn-warning" id="btnAdd" value="+">
-                <input type="button" class="btn btn-warning" id="btnDel" value="-">
+                <input type="button" class="btn btn-warning" id="btnDel" value="-"> <!-- preguntar -->
 
                 <div class="form-group">
                     <label class="control-label col-xs-1">Teléfono</label>
                     <div class="col-xs-12">
-                        <input type="text" class="form-control" placeholder="Ingrese aquí su Teléfono">
+                        <input type="text" class="form-control" placeholder="Ingrese aquí su Teléfono" name="telefono" ng-model="imagen.telefono" required>
                     </div>
 
                     <label class="control-label col-xs-1">Descripción</label>
                     <div class="col-xs-12">
-                        <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar"></textarea>
+                        <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar" name="descripcion" ng-model="imagen.descripcion" required></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-warning"><span class="icon-Guardar"></button>
+                <button type="button" class="btn btn-warning" ng-click="agregarImagen()"><span class="icon-Guardar"></button>
             </form>
         </li>
     </ul>
