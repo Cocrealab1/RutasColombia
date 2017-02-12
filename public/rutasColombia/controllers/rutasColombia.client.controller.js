@@ -200,12 +200,12 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
             }
 
 
-
         }
 
         //llama el json que contine los peajes mediante una peticion get
         $http.get('rutasColombia/json/geo.json')
             .then(function(res) {
+                var markers = [];
                 for (var i = 0; i < res.data.length; i++) {
                     //coloca el marcador
                     marker = new google.maps.Marker({
@@ -213,7 +213,13 @@ angular.module('rutasColombia').controller('rutasColombiaHomeCtrl', ['$scope', '
                         position: new google.maps.LatLng(res.data[i].coords.lat, res.data[i].coords.lng),
                         map: mapa
                     });
+                    markers.push(marker);
                 }
+                // Añade un clusterizador de marcadores para administrar los marcadores.
+                var markerCluster = new MarkerClusterer(mapa, markers, {
+                    imagePath: 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&%27%20+%20%27chco=FFFFFF,008CFF,000000&ext=.png'
+                });
+
             });
     }
 ]);
