@@ -24,16 +24,16 @@
 
                     <label class="control-label col-xs-8">Donde tomaste la foto</label><!-- preguntar -->
                     <div class="col-xs-12">
-                        <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUF1()"></input>
+                        <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUF1()" name="donde" ng-model="imagen.donde" required></input>
                     </div>
-                    <button ng-show="BtnUF" class="btn-warning btn-xs" ng-click="BtnUF2();localizacion()"> <span class="icon-Bus"></button>
+                    <button ng-show="BtnUF" class="btn-warning btn-xs" ng-click="BtnUF2();localizacion()"> <span class="icon-Bus"></button> <!-- organizar jeison -->
                 </div>
 
 
 
 
-                <select class="form-control">
-            <option value="" disabled selected>Tipo de sitio turistico</option>
+                <select class="form-control" name="tipo" ng-model="imagen.tipo" required>
+            <option value="" disabled selected >Tipo de sitio turistico</option>
             <option>1.Monumentos historicos<span class="icon-Carro"></option> <!-- preguntar -->
             <button>2.Gastronómico <span class="icon-Carro" ></button> <!-- preguntar -->
             <option>3.Folclórico</option>
