@@ -27,5 +27,8 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "ui-router": "^1.0.0-alpha.3"
+  },
+  "engines": {
+  	"node": "6.9.1"
   }
 }
