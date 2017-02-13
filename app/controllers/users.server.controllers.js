@@ -62,10 +62,11 @@ exports.signup = function(req, res, next) {
                 var messages = getErrorMessage(err);
                 console.log(messages);
 
+
                 req.flash('error', messages);
 
-                //return res.redirect('/signup');
                 return res.redirect('/');
+           
             }
 
 
@@ -73,6 +74,7 @@ exports.signup = function(req, res, next) {
                 if (err) return next(err);
 
                 return res.redirect('/');
+
             });
         });
     } else {
