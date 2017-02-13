@@ -20,9 +20,7 @@
                     <label>Nombres :</label>
                     <input type="text" id="nombres" name="nombre" class="form-control" ng-model="registrar.nombre" required>
                     <!-- ng-show manda la alerta de que el campo esta vacio -->
-                   <div ng-show="errorMensaje" class="alert alert-warning">
-                    
-                   </div>   bueno este es un error "apareci"
+                   
                     <div ng-show="!registrar.nombre && form1.$submitted " class="alert alert-warning">
                         El Campo de Nombre es Obligatorio
                     </div>
