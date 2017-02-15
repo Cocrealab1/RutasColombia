@@ -28,28 +28,6 @@ var getErrorMessage = function(err) {
 }
 
 
-exports.renderSignin = function(req, res, next) {
-    if (!req.user) {
-        res.render('signin', {
-            title: 'Sign-in Form',
-            messages: req.flash('error') || req.flash('info')
-        });
-    } else {
-        return res.redirect('/');
-    }
-}
-
-exports.renderSignup = function(req, res, next) {
-    if (!req.user) {
-        res.render('signup', {
-            title: 'Sign-up Form',
-            messages: req.flash('error')
-        });
-    } else {
-        return res.redirect('/');
-    }
-}
-
 exports.signup = function(req, res, next) {
     if (!req.user) {
         var user = new User(req.body);
@@ -58,15 +36,25 @@ exports.signup = function(req, res, next) {
         user.provider = 'local';
 
         user.save(function(err) {
+            user.contrasenia= undefined;
             if (err) {
                 var messages = getErrorMessage(err);
                 console.log(messages);
+<<<<<<< HEAD
 
 
                 req.flash('error', messages);
 
                 return res.redirect('/');
            
+=======
+
+               // req.flash('error', messages);
+
+                //return res.redirect('/signup');
+               // return res.redirect('/');
+               return res.status(400).send({message:messages})
+>>>>>>> refs/remotes/origin/Federico-Lopez
             }
 
 
@@ -74,7 +62,6 @@ exports.signup = function(req, res, next) {
                 if (err) return next(err);
 
                 return res.redirect('/');
-
             });
         });
     } else {

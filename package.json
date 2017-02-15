@@ -4,7 +4,8 @@
   "description": "mean",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [
     "mean"
@@ -29,6 +30,15 @@
     "ui-router": "^1.0.0-alpha.3"
   },
   "engines": {
-  	"node": "6.9.1"
-  }
+    "node": "6.9.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cocrealab1/RutasColombia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cocrealab1/RutasColombia/issues"
+  },
+  "homepage": "https://github.com/Cocrealab1/RutasColombia#readme"
 }

@@ -14,6 +14,7 @@ var mongoose = require ('mongoose'),
     // }
 
 /*Definir un nuevo UserSchema*/
+<<<<<<< HEAD
 var UserSchema = new Schema ({
   nombre: String,
   apellido: String,
@@ -31,6 +32,25 @@ var UserSchema = new Schema ({
         return this.confirmacionContrasenia == p;
           },
       message: "las contraseñas no son iguales"
+=======
+var UserSchema = new Schema({
+    nombre: String,
+    apellido: String,
+    correo: {
+        type: String,
+        unique: true,
+        match: [/.\@.+\..+/, "POr favor escribe una direccion de email correcta"]
+    },
+
+    contrasenia: {
+        type: String,
+        minlength:[6,"la contraseña es muy corta"],
+        validate: {
+            validator: function(p) {
+                return this.confirmacionContrasenia == p;
+            },
+            message: "las contraseñas no son iguales"
+>>>>>>> refs/remotes/origin/Federico-Lopez
         }
     // validate: [
     //   function (password) {
