@@ -1,19 +1,20 @@
-/*Invocar el modo JavaScript 'strict'*/
 'use strict';
 
 /*Cargar el controller 'users'*/
-var users = require('../../app/controllers/users.server.controllers'),
+var imagenes = require('../../app/controllers/imagen.server.controllers'),
     passport = require('passport');
 
 /*Define el método routes module*/
 module.exports = function(app) {
     //Configura la ruta base para 'users'
 
-    app.route('/registroUsuario')
+    app.route('/registroImagen')
         //.get(users.renderSignup)
-        .post(users.signup);
+        //
+        .post(imagenes.create);
+     /*   
     app.route('/signin')
-        //.get(users.renderSignin)
+        .get(users.renderSignin)
         .post(passport.authenticate('local', {
             successRedirect: '/',
             failureRedirect: '/signin',
@@ -27,6 +28,8 @@ module.exports = function(app) {
         .get(users.read)
         .put(users.upDate)
         .delete(users.delete);
-
+ 
+  // preguntar a jeison
     app.param('userId', users.userByID);
+     */
 };
