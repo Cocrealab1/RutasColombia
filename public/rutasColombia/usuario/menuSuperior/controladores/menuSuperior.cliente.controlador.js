@@ -1,8 +1,6 @@
 angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http', 'MenuSuperior',
     function($scope, $http, MenuSuperior) {
 
-      $scope.usuario = MenuSuperior.registrar;
-
       $scope.agregar = function () {
          MenuSuperior.add({
             nombre: $scope.registrar.nombre,
@@ -17,7 +15,6 @@ angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http'
          $scope.registrar.correo = '';
          $scope.registrar.contrasenia = '';
          $scope.registrar.confirmacionContrasenia ='';
-
       }
     }
 ]);

@@ -13,7 +13,7 @@ var getErrorMessage = function(err) {
         switch (err.code) {
             case 11000:
             case 11001:
-                message = 'usuario ya existente';
+                message = 'correo ya existente2';
                 break;
             default:
                 message = 'Se ha producido un error';
@@ -51,33 +51,32 @@ exports.renderSignup = function(req, res, next) {
 }
 
 exports.signup = function(req, res, next) {
-    if (!req.user) {
-        var user = new User(req.body);
-        var messages = null;
+    var user = new User(req.body);
 
-        user.provider = 'local';
+    var messages = null;
 
-        user.save(function(err) {
-            if (err) {
-                var messages = getErrorMessage(err);
-                console.log(messages);
+    user.provider = 'local';
 
-                req.flash('error', messages);
+    user.save(function(err) {
+      console.log(user);
+        if (err) {
+            var messages = getErrorMessage(err);
+            console.log(messages);
 
-                //return res.redirect('/signup');
-                return res.redirect('/');
-            }
+            req.flash('error', messages);
 
+            //return res.redirect('/signup');
+            return res.redirect('/');
+        }
 
-            req.login(user, function(err) {
-                if (err) return next(err);
+        return res.json(user);
 
-                return res.redirect('/');
-            });
-        });
-    } else {
-        return res.redirect('/');
-    }
+        /*req.login(user, function(err) {
+            if (err) return next(err);
+            return res.redirect('/');
+        });*/
+    });
+
 }
 
 /*Crear un nuevo método controller 'create'*/
