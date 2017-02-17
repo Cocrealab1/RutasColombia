@@ -13,7 +13,7 @@ module.exports = function(){
 
   //cargar el modelo'user'
   require('../app/models/user.server.models');
-
+  require('../app/models/imagen.server.model');
   //Devolver la instancia de conexion a Mongoose
   return db;
 };

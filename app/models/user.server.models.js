@@ -26,7 +26,7 @@ var UserSchema = new Schema({
 
     contrasenia: {
         type: String,
-        //minlength:[6,"la contraseña es muy corta"],
+        minlength:[6,"la contraseña es muy corta"],
         validate: {
             validator: function(p) {
                 return this.confirmacionContrasenia == p;
