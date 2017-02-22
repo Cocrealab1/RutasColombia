@@ -8,11 +8,12 @@ var config = require('./config'),
 /*definir el método del conrfiguración de Mongoose*/
 module.exports = function(){
   //usar Mongoose para conectar a MongoDB
+  mongoose.Promise = global.Promise;
   var db = mongoose.connect(config.db);
 
   //cargar el modelo'user'
   require('../app/models/user.server.models');
-
+  require('../app/models/imagen.server.model');
   //Devolver la instancia de conexion a Mongoose
   return db;
 };
