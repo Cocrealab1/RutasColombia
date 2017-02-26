@@ -9,6 +9,13 @@ var users = require('../../app/controllers/users.server.controllers'),
 module.exports = function(app) {
     //Configura la ruta base para 'users'
 
+
+      //FEDERICO
+    // Setting up the users authentication api
+    //app.route('/auth/signup').post(users.signup);
+    //app.route('/auth/signin').post(users.signin);
+    //app.route('/auth/signout').get(users.signout);
+
     app.route('/registroUsuario')
         //.get(users.renderSignup)
         .post(users.signup);

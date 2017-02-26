@@ -60,6 +60,35 @@ exports.signup = function(req, res, next) {
     }
 }
 
+/* Iniciar seccion autenticacion */
+exports.signin = function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err || !user) {
+            res.status(400).send(info);
+        } else {
+            // Remove sensitive data before login
+            user.password = undefined;
+            user.salt = undefined;
+
+            req.login(user, function(err) {
+                if (err) {
+                    res.status(400).send(err);
+                } else {
+                    res.json(user);
+                }
+            });
+        }
+    })(req, res, next);
+};
+
+
+exports.signout = function(req, res) {
+    req.logout();
+    res.redirect('/');
+}
+
+
+
 /*Crear un nuevo método controller 'create'*/
 exports.create = function(req, res, next) {
     //Crear una nueva intancia del model Mongoose 'user'
@@ -141,10 +170,6 @@ exports.delete = function(req, res, next, id) {
     })
 }
 
-exports.signout = function(req, res) {
-    req.logout();
-    res.redirect('/');
-}
 
 /*NOTA*/
 /* find(objetoConsulta, String campos que se deben de devolver, opciones que pueden aparecer o no, callback  )*/
@@ -152,3 +177,38 @@ exports.signout = function(req, res) {
   skip:10,
   limit;10
 }, function(err, users))*/
+
+
+
+// FEDERICO
+/**
+ * Require login routing middleware
+ */
+exports.requiresLogin = function(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return res.status(401).send({
+            message: 'User is not logged in'
+        });
+    }
+
+    next();
+};
+
+/**
+ * User authorizations routing middleware
+ */
+exports.hasAuthorization = function(roles) {
+    var _this = this;
+
+    return function(req, res, next) {
+        _this.requiresLogin(req, res, function() {
+            if (_.intersection(req.user.roles, roles).length) {
+                return next();
+            } else {
+                return res.status(403).send({
+                    message: 'User is not authorized'
+                });
+            }
+        });
+    };
+};
