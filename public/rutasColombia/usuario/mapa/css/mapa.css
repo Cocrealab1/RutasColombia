@@ -1,7 +1,0 @@
-@charset "utf-8";
-#mapa {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    overflow: hidden;
-}
