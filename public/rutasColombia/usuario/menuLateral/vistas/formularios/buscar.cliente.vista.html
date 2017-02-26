@@ -1,0 +1,49 @@
+<!--icono de vehiculo con funcion que ejecuta que se vean las opciones de este menu-->
+<div>
+    <!--div que contiene todas las opciones del menu vehiculo-->
+    <ul id="ul1">
+        <!-- id que controla el estilo de las opciones del menu vehiculo-->
+        <li>
+            <form class="form-horizonal">
+                <!--radioButton Categorias-->
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option1">
+                        <span class="icon-Bus"></span>
+                    </label>
+
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option2">
+                        <span class="icon-Carro"></span>
+                    </label>
+
+                    <label class="btn btn-default">
+                        <input type="radio" name="options" id="option3">
+                        <span class="icon-Bus"></span>
+                    </label>
+                </div>
+
+                <!--Origen y destino-->
+                <div class="form-group">
+                    <div class="input-group" id="origen">
+                        <div class="input-group-addon" id="PuntoA">A</div>
+                        <input ng-model="origen" type="text" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen" ng-click="BtnUA1()">
+                    </div>
+
+                    <button ng-show="BtnUA" class="btn-warning btn-xs" ng-click="BtnUA2();localizacion()"> <span class="icon-Bus"></button>
+                    <br>
+
+                    <div class="input-group" id="Destino">
+                        <div class="input-group-addon" id="PuntoB">B</div>
+                        <input ng-model="destino" type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" ng-click="BtnUAD1()">
+                    </div>
+
+                    <button ng-show="BtnUAD" class="btn-warning btn-xs" ng-click="BtnUAD2();localizacion()"> <span class="icon-Bus"></button>
+                    <br>
+                </div>
+                <button ng-clic="buscar()" type="button" class="btn btn-warning">Buscar</button>
+            </form>
+        </li>
+    </ul>
+</div>
+<!-- Fin div que contiene todas las opciones del menu vehiculo-->
