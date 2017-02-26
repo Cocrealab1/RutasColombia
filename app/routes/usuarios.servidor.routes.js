@@ -2,7 +2,7 @@
 'use strict';
 
 /*Cargar el controller 'users'*/
-var users = require('../../app/controllers/users.server.controllers'),
+var users = require('../../app/controladores/usuarios.servidor.controladores'),
     passport = require('passport');
 
 /*Define el método routes module*/

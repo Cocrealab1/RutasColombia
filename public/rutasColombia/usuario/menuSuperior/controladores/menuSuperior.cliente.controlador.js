@@ -1,7 +1,5 @@
-angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http', 'MenuSuperior',
+/*angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http', 'MenuSuperior',
     function($scope, $http, MenuSuperior) {
-
-      $scope.usuario = MenuSuperior.registrar;
 
       $scope.agregar = function () {
          MenuSuperior.add({
@@ -17,11 +15,34 @@ angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http'
          $scope.registrar.correo = '';
          $scope.registrar.contrasenia = '';
          $scope.registrar.confirmacionContrasenia ='';
-
       }
     }
-]);
+]);*/
 
+
+angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http', 'MenuSuperior',
+    function($scope, $http, MenuSuperior) {
+        $scope.agregar = function() {
+            var resgistrar = new MenuSuperior({
+                nombre: $scope.registrar.nombre,
+                apellido: $scope.registrar.apellido,
+                correo: $scope.registrar.correo,
+                contrasenia: $scope.registrar.contrasenia,
+                confirmacionContrasenia: $scope.registrar.confirmacionContrasenia
+            });
+            resgistrar.$save(function(respuesta) {
+              $scope.registrar.nombre = '';
+              $scope.registrar.apellido = '';
+              $scope.registrar.correo = '';
+              $scope.registrar.contrasenia = '';
+              $scope.registrar.confirmacionContrasenia ='';
+            }, function(respuesta) {
+                console.log(respuesta.data);
+                $scope.error = respuesta.data;
+            });
+        }
+    }
+]);
 
 
 

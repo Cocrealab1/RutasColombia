@@ -30,6 +30,24 @@ body {
     }
 }
 
+/*cambiar*/
+#conteMenuSuperior{
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  z-index: 9999;
+}
+
+#conteMenuSuperior li{
+  list-style: none;
+}
+
+#conteMenuSuperior .container{
+  width: auto;
+
+}
+/***********************/
+
 #menuwrapper ul, #menuwrapper ul li {
     margin: 0;
     padding: 0;
