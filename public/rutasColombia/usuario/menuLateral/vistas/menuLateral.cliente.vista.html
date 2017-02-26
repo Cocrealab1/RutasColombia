@@ -1,0 +1,20 @@
+<section ng-controller='MenuLateralCtrl'>
+    <div id="menuwrapper">
+        <ul id="sidemenu">
+            <!--Buscar-->
+            <li>
+                <a ui-sref="buscar" class="btn"><span id="sp1" class="icon-Carro" ></a>
+                  <div ui-view="menuLateralView"></div>
+            </li>
+            <!--Subir-->
+            <li>
+                <a ui-sref="subir" class="btn active"><span class="icon-Subir_Fotos" ></a>
+            </li>
+            <!--contactenos-->
+            <li>
+                <a ui-sref="contactenos" class="btn"><span class="icon-Guardar" ></a>
+            </li>
+
+        </ul>
+    </div>
+</section>
