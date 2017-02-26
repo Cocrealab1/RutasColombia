@@ -1,7 +1,8 @@
-Gmail - heroku
+﻿Gmail - heroku
 user: cocrealab.rutas@gmail.com
 contraseña: rutas.123
 
 Mlab
 user: rutasColombia
 contraseña: rutas.123
+
