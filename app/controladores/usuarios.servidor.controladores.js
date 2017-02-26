@@ -28,61 +28,58 @@ var getErrorMessage = function(err) {
 }
 
 
-exports.renderSignin = function(req, res, next) {
-    if (!req.user) {
-        res.render('signin', {
+exports.renderSignin = function(solicidud, respuesta, next) {
+    if (!solicidud.user) {
+        respuesta.render('signin', {
             title: 'Sign-in Form',
-            messages: req.flash('error') || req.flash('info')
+            messages: solicidud.flash('error') || solicidud.flash('info')
         });
     } else {
-        return res.redirect('/');
+        return respuesta.redirect('/');
     }
 }
 
-exports.renderSignup = function(req, res, next) {
-    if (!req.user) {
-        res.render('signup', {
+exports.renderSignup = function(solicidud, respuesta, next) {
+    if (!solicidud.user) {
+        respuesta.render('signup', {
             title: 'Sign-up Form',
-            messages: req.flash('error')
+            messages: solicidud.flash('error')
         });
     } else {
-        return res.redirect('/');
+        return respuesta.redirect('/');
     }
 }
 
-exports.signup = function(req, res, next) {
-    var user = new User(req.body);
+exports.signup = function(solicidud, respuesta, next) {
+    var user = new User(solicidud.body);
 
     var messages = null;
 
     user.provider = 'local';
 
     user.save(function(err) {
-      console.log(user);
         if (err) {
             var messages = getErrorMessage(err);
             console.log(messages);
 
-            req.flash('error', messages);
-
-            //return res.redirect('/signup');
-            return res.redirect('/');
+            return respuesta.status(400).send(messages);
+            //return respuesta.redirect('/');
         }
 
-        return res.json(user);
+        return respuesta.json(user);
 
-        /*req.login(user, function(err) {
+        /*solicidud.login(user, function(err) {
             if (err) return next(err);
-            return res.redirect('/');
+            return respuesta.redirect('/');
         });*/
     });
 
 }
 
 /*Crear un nuevo método controller 'create'*/
-exports.create = function(req, res, next) {
+exports.create = function(solicidud, respuesta, next) {
     //Crear una nueva intancia del model Mongoose 'user'
-    var user = new User(req.body);
+    var user = new User(solicidud.body);
     //usar el metodo 'save' para salvar el nuevo documento user
     user.save(function() {
         if (err) {
@@ -90,13 +87,13 @@ exports.create = function(req, res, next) {
             return (next(err));
         } else {
             //Usar el objeto 'response' para enviar una respuesta JSON
-            res.json(user);
+            respuesta.json(user);
         }
     })
 }
 
 /*Crear un nuevo método controller 'create'*/
-exports.list = function(req, res, next) {
+exports.list = function(solicidud, respuesta, next) {
     //Usa el método static 'user' 'find' para recuperrar la lista de usuarios
     User.find({}, function(err, users) {
         if (err) {
@@ -104,17 +101,17 @@ exports.list = function(req, res, next) {
             return (next(err));
         } else {
             //Usar el objeto 'response' para enviar una respuesta JSON
-            res.json(users);
+            respuesta.json(users);
         }
     })
 }
 
-exports.read = function(req, res) {
-    res.json(req.user);
+exports.read = function(solicidud, respuesta) {
+    respuesta.json(solicidud.user);
 }
 
 /*Crear un nuevo método controller 'userByID'*/
-exports.userByID = function(req, res, next, id) {
+exports.userByID = function(solicidud, respuesta, next, id) {
     // Usar el método static 'findOne' de 'User' para recurpar un usuario especifico
     User.findOne({
         _id: id
@@ -123,8 +120,8 @@ exports.userByID = function(req, res, next, id) {
             //Llamar al siguiente meddleware con el mensaje de error
             return (next(err));
         } else {
-            //configurar la propiedad 'req.user'
-            req.user = user;
+            //configurar la propiedad 'solicidud.user'
+            solicidud.user = user;
 
             //Llamar al siguiernte middleware
             next();
@@ -133,36 +130,36 @@ exports.userByID = function(req, res, next, id) {
 }
 
 /*Crear un nuevo método controller 'update'*/
-exports.upDate = function(req, res, next, id) {
+exports.upDate = function(solicidud, respuesta, next, id) {
     // Usar el método static 'findOne' de 'User' para recurpar un usuario especifico
-    User.findByIDAndUpdate(req.user.id, req.body, function(err, user) {
+    User.findByIDAndUpdate(solicidud.user.id, solicidud.body, function(err, user) {
         if (err) {
             //Llamar al siguiente meddleware con el mensaje de error
             return (next(err));
         } else {
             //Usar el objeto 'response' para enviar una respuesta JSON
-            res.json(users);
+            respuesta.json(users);
         }
     })
 }
 
 /*Crear un nuevo método controller 'update'*/
-exports.delete = function(req, res, next, id) {
+exports.delete = function(solicidud, respuesta, next, id) {
     //Usar el método 'remove' de la instancia 'User' para eliminar documentos
-    req.user.remover(function(err) {
+    solicidud.user.remover(function(err) {
         if (err) {
             //Llamar al siguiente meddleware con el mensaje de error
             return (next(err));
         } else {
             //Usar el objeto 'response' para enviar una respuesta JSON
-            res.json(req.users);
+            respuesta.json(solicidud.users);
         }
     })
 }
 
-exports.signout = function(req, res) {
-    req.logout();
-    res.redirect('/');
+exports.signout = function(solicidud, respuesta) {
+    solicidud.logout();
+    respuesta.redirect('/');
 }
 
 /*NOTA*/

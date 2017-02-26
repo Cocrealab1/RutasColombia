@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('menuSuperior').factory('MenuSuperior', function($http) {
-    var MenuSuperior = {};
+angular.module('menuSuperior').factory('MenuSuperior', ['$resource',
+    /*var MenuSuperior = {};
 
     MenuSuperior.usuarios = [];
 
@@ -13,12 +13,19 @@ angular.module('menuSuperior').factory('MenuSuperior', function($http) {
             .then(
                 function(usuario) {
                     MenuSuperior.usuarios.push(usuario);
-                },
-                function(err) {
-                    console.log(err);
-                }
-            )
+                },function(err) {
+                    console.log('hbo');
+                    $scope.errorMensaje = err.data.message;
+                });
     }
-    return MenuSuperior;
+    return MenuSuperior;*/
 
-})
+    function($resource) {
+  		return $resource('/registroUsuario', {}, {
+  			update: {
+  				method: 'POST'
+  			}
+  		});
+  	}
+
+])

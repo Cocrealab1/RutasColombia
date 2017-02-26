@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
     <!--<link rel="stylesheet" href="lib/bootstrap/bootstrap1.min.css">-->
     <title>
-        <%= title %>
+        <%= titulo %>
     </title>
 </head>
 
-<body>
+<body ng-controller="rutasColombiaCtrl">
     <!--incluir las views definidas por el config-->
     <section ui-view='menuView'></section>
     <section ui-view></section>
@@ -29,6 +29,7 @@
 
     <!--rutasColombia-->
     <script type="text/JavaScript" src="rutasColombia/rutasColombia.cliente.router.js"></script>
+    <script type="text/JavaScript" src="rutasColombia/rutasColombia.cliente.controlador.js"></script>
 
     <!--Home-->
     <script type="text/JavaScript" src="rutasColombia\usuario/menuSuperior/menuSuperior.cliente.modulo.js"></script>
