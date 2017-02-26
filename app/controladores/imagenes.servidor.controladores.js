@@ -4,11 +4,11 @@
 /*Cargar el model Mongoose 'Imagen'*/
 var Imagen = require('mongoose').model('Imagen'),
     passport = require('passport');
-    
+
   //Crear un nuevo método controller 'create'
-exports.create = function(req, res, next) {
+exports.create = function(solicitud, respuesta, next) {
     //Crear una nueva intancia del model Mongoose 'user'
-    var imagen = new Imagen(req.body);
+    var imagen = new Imagen(solicitud.body);
     //usar el metodo 'save' para salvar el nuevo documento user
     imagen.save(function() {
         if (err) {
@@ -16,13 +16,13 @@ exports.create = function(req, res, next) {
             return (next(err));
         } else {
             //Usar el objeto 'response' para enviar una respuesta JSON
-            res.json(imagen);
+            respuesta.json(imagen);
         }
     })
 }
 
 //Crear un nuevo método controller 'create'
-exports.list = function(req, res, next) {
+exports.list = function(solicitud, respuesta, next) {
     //Usa el método static 'user' 'find' para recuperrar la lista de usuarios
     User.find({}, function(err, imagenes) {
         if (err) {
@@ -30,8 +30,7 @@ exports.list = function(req, res, next) {
             return (next(err));
         } else {
             //Usar el objeto 'response' para enviar una respuesta JSON
-            res.json(imagenes);
+            respuesta.json(imagenes);
         }
     })
 }
-     

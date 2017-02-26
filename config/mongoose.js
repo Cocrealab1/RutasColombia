@@ -11,9 +11,10 @@ module.exports = function(){
   mongoose.Promise = global.Promise;
   var db = mongoose.connect(config.db);
 
-  //cargar el modelo'user'
-  require('../app/models/user.server.models');
-  require('../app/models/imagen.server.model');
+  //cargar el modelo'usuario'
+  require('../app/modelos/usuario.servidor.modelo');
+  require('../app/modelos/imagen.servidor.modelo');
+
   //Devolver la instancia de conexion a Mongoose
   return db;
 };
