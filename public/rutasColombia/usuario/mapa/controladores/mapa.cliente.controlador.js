@@ -136,7 +136,6 @@ angular.module('mapa').controller('MapaCtrl', ['$scope', '$http',
             }
 
 
-
         }
 
 
@@ -144,6 +143,7 @@ angular.module('mapa').controller('MapaCtrl', ['$scope', '$http',
 
         $http.get('rutasColombia/usuario/mapa/json/geo.json')
             .then(function(res) {
+                var markers = [];
                 for (var i = 0; i < res.data.length; i++) {
                     //coloca el marcador
                     marker = new google.maps.Marker({
@@ -151,7 +151,13 @@ angular.module('mapa').controller('MapaCtrl', ['$scope', '$http',
                         position: new google.maps.LatLng(res.data[i].Coordenadas.lat, res.data[i].Coordenadas.lng),
                         map: mapa
                     });
+                    markers.push(marker);
                 }
+                // Añade un clusterizador de marcadores para administrar los marcadores.
+                var markerCluster = new MarkerClusterer(mapa, markers, {
+                    imagePath: 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&%27%20+%20%27chco=FFFFFF,008CFF,000000&ext=.png'
+                });
+
             });
 
     }
