@@ -11,7 +11,7 @@ var ImagenesSchema = new Schema({
             nombrelugar: {
                 type: String,
                 require: "Nombre del usuario es obligatoro"
-            }, 
+            },
 
             descripcion: {
                 type: String,
@@ -52,7 +52,5 @@ var ImagenesSchema = new Schema({
         },{
     collection: 'imagenes'
 });
-    
-      mongoose.model('Imagen', ImagenesSchema);
 
-      
+      mongoose.model('Imagen', ImagenesSchema);

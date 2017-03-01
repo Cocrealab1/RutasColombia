@@ -47,9 +47,9 @@ module.exports = function() {
     app.use(passport.session());
 
     //Cargar los archivos de enrutamiento
-    require('../app/routes/index.server.routes.js')(app);
-    require('../app/routes/users.server.routes.js')(app);
-    require('../app/routes/imagen.server.routes.js')(app);
+    require('../app/routes/imagenes.servidor.routes.js')(app);
+    require('../app/routes/index.servidor.routes.js')(app);
+    require('../app/routes/usuarios.servidor.routes.js')(app);
 
     //Configurar el serviddor de archivos estáticos
     app.use (express.static('./public'));
