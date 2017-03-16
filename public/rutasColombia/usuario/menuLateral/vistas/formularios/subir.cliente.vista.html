@@ -1,0 +1,77 @@
+<div>
+    <ul id="u2">
+
+        <li>
+            <!--
+        <div class="container">
+    <form enctype="multipart/form-data">
+     <div class="form-group">
+    <input id="file-3" type="file" multiple=true>
+    </div> -->
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div>
+                        <label class="btn btn-warning btn-file">
+                      Browse <input type="file" multiple="true">
+                  </label>
+                    </div>
+                    <br>
+                    <br>
+                    <label class="control-label col-xs-8">Titulo de la imagen</label>
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control" placeholder="Ingrese aquí el titulo">
+                    </div>
+
+                    <label class="control-label col-xs-8">Donde tomaste la foto</label>
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUF1()"></input>
+                    </div>
+                    <button ng-show="BtnUF" class="btn-warning btn-xs" ng-click="BtnUF2();localizacion()"> <span class="icon-Bus"></button>
+                </div>
+
+
+
+
+                <select class="form-control">
+            <option value="" disabled selected>Tipo de sitio turistico</option>
+            <option>1.Monumentos historicos<span class="icon-Carro"></option>
+            <button>2.Gastronómico <span class="icon-Carro" ></button>
+            <option>3.Folclórico</option>
+            <option>4.Estadios</option>
+            <option>5.Parques de atracción</option>
+            <option>6.Aventura</option>
+            <option>7.Naturaleza</option>
+            <option>8.Etnografico</option>
+            <option>9.Cinematografico</option>
+            <option>10.Cultural</option>
+            <option>11.Ecoturismo</option>
+            <option>12.Deportivo</option>
+            <option>13.Religioso</option>
+            <option>14.Mochilero</option>
+        </select>
+
+                <br>
+                <div id="input1" class="clonedInput ">
+                    <input type="text" class="form-control" name="name1">
+                    <br>
+                </div>
+
+                <input type="button" class="btn btn-warning" id="btnAdd" value="+">
+                <input type="button" class="btn btn-warning" id="btnDel" value="-">
+
+                <div class="form-group">
+                    <label class="control-label col-xs-1">Teléfono</label>
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control" placeholder="Ingrese aquí su Teléfono">
+                    </div>
+
+                    <label class="control-label col-xs-1">Descripción</label>
+                    <div class="col-xs-12">
+                        <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning" ng-click="agregarImagen()"><span class="icon-Guardar"></button>
+            </form>
+        </li>
+    </ul>
+</div>
