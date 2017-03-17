@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/ -m 5 server.js
+web: node server.js
