@@ -24,133 +24,1023 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Bus:before {
-  content: "\e900";
-  font-size: 30px;
+.icon-buscar:before {
+  content: "\e97d";
 }
-.icon-Camara:before {
-  content: "\e901";
+.icon-Editar:before {
+  content: "\e9cc";
 }
-.icon-Carro:before {
-  content: "\e902";
-  font-size: 30px;
-
+.icon-gestion_de_contenido .path1:before {
+  content: "\e9cd";
+  color: rgb(0, 0, 0);
 }
-
-.icon-Carro:visited {
-  color:yellow;
- }
-
-.icon-Español:before {
-  content: "\e903";
+.icon-gestion_de_contenido .path2:before {
+  content: "\e9ce";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
 }
-.icon-Borrar:before {
-  content: "\e904";
-}
-.icon-Guardar:before {
-  content: "\e905";
-  font-size: 200%;
-}
-.icon-Subir_Fotos:before {
-  content: "\e906";
-  font-size: 30px;
-}
-.icon-Vehiculo:before {
-  content: "\e907";
-}
-.icon-Motocicleta:before {
-  content: "\e908";
-}
-.icon-Peaje:before {
-  content: "\e909";
-}
-.icon-Punto_A:before {
-  content: "\e90a";
-}
-.icon-Punto_B:before {
-  content: "\e90b";
-}
-.icon-Ingles .path1:before {
-  content: "\e90c";
+.icon-gestion_de_contenido .path3:before {
+  content: "\e9cf";
+  margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Ingles .path2:before {
+.icon-gestion_de_contenido .path4:before {
+  content: "\e9d0";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-gestion_de_usuario .path1:before {
+  content: "\e9d1";
+  color: rgb(0, 0, 0);
+}
+.icon-gestion_de_usuario .path2:before {
+  content: "\e9d2";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-gestion_de_usuario .path3:before {
+  content: "\e9d3";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-gestion_de_usuario .path4:before {
+  content: "\e9d4";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-gestion_de_usuario .path5:before {
+  content: "\e9d5";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-gestion_de_usuario .path6:before {
+  content: "\e9d6";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-salir:before {
+  content: "\e9d7";
+}
+.icon-etnografico .path1:before {
+  content: "\e900";
+  color: rgb(0, 0, 0);
+}
+.icon-etnografico .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-etnografico .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-etnografico .path4:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-etnografico .path5:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-regresar:before {
+  content: "\e905";
+  font-size: 30px;
+}
+.icon-cinematografico:before {
+  content: "\e906";
+}
+.icon-aventura:before {
+  content: "\e907";
+}
+.icon-contactos:before {
+  content: "\e908";
+  font-size: 30px;
+}
+.icon-folclorico:before {
+  content: "\e909";
+}
+.icon-ecoturismo .path1:before {
+  content: "\e90a";
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path2:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path3:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path4:before {
   content: "\e90d";
   margin-left: -1em;
-  color: rgb(58, 58, 109);
+  color: none;
 }
-.icon-Ingles .path3:before {
+.icon-ecoturismo .path5:before {
   content: "\e90e";
   margin-left: -1em;
-  color: rgb(150, 50, 57);
+  color: rgb(0, 0, 0);
 }
-.icon-Ingles .path4:before {
+.icon-ecoturismo .path6:before {
   content: "\e90f";
   margin-left: -1em;
-  color: rgb(150, 50, 57);
+  color: rgb(255, 255, 255);
 }
-.icon-Ingles .path5:before {
+.icon-ecoturismo .path7:before {
   content: "\e910";
   margin-left: -1em;
-  color: rgb(150, 50, 57);
+  color: rgb(0, 0, 0);
 }
-.icon-Ingles .path6:before {
+.icon-ecoturismo .path8:before {
   content: "\e911";
   margin-left: -1em;
-  color: rgb(150, 50, 57);
+  color: rgb(0, 0, 0);
 }
-.icon-Ingles .path7:before {
+.icon-ecoturismo .path9:before {
   content: "\e912";
   margin-left: -1em;
-  color: rgb(150, 50, 57);
+  color: rgb(255, 255, 255);
 }
-.icon-Ingles .path8:before {
+.icon-ecoturismo .path10:before {
   content: "\e913";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Ingles .path9:before {
+.icon-ecoturismo .path11:before {
   content: "\e914";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
-.icon-Ingles .path10:before {
+.icon-ecoturismo .path12:before {
   content: "\e915";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Ingles .path11:before {
+.icon-ecoturismo .path13:before {
   content: "\e916";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
-.icon-Ingles .path12:before {
+.icon-ecoturismo .path14:before {
   content: "\e917";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Ingles .path13:before {
+.icon-ecoturismo .path15:before {
   content: "\e918";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
-.icon-Ingles .path14:before {
+.icon-ecoturismo .path16:before {
   content: "\e919";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Ingles .path15:before {
+.icon-ecoturismo .path17:before {
   content: "\e91a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Ingles .path16:before {
+.icon-ecoturismo .path18:before {
   content: "\e91b";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
-.icon-Ingles .path17:before {
+.icon-ecoturismo .path19:before {
   content: "\e91c";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
+.icon-ecoturismo .path20:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path21:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path22:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path23:before {
+  content: "\e920";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path24:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path25:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path26:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path27:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path28:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path29:before {
+  content: "\e926";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path30:before {
+  content: "\e927";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path31:before {
+  content: "\e928";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path32:before {
+  content: "\e929";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path33:before {
+  content: "\e92a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path34:before {
+  content: "\e92b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path35:before {
+  content: "\e92c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path36:before {
+  content: "\e92d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path37:before {
+  content: "\e92e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path38:before {
+  content: "\e92f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path39:before {
+  content: "\e930";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path40:before {
+  content: "\e931";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path41:before {
+  content: "\e932";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path42:before {
+  content: "\e933";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path43:before {
+  content: "\e934";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path44:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path45:before {
+  content: "\e936";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path46:before {
+  content: "\e937";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path47:before {
+  content: "\e938";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path48:before {
+  content: "\e939";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path49:before {
+  content: "\e93a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path50:before {
+  content: "\e93b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path51:before {
+  content: "\e93c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path52:before {
+  content: "\e93d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path53:before {
+  content: "\e93e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path54:before {
+  content: "\e93f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path55:before {
+  content: "\e940";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path56:before {
+  content: "\e941";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path57:before {
+  content: "\e942";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path58:before {
+  content: "\e943";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path59:before {
+  content: "\e944";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path60:before {
+  content: "\e945";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path61:before {
+  content: "\e946";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path62:before {
+  content: "\e947";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path63:before {
+  content: "\e948";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path64:before {
+  content: "\e949";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path65:before {
+  content: "\e94a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path66:before {
+  content: "\e94b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path67:before {
+  content: "\e94c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path68:before {
+  content: "\e94d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path69:before {
+  content: "\e94e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path70:before {
+  content: "\e94f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path71:before {
+  content: "\e950";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path72:before {
+  content: "\e951";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path73:before {
+  content: "\e952";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path74:before {
+  content: "\e953";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path75:before {
+  content: "\e954";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path76:before {
+  content: "\e955";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path77:before {
+  content: "\e956";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path78:before {
+  content: "\e957";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path79:before {
+  content: "\e958";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path80:before {
+  content: "\e959";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path81:before {
+  content: "\e95a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path82:before {
+  content: "\e95b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path83:before {
+  content: "\e95c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path84:before {
+  content: "\e95d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path85:before {
+  content: "\e95e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path86:before {
+  content: "\e95f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path87:before {
+  content: "\e960";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path88:before {
+  content: "\e961";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path89:before {
+  content: "\e962";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path90:before {
+  content: "\e963";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path91:before {
+  content: "\e964";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path92:before {
+  content: "\e965";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path93:before {
+  content: "\e966";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path94:before {
+  content: "\e967";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path95:before {
+  content: "\e968";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path96:before {
+  content: "\e969";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path97:before {
+  content: "\e96a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path98:before {
+  content: "\e96b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path99:before {
+  content: "\e96c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path100:before {
+  content: "\e96d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path101:before {
+  content: "\e96e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path102:before {
+  content: "\e96f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path103:before {
+  content: "\e970";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path104:before {
+  content: "\e971";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path105:before {
+  content: "\e972";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path106:before {
+  content: "\e973";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path107:before {
+  content: "\e974";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ecoturismo .path108:before {
+  content: "\e975";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path109:before {
+  content: "\e976";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path110:before {
+  content: "\e977";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path111:before {
+  content: "\e978";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path112:before {
+  content: "\e979";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-ecoturismo .path113:before {
+  content: "\e97a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-deportivo:before {
+  content: "\e97b";
+}
+.icon-estadios:before {
+  content: "\e97c";
+}
+.icon-cultural .path1:before {
+  content: "\e97e";
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path2:before {
+  content: "\e97f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path3:before {
+  content: "\e980";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path4:before {
+  content: "\e981";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path5:before {
+  content: "\e982";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path6:before {
+  content: "\e983";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path7:before {
+  content: "\e984";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path8:before {
+  content: "\e985";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path9:before {
+  content: "\e986";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path10:before {
+  content: "\e987";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path11:before {
+  content: "\e988";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path12:before {
+  content: "\e989";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path13:before {
+  content: "\e98a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-cultural .path14:before {
+  content: "\e98b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path15:before {
+  content: "\e98c";
+  margin-left: -1em;
+  color: none;
+}
+.icon-cultural .path16:before {
+  content: "\e98d";
+  margin-left: -1em;
+  color: none;
+}
+.icon-cultural .path17:before {
+  content: "\e98e";
+  margin-left: -1em;
+  color: none;
+}
+.icon-cultural .path18:before {
+  content: "\e98f";
+  margin-left: -1em;
+  color: none;
+}
+.icon-cultural .path19:before {
+  content: "\e990";
+  margin-left: -1em;
+  color: none;
+}
+.icon-cultural .path20:before {
+  content: "\e991";
+  margin-left: -1em;
+  color: none;
+}
+.icon-cultural .path21:before {
+  content: "\e992";
+  margin-left: -1em;
+  color: none;
+}
+.icon-cultural .path22:before {
+  content: "\e993";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path23:before {
+  content: "\e994";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-cultural .path24:before {
+  content: "\e995";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-gastronomico:before {
+  content: "\e996";
+}
+.icon-gps:before {
+  content: "\e997";
+  font-size: 30px;
+}
+.icon-mochilero:before {
+  content: "\e998";
+}
+.icon-monumentos_historicos:before {
+  content: "\e999";
+}
+.icon-naturaleza:before {
+  content: "\e99a";
+}
+.icon-parques_de_atraccion .path1:before {
+  content: "\e99b";
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path2:before {
+  content: "\e99c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path3:before {
+  content: "\e99d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path4:before {
+  content: "\e99e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path5:before {
+  content: "\e99f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path6:before {
+  content: "\e9a0";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path7:before {
+  content: "\e9a1";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path8:before {
+  content: "\e9a2";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path9:before {
+  content: "\e9a3";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path10:before {
+  content: "\e9a4";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path11:before {
+  content: "\e9a5";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path12:before {
+  content: "\e9a6";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path13:before {
+  content: "\e9a7";
+  margin-left: -1em;
+  color: none;
+}
+.icon-parques_de_atraccion .path14:before {
+  content: "\e9a8";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-parques_de_atraccion .path15:before {
+  content: "\e9a9";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-peaje:before {
+  content: "\e9aa";
+}
+.icon-peaje_categoria_1:before {
+  content: "\e9ab";
+  font-size: 30px;
+}
+.icon-peaje_categoria_2:before {
+  content: "\e9ac";
+  font-size: 30px;
+}
+.icon-peaje_categoria_3:before {
+  content: "\e9ad";
+  font-size: 30px;
+}
+.icon-peaje_categoria_4:before {
+  content: "\e9ae";
+  font-size: 30px;
+}
+.icon-religioso:before {
+  content: "\e9af";
+}
+.icon-Bus:before {
+  content: "\e9b0";
+}
+.icon-Camara:before {
+  content: "\e9b1";
+  font-size: 30px;
+}
+.icon-Carro:before {
+  content: "\e9b2";
+  font-size: 30px;
+}
+.icon-Eliminar:before {
+  content: "\e9b3";
+  font-size: 30px;
+}
+.icon-Español:before {
+  content: "\e9b4";
+}
+.icon-Guardar:before {
+  content: "\e9b5";
+}
+.icon-Importar_imagen:before {
+  content: "\e9b6";
+}
+.icon-Ingles .path1:before {
+  content: "\e9b7";
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path2:before {
+  content: "\e9b8";
+  margin-left: -1em;
+  color: rgb(58, 58, 109);
+}
+.icon-Ingles .path3:before {
+  content: "\e9b9";
+  margin-left: -1em;
+  color: rgb(150, 50, 57);
+}
+.icon-Ingles .path4:before {
+  content: "\e9ba";
+  margin-left: -1em;
+  color: rgb(150, 50, 57);
+}
+.icon-Ingles .path5:before {
+  content: "\e9bb";
+  margin-left: -1em;
+  color: rgb(150, 50, 57);
+}
+.icon-Ingles .path6:before {
+  content: "\e9bc";
+  margin-left: -1em;
+  color: rgb(150, 50, 57);
+}
+.icon-Ingles .path7:before {
+  content: "\e9bd";
+  margin-left: -1em;
+  color: rgb(150, 50, 57);
+}
+.icon-Ingles .path8:before {
+  content: "\e9be";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path9:before {
+  content: "\e9bf";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path10:before {
+  content: "\e9c0";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path11:before {
+  content: "\e9c1";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path12:before {
+  content: "\e9c2";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path13:before {
+  content: "\e9c3";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path14:before {
+  content: "\e9c4";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path15:before {
+  content: "\e9c5";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path16:before {
+  content: "\e9c6";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Ingles .path17:before {
+  content: "\e9c7";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-vehiculo:before {
+  content: "\e9c8";
+}
+.icon-Moto:before {
+  content: "\e9c9";
+}
+.icon-Punto_A:before {
+  content: "\e9ca";
+}
+.icon-Punto_B:before {
+  content: "\e9cb";
+}
+
