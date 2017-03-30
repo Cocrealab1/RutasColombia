@@ -1,20 +1,47 @@
 <ul>
     <li>
         <!--<formulario login -->
-        <div class="container">
-            <div class="jumbotron forlogin">
-                <form method="POST" id="login" name="login">
-                    <label>Correo electronico:</label>
-                    <input type="email" required="required" id="usuario" name="correo" size='20' placeholder="Correo electronico" class="form-control">
-                    <label>Contraseña:</label>
-                    <input type="password" required="required" id="password" name="contrasenia" size='20' placeholder="Contraseña" class="form-control">
-                    </br>
-                    <div class="col-xs-offset-2 col-xs-12">
-                        <input type="button" class="btn btn-default" name='boton' value="Limpiar">
-                        <input type="submit" class="btn btn-warning" name='boton' value="Ingresar">
-                    </div>
-                </form>
-            </div>
-        </div>
+		<div class="container">
+			<div class="forlogin">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<form role="form" class="form-horizontal">
+						</br>
+							<div class="mensaje">
+								<div class="alerta alerta-danger text-center" style="display:none;" id="error">
+								<strong >No debe dejar campos vacios </strong>
+								</div>
+								<div class="alerta alerta-suc text-center" style="display:none;" id="exito">
+								<strong>Login exitoso </strong>
+								</div> 
+								<div class="alerta alerta-danger text-center" style="display:none;" id="usuarionovalido">
+								<strong>usuario no valido </strong>
+								</div>					
+							</div> 
+							<div class="form-group">
+								<label for="usuario" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Usuario:</label>
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<input id="usuario" name="usuario" type="text" class="form-control" placeholder="Ingrese su usuario" onkeyup="validacion('usuario');" aria-describedby="inputSuccess2Status">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="password" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Password:</label>
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<input id="password" name="password" type="password" class="form-control" placeholder="Ingrese su contraseña" onkeyup="validacion('password');">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="codigo" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3"></label>
+								<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+								<button type="reset" class="btn btn-default" > Limpiar</button>
+								<button type="button" class="btn btn-default" style="background-color: #E3C83A"  onclick='verificar();'><span class="glyphicon glyphicon-lock"></span> Entrar</button>   
+								</div>
+							</div>                 
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+									
     </li>
 </ul>

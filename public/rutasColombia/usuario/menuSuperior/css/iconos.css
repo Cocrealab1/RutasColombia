@@ -154,3 +154,11 @@
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
+.icon-Ingles_path18:before {
+	content: "\e903";
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+  color: rgb(191, 10, 48);
+}
+
