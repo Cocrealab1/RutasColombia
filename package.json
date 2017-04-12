@@ -4,6 +4,11 @@
   "engines":{
     "node": "7.2.0"
   },
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=production && node server.js"
+  },
   "description": "mean",
   "main": "index.js",
   "scripts": {
