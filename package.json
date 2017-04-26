@@ -1,21 +1,22 @@
 {
   "name": "mean",
   "version": "1.0.0",
+  "description": "mean",
   "engines":{
-    "node": "7.2.0"
+    "node": "5.9.1"
   },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "set NODE_ENV=production && node server.js"
   },
-  "description": "mean",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cocrealab1/RutasColombia.git"
   },
   "keywords": [
-    "mean"
+    "mean",
+    "hola"
   ],
   "author": "Jeisson Fabian Sanche Gutierrez",
   "license": "ISC",
