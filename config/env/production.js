@@ -5,12 +5,13 @@ module.exports = {
   //db: 'mongodb://localhost/rutas',
   db: 'mongodb://rutascolombia:dbrutas123@ds161029.mlab.com:61029/rutascolombia'
   sessionSecreta: 'developmentSessionSecret'
+
 };
 
 
 /*URI GENERICA DE MONGO
 mongodb://nombreusuario:password@hostname:puerto/basedatos
-mongodb://rutascolombia:dbrutas123@ds161029.mlab.com:61029/rutascolombia
+
 
 URI EN INSTANCIA localhost
 mongodb://localhost/mean*/
