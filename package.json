@@ -20,6 +20,9 @@
   ],
   "author": "Jeisson Fabian Sanche Gutierrez",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cocrealab1/RutasColombia/issues"
+  },
   "dependencies": {
     "angular-ui-router": "^0.3.2",
     "body-parser": "^1.15.2",
