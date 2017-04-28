@@ -2,7 +2,7 @@
   "name": "mean",
   "version": "1.0.0",
   "engines": {
-    "node": "5.9.1"
+    "node": "7.9.0"
   },
   "description": "mean",
   "main": "server.js",
