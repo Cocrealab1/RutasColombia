@@ -17,7 +17,7 @@
   "keywords": [
     "mean"
   ],
-  "author": "Jeisson Fabian Sanche Gutierrez",
+  "author": "Cocrealab",
   "license": "ISC",
   "dependencies": {
     "angular-ui-router": "^0.3.2",
