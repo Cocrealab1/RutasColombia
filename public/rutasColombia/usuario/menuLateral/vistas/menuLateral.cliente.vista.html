@@ -1,26 +1,27 @@
 <section ng-controller='MenuLateralCtrl'>
-    <div id="menuwrapper">
-        <ul id="sidemenu">
-            <!--Buscar-->
-            <li>
-                <a ui-sref="buscar" class="btn"><span id="sp1" class="icon-Carro" ></a>
-                  <div ui-view="menuLateralView"></div>
-            </li>
-            <!--Subir-->
-            <li>
-                <a ui-sref="subir" class="btn active"><span class="icon-Camara" ></a>
-            </li>
-            <!--contactenos-->
-            <li>
-                <a ui-sref="contactenos" class="btn"><span class="icon-contactos" ></a>
-            </li>
+  <div id="menuwrapper">
+    <ul id="sidemenu">
+      <!--Buscar-->
+      <li>
+        <a ui-sref="buscar" class="btn"><span id="sp1" class="icon-Carro"></a>
+        <div ui-view="menuLateralView"></div>
+      </li>
+      <!--Subir-->
+      <li>
+        <a ui-sref="subir" class="btn active"><span class="icon-Camara"></a>
+      </li>
+      <!--contactenos-->
+      <li>
+        <a ui-sref="contactenos" class="btn"><span class="icon-contactos"></a>
+      </li>
 
-            <!--Nota: cambiar por responsive no con br-->
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <!--Nota: cambiar por responsive, no con br-->
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-            <li>
-                <a ui-sref="usuario" class="btn"><span class="icon-regresar" ></a>
-            </li>
-        </ul>
-    </div>
+      <!--regresar-->
+      <li>
+        <a ui-sref="usuario" class="btn"><span class="icon-regresar"></a>
+      </li>
+    </ul>
+  </div>
 </section>
