@@ -1,7 +1,7 @@
 {
   "name": "mean",
   "version": "1.0.0",
-  "engines":{
+  "engines": {
     "node": "7.2.0"
   },
   "description": "mean",
@@ -27,6 +27,7 @@
     "mongodb": "^2.2.16",
     "mongoose": "^4.7.3",
     "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "ui-router": "^1.0.0-alpha.3"

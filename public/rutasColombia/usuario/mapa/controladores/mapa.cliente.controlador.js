@@ -1,7 +1,7 @@
 angular.module('mapa').controller('MapaCtrl', ['$scope', '$http',
     function($scope, $http) {
 
-        $http.get('rutasColombia/usuario/mapa/json/geo.json')
+        $http.get('rutasColombia/usuario/mapa/json/peajes.json')
             .then(function(respuesta) {
                 var ventanaInfo;
                 var marcador;
@@ -19,8 +19,10 @@ angular.module('mapa').controller('MapaCtrl', ['$scope', '$http',
 
                     /*Creacion de marcadores*/
                     marcador = new google.maps.Marker({
-                        position: new google.maps.LatLng(respuesta.data[i].Coordenadas.lat, respuesta.data[i].Coordenadas.lng),
-                        map: mapa
+                        position: new google.maps.LatLng(respuesta.data[i].coordenadas.lat, respuesta.data[i].coordenadas.lng),
+
+                        map: mapa,
+                        icon: 'rutasColombia/usuario/mapa/img/apuntadorA.png'
                     });
                     marcadores.push(marcador);
 
@@ -36,7 +38,58 @@ angular.module('mapa').controller('MapaCtrl', ['$scope', '$http',
                     //la imagePath nos permite cambiar la imagen del markerclusterer se puede colocar una direccion web o ruta de donde est la imagen
                     //imagePath: 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&%27%20+%20%27chco=FFFFFF,008CFF,000000&ext=.png'
                     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+
                 });
+
+
+                //fondo gris mapa
+                  var colores = [
+                    {
+                        featureType: "geometry.fill",
+                        elementType: "geometry",
+                        stylers: [
+                            { saturation: -100 },
+                            { hue: "#373833" }
+                        ]
+                    },
+                    {
+                        featureType: 'water',
+                        stylers: [
+                            {color: '#1d334a'},
+                                {visibility: 'on'}
+                            ]
+                    },
+                    {
+                        featureType: 'landscape.natural.terrain',
+                        stylers: [
+                            {color: '#AFAFAF'}
+                            ]
+                    },
+                    {
+                        featureType: 'poi.attraction',
+                        featureType: 'poi.medical',
+
+                        stylers: [
+                            {color: '#0BB5C1'},
+                            {text: 'arial'}
+                            ]
+                    },
+                     {
+                        featureType: "transit",
+                        elementType: "geometry.stroke",
+                        elementType: "labels.text.stroke",
+                        stylers: [
+                            {color: '#E3C83A'}
+                            ]
+                    }
+
+                ];
+
+                var estilo = new google.maps.StyledMapType(colores);
+                mapa.mapTypes.set('mapa-bn', estilo);
+                mapa.setMapTypeId('mapa-bn');
+
+                //google.maps.event.addDomListener(window, 'onload', inicializarMapa);
             });
     }
 ]);
