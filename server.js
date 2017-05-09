@@ -6,7 +6,7 @@ var mongoose = require('./config/mongoose'),
 
 var db = mongoose();
 var app = express();
-var passport = passport();
+var passport = passport(require("passport"));
 
 app.listen(process.env.PORT || 8080 , function(){
   console.log('Sevidor ejecutándose en http://localhost:8080');

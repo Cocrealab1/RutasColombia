@@ -3,30 +3,39 @@
 
 /*Cargar el controller 'users'*/
 var users = require('../../app/controladores/usuarios.servidor.controladores'),
-    passport = require('passport');
+  passport = require('passport');
 
 /*Define el método routes module*/
-module.exports = function(app) {
-    //Configura la ruta base para 'users'
+module.exports = function(app, passport) {
+  //Configura la ruta base para 'users'
 
-    app.route('/registroUsuario')
-        //.get(users.renderSignup)
-        .post(users.signup);
-    app.route('/signin')
-        //.get(users.renderSignin)
-        .post(passport.authenticate('local', {
-            successRedirect: '/',
-            failureRedirect: '/signin',
-            failureFlash: true
-        }));
+  app.route('/registroUsuario')
+    //.get(users.renderSignup)
+    .post(users.signup);
 
-    app.route('/users')
-        .post(users.create)
-        .get(users.list);
-    app.route('/users/:userId')
-        .get(users.read)
-        .put(users.upDate)
-        .delete(users.delete);
+  app.route('/signin')
+    //.get(users.renderSignin)
+    /*.get(function(req, res) {
+      res.render("profile.ejs", {
+        //message: req.flash('loginMessage')
+      });
+    })*/
+    .post(passport.authenticate('local', {
+      successRedirect: '/#!/admin',
+      failureRedirect: '/',
+      session: false
+      //failureFlash: true
+    }));
 
-    app.param('userId', users.userByID);
+
+  app.route('/users')
+    .post(users.create)
+    .get(users.list);
+  app.route('/users/:userId')
+    .get(users.read)
+    .put(users.upDate)
+    .delete(users.delete);
+
+
+  app.param('userId', users.userByID);
 };
