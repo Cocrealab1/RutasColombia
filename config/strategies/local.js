@@ -3,27 +3,36 @@ var passport = require('passport'),
     User = require('mongoose').model('User');
 
 module.exports = function() {
-    passport.use(new LocalStrategy(function(username, password, hecho) {
-        User.findOne({
-            username: username
-        }, function(err, user) {
-            if (err) {
-                return hecho(err);
-            }
+        passport.use('local', new LocalStrategy({
+                    // by default, local strategy uses username and password, we will override with email
+                    usernameField: 'correo',
+                    passwordField: 'contrasenia',
+                    passReqToCallback: true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
+                },
+                function(req, correo, contrasenia, hecho) {
+                    if (correo)
+                        correo = correo.toLowerCase();
 
-            if (!user) {
-                return hecho(null, false, {
-                    message: 'username Desconocido'
-                });
-            }
+                    process.nextTick(function() {
+                            User.findOne({'correo': correo}, function(err, user) {
+                                if (err) {
+                                    return hecho(err);
+                                }
 
-            if (!user.authenticate(password)) {
-                return hecho(null, false, {
-                    message: 'Contaseña invalida'
-                });
-            }
+                                if (!user) {
+                                    return hecho(null, false, {
+                                        message: 'correo Desconocido'
+                                    });
+                                }
 
-            return hecho(null, user);
-        })
-    }));
-};
+                                if (!user.validaContrasenia(contrasenia)) {
+                                    return hecho(null, false, {
+                                        message: 'Contaseña invalida'
+                                    });
+                                }
+
+                                return hecho(null, user);
+                            })
+                        })
+                    }));
+        };
