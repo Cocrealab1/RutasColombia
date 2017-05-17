@@ -303,3 +303,7 @@ label {
 .imgSVG {
     max-height: 52.17px;
 }
+
+.form-horizontal .control-label {
+    text-align: left !important;
+}

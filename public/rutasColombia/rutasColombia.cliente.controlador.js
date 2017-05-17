@@ -49,7 +49,8 @@ angular.module('rutasColombia').controller('rutasColombiaCtrl', ['$scope', '$htt
                         var marker = new google.maps.Marker({
                             position: pocision,
                             map: mapa,
-                            title: 'Ubicación actual'
+                            title: 'Ubicación actual',
+                            icon: 'rutasColombia/usuario/mapa/img/apuntadorN.png'
                         });
                         marker.setMap(mapa);
 

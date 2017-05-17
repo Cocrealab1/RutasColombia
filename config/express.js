@@ -22,6 +22,8 @@ module.exports = function() {
         app.use(compress());
     }
 
+
+
     //configurar el middleware 'body-parser' y el 'method-override'
     app.use(bodyParser.urlencoded({
         extended: true
@@ -30,11 +32,11 @@ module.exports = function() {
     app.use(methodOverride());
 
     //configurar el middleware 'session''
-    /*app.use(session({
+    app.use(session({
       saveUninitializaed:true,
       resave :true,
       secret: config.sessionSecreta
-    }))*/
+    }))
 
     //Configuarar el motor view de la aplicacion y el directorio de 'views'
     app.set('views', './app/views');
@@ -47,9 +49,9 @@ module.exports = function() {
     app.use(passport.session());
 
     //Cargar los archivos de enrutamiento
-    require('../app/routes/imagenes.servidor.routes.js')(app);
+    require('../app/routes/imagenes.servidor.routes.js')(app, passport);
     require('../app/routes/index.servidor.routes.js')(app);
-    require('../app/routes/usuarios.servidor.routes.js')(app);
+    require('../app/routes/usuarios.servidor.routes.js')(app, passport);
 
     //Configurar el serviddor de archivos estáticos
     app.use (express.static('./public'));
