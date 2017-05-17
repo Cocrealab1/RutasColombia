@@ -1,10 +1,44 @@
-angular.module('conteAdministrador').controller('conteAdministradorCtrl', ['$scope', '$http',
-function($scope, $http) {
+angular.module('conteAdministrador').controller('conteAdministradorCtrl', ['$scope', '$http', 'Usuarios',
+function($scope, $http, Usuarios) {
   $('#Botonlist').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');$('#tabla').hide();$('#ListayGrid').show();});
   $('#Botongrid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#tabla').hide();$('#ListayGrid').show();$('#products .item').addClass('grid-group-item');});
   $('#Botontabla').click(function(event){event.preventDefault();$('#tabla').show();$('#ListayGrid').hide();});
+  $('#tabla').hide();
 
-$('#tabla').hide();
+  $scope.find = function() {
+      $scope.users = Usuarios.query();
+  }
+
+  $scope.findOne = function(userI) {
+      var user = Usuarios.get({
+          userId: $routeParams.userId
+      });
+  };
+
+  $scope.update = function() {
+      $scope.user = $update(function() {
+          alert('usuario actualizado');
+      }, function(err) {
+          $scope.error = err.data.message;
+      });
+  };
+
+  $scope.delete = function(user) {
+      $scope.users = Usuarios.query();
+      if (user) {
+          user.$remove(function() {
+              for (var i in $scope.users) {
+                  if ($scope.users[i] === user) {
+                      $scope.users.splice(i, 1);
+                  }
+              }
+          });
+      } else {
+          $scope.user.$remove(function() {
+              alert('usuario borrado');
+          });
+      }
+  };
 
   $scope.personas = [{
       "Nombre": "Caño Cristales",

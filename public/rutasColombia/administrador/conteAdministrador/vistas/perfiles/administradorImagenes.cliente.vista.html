@@ -1,8 +1,7 @@
-<section ng-controller='conteAdministradorCtrl'>
+<section ng-controller='conteAdministradorCtrl' data-ng-init="find()">
 
 
 <div class="row-fluid">
-
   <form action="">
     <center><input type="text" class="search-query" placeholder=" Ingresa busqueda">&nbsp;<button type="submit" class="btn btn-warning">Buscar</button>
 
@@ -13,22 +12,23 @@
   </form>
 
 </div>
+
+<!--primera vista Administrador-->
 <div id="tabla" class="container">
   <table class="table table-sm">
-    <tr ng-repeat="persona in personas">
+    <tr ng-repeat="persona in users">
       <!--| filter:busqueda | -->
       <!--   |   orderBy:'nombre':revers-->
       <td> <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }} " class="avatar img-rounded"></td>
       <td>{{ persona.Nombre }}</td><br>
-      <td><button class="btn btn-warning btn-sm"> Mas info</button></td>
-      <td> <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }} " class="avatar img-rounded"></td>
+      <td><button class="btn btn-warning btn-sm"> + info</button></td>
+      <!--<td> <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }} " class="avatar img-rounded"></td>
       <td>{{ persona.Nombre }}</td><br>
       <td><button class="btn btn-warning btn-sm"> Mas info</button></td>
       <td> <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }} " class="avatar img-rounded"></td>
       <td>{{ persona.Nombre }}</td><br>
-      <td><button class="btn btn-warning btn-sm"> Mas info</button></td>
+      <td><button class="btn btn-warning btn-sm"> Mas info</button></td>-->
     </tr>
-
   </table>
 </div>
 
