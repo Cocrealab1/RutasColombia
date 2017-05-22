@@ -1,6 +1,5 @@
-<ul ng-controller="menuSuperiorCtrl">
+<!--<ul ng-controller="menuSuperiorCtrl">
     <li>
-        <!--<formulario registro -->
         <div class="container">
             <div class="jumbotron formregistro">
 
@@ -40,73 +39,103 @@
 
     </li>
 </ul>
+-->
 
-<!--<li>
-    <div class="formregistro">
+<li>
+  <ul ng-controller="menuSuperiorCtrl">
+    <li>
+      <!--<formulario registro -->
+
+      <div class="formregistro">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <form class="form-horizontal" data-ng-submit="agregar()" role="form" name="form1">
-                    </br>
-                    <div class="mensaje">
-                        <div data-ng-show="error" class="alerta alerta-danger text-center" id="negativo">
-                            <strong data-ng-bind="error"></strong>
-                        </div>
-                    </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form role="form" class="form-horizontal" name="form1" novalidate data-ng-submit="agregar()">
+              </br>
+              <!--Mensajes de error-->
+              <div class="mensaje">
+                <div data-ng-show="error" class="alert alert-warning text-center">
+                  <strong data-ng-bind="error"></strong>
+                </div>
+              </div>
+              <!--Botones-->
+              <div class="form-group">
+                <label for="nombre" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Nombres:</label>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <input id="nombres" name="nombre" type="text" class="form-control" ng-model="registrar.nombre" placeholder="Ingrese su nombre">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="apellido" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Apellidos:</label>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <input id="apellidos" name="apellido" type="text" class="form-control" ng-model="registrar.apellido" placeholder="Ingrese su apellido">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="correo" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2 ">Email:</label>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <input id="email" name="correo" type="text" class="form-control" ng-model="registrar.correo" placeholder="Ingrese su email">
 
-                    <div class="form-group">
-                        <label for="nombre" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Nombres:</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input id="nombres"  ng-model="registrar.nombre" name="nombre" type="text" class="form-control" placeholder="Ingrese su nombre" onkeyup="validar('nombre');" aria-describedby="inputSuccess2Status">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="apellido" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Apellidos:</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input id="apellidos" ng-model="registrar.apellido" name="apellido" type="text" class="form-control" placeholder="Ingrese su apellido" onkeyup="validar('apellido');">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="correo" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2 ">Email:</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input id="email" ng-model="registrar.correo" name="correo" type="text" class="form-control" placeholder="Ingrese su email" onkeyup="validar('email');">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contrasenia" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Contraseña:</label>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <input id="pass" name="contrasenia" type="password" class="form-control" ng-model="registrar.contrasenia" placeholder="Ingrese su contraseña">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirmacionContrasenia" class="control-label col-xs7 col-sm-7 col-md-7 col-lg-7">Confirmar Contraseña:</label>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <input id="pass1" name="confirmacionContrasenia" type="password" class="form-control" ng-model="registrar.confirmacionContrasenia" placeholder="Repetir contraseña">
+                </div>
+              </div>
+              <div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <input id="check" name="terminosyCondiciones" ng-model="registrar.terminosyCondiciones" type="checkbox"><a href="#"> Aceptar terminos y condiciones</a>
+                </div>
+              </div>
+              </br>
 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="contrasenia" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Contraseña:</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input id="pass" ng-model="registrar.contrasenia" name="contrasenia" type="text" class="form-control" placeholder="Ingrese su contraseña" onkeyup="validar('contrasenia');">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmacionContrasenia" class="control-label col-xs7 col-sm-7 col-md-7 col-lg-7">Confirmar Contraseña:</label>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input id="pass1" ng-model="registrar.confirmacionContrasenia" name="confirmacionContrasenia" type="text" class="form-control" placeholder="Repetir contraseña" onkeyup="validar('confirmacionContrasenia');">
+              <div class="form-group">
+                <label for="codigo" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2"></label>
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                  <button type="reset" name='btnLimpiar' value="Limpiar" class="btn btn-default">Limpiar</button>
+                  <button type="submit" name='btnRegistrarse' value="Registrarse" class="btn btn-default" style="background-color: #E3C83A"><span class="glyphicon glyphicon-pencil"></span>  Registrarse</button>
+                </div>
+              </div>
+              <div class="social">
+                <a class="btn btn-block btn-social btn-facebook">
+													<span class="fa fa-facebook"></span>  Registrarse con Facebook
+													</a>
+                </br>
+                <a class="btn btn-block btn-social btn-google">
+													<span class="fa fa-google"></span>  Registrarse con Google
+													</a>
+              </div>
 
-                        </div>
-                    </div>
-                    </br>
-                    <div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
-
-                    <div class="form-group">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input id="check" name="check" type="checkbox" onclick="validar('check');"><a href="#"> Aceptar terminos y condiciones</a>
-
-                        </div>
-                    </div>
-                    </br>
-                    </br>
-                    <div class="form-group">
-                        <label for="codigo" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2"></label>
-                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                            <button type="reset" class="btn btn-default">Limpiar</button>
-                            <button type="submit" class="btn btn-default" style="background-color: #E3C83A" value="Registrarse" name='btnRegistrarse' onclick='verificar_usuario();'><span class="glyphicon glyphicon-pencil"></button>
-
-                        </div>
-                    </div>
-                </form>
-            </div>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
+
+    </li>
+  </ul>
 </li>
-</ul>-->
+<li id="boton1">
+  <a href="admin.html">
+							<span class="glyphicon icon-Español"></span></a>
+</li>
+<li id="contenido-2">
+  <a href="#">
+							<span class="glyphicon icon-Ingles_path18"></span></a>
+</li>
+
+<li class="espacio"></li>
+<li class="espacio"></li>
+<li class="espacio"></li>
+
+
+</ul>
+</div>
+</div>

@@ -3,12 +3,12 @@
   <div>
     <ul id="u2">
       <li>
-        <form class="form-horizontal" data-ng-submit="agregarImagen()">
+        <form class="form-horizontal" data-ng-submit="agregarImagen()" enctype="multipart/form-data" method="post">
           <div class="form-group">
             <div>
               <label class="btn btn-warning btn-file">
-                      Buscar <input type="file" multiple="true">
-                  </label>
+                      Buscar <input type="file" name = 'archivoImagen'>
+              </label>
             </div>
             <br>
             <br>

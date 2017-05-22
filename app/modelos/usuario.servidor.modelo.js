@@ -19,7 +19,10 @@ var bcrypt = require('bcrypt-nodejs'),
 var UsuarioSchema = new Schema({
   id: String,
   token: String,
-  nombre: String,
+  nombre: {
+    type: String,
+    required:"El nombre es requerido",
+  },
   apellido: String,
   correo: {
     type: String,
@@ -29,6 +32,7 @@ var UsuarioSchema = new Schema({
   },
   contrasenia: {
     type: String,
+    required:"La contraseña es requerida",
     minlength: [6, "la contraseña es muy corta"],
     validate: {
       validator: function(p) {
@@ -59,6 +63,8 @@ UsuarioSchema.virtual("confirmacionContrasenia").get(function() {
 }).set(function(contrasenia) {
   this.c_C = contrasenia;
 });
+
+UsuarioSchema.virtual("terminosyCondiciones").get();
 
 //usar middleware pre-save para hash la contaseña
 UsuarioSchema.pre('save', function(next) {
