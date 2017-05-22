@@ -903,6 +903,7 @@
 }
 .icon-peaje:before {
   content: "\e9aa";
+  font-size: 30px;
 }
 .icon-peaje_categoria_1:before {
   content: "\e9ab";
@@ -925,6 +926,7 @@
 }
 .icon-Bus:before {
   content: "\e9b0";
+  font-size: 30px;
 }
 .icon-Camara:before {
   content: "\e9b1";
@@ -1043,4 +1045,3 @@
 .icon-Punto_B:before {
   content: "\e9cb";
 }
-
