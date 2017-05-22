@@ -10,7 +10,10 @@ var config = require('./config'),
   methodOverride = require('method-override'),
   flash = require('connect-flash'),
   multer = require('multer'),
-  passport = require('passport');
+  passport = require('passport'),
+  multer = require('multer'),
+  upload = multer({ dest: '/uploads'});;
+
 
 /*Definir el método de configuración de Express*/
 module.exports = function() {
@@ -50,7 +53,7 @@ module.exports = function() {
   app.use(passport.session());
 
   //Cargar los archivos de enrutamiento
-  require('../app/routes/imagenes.servidor.routes.js')(app, passport);
+  require('../app/routes/imagenes.servidor.routes.js')(app, passport, upload);
   require('../app/routes/index.servidor.routes.js')(app);
   require('../app/routes/usuarios.servidor.routes.js')(app, passport);
 

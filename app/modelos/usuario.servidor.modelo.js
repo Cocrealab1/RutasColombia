@@ -41,6 +41,17 @@ var UsuarioSchema = new Schema({
       message: "las contraseñas no son iguales"
     }
   },
+  terminosyCondiciones:{
+    type: String,
+    required:"se necesita aceptar Terminos y condiciones",
+    validate: {
+      validator: function(s) {
+        console.log(s)
+        return  (s ==  "true");
+      },
+      message: "se necesita aceptar Terminos y condiciones2"
+    }
+  },
   salt: {
     type: String,
   },
@@ -63,8 +74,6 @@ UsuarioSchema.virtual("confirmacionContrasenia").get(function() {
 }).set(function(contrasenia) {
   this.c_C = contrasenia;
 });
-
-//UsuarioSchema.virtual("terminosyCondiciones").get();
 
 //usar middleware pre-save para hash la contaseña
 UsuarioSchema.pre('save', function(next) {
