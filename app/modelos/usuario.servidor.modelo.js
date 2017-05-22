@@ -64,7 +64,7 @@ UsuarioSchema.virtual("confirmacionContrasenia").get(function() {
   this.c_C = contrasenia;
 });
 
-UsuarioSchema.virtual("terminosyCondiciones").get();
+//UsuarioSchema.virtual("terminosyCondiciones").get();
 
 //usar middleware pre-save para hash la contaseña
 UsuarioSchema.pre('save', function(next) {
