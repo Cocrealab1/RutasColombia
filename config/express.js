@@ -7,18 +7,21 @@ var config = require('./config'),
   morgan = require('morgan'),
   compress = require('compression'),
   bodyParser = require('body-parser'),
-  methodOverride = require('method-override'),
-  flash = require('connect-flash'),
-  multer = require('multer'),
-  passport = require('passport'),
-  multer = require('multer'),
-  upload = multer({ dest: '/uploads'});;
+  //methodOverride = require('method-override'),
+  //flash = require('connect-flash'),
+  //multer = require('multer'),
+  //formidable = require('express-formidable'),
+  passport = require('passport');
+
+//upload = multer({ dest: '/uploads'});
 
 
 /*Definir el método de configuración de Express*/
 module.exports = function() {
   //Crear una nueva instancia de la aplicacion Express
   var app = express();
+
+
 
   //Usar la varible 'NODE_ENV' para activar los middlware 'morgan' logger o 'compress'
   if (process.env.NODE_ENV === 'development') {
@@ -27,12 +30,18 @@ module.exports = function() {
     app.use(compress());
   }
 
+  /*app.use(formidable ({
+    encoding: 'utf-8',
+    uploadDir: '/my/dir',
+    multiples: true
+  }));*/
+
   //configurar el middleware 'body-parser' y el 'method-override'
   app.use(bodyParser.urlencoded({
     extended: true
   }));
   app.use(bodyParser.json());
-  app.use(methodOverride());
+  //app.use(methodOverride());
 
   //configurar el middleware 'session''
   app.use(session({
@@ -45,7 +54,8 @@ module.exports = function() {
   app.set('views', './app/views');
   app.set('view engine', 'ejs');
 
-  app.use(flash());
+
+  //app.use(flash());
 
 
   //configurar el middleware 'passport'
@@ -53,7 +63,7 @@ module.exports = function() {
   app.use(passport.session());
 
   //Cargar los archivos de enrutamiento
-  require('../app/routes/imagenes.servidor.routes.js')(app, passport, upload);
+  require('../app/routes/imagenes.servidor.routes.js')(app, passport);
   require('../app/routes/index.servidor.routes.js')(app);
   require('../app/routes/usuarios.servidor.routes.js')(app, passport);
 
