@@ -26,9 +26,11 @@
 
 .icon-buscar:before {
   content: "\e97d";
+  font-size: 15px;
 }
 .icon-Editar:before {
   content: "\e9cc";
+  font-size: 25px;
 }
 .icon-gestion_de_contenido .path1:before {
   content: "\e9cd";
