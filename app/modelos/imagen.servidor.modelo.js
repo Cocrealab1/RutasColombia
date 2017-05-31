@@ -8,7 +8,7 @@ var mongoose = require("mongoose"),
 //definir un nuevo schema
 var ImagenesSchema = new Schema({
 
-            nombrelugar: {
+            nombre: {
                 type: String,
                 require: "Nombre del usuario es obligatoro"
             },
@@ -23,11 +23,12 @@ var ImagenesSchema = new Schema({
                 //]
             },
             departamento: {
-                type: String,
-                require: "Nombre del departamento obligatoro"
+                type: String
+                //require: "Nombre del departamento obligatoro"
             },
             tipo: {
-                type: String
+                type: String,
+                require: "tipo de actividad obligatoro"
             },
             fecha: {
                 type: Date,
@@ -42,12 +43,12 @@ var ImagenesSchema = new Schema({
                 type: String
             },
             geolocalizacionX: {
-                type: Number,
-                require:"Geolocalizacion en X es requerida"
+                type: Number
+                //require:"Geolocalizacion en X es requerida"
             },
             geolocalizacionY: {
-                type: Number,
-                require:"Geolocalizacion en Y es requerida"
+                type: Number
+                //require:"Geolocalizacion en Y es requerida"
             }
         },{
     collection: 'imagenes'

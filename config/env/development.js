@@ -2,7 +2,7 @@
 
 module.exports = {
   //cambiar puesto que es un palabra secreta
-  db: 'mongodb://localhost/rutas',
+  db:'mongodb://rutas:123456789@ds117819.mlab.com:17819/dbrutas' || 'mongodb://localhost/rutas',
   sessionSecreta: 'developmentSessionSecret'
 };
 

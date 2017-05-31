@@ -1,33 +1,43 @@
 {
   "name": "mean",
   "version": "1.0.0",
-  "engines":{
-    "node": "7.2.0"
+  "engines": {
+    "node": "5.9.1"
   },
   "description": "mean",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=production && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cocrealab1/RutasColombia.git"
   },
   "keywords": [
     "mean"
   ],
-  "author": "Jeisson Fabian Sanche Gutierrez",
+  "author": "Cocrealab",
   "license": "ISC",
   "dependencies": {
     "angular-ui-router": "^0.3.2",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "connect-flash": "^0.1.1",
     "crypto": "0.0.3",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
+    "express-formidable": "^1.0.0",
     "express-session": "^1.14.2",
     "method-override": "^2.3.7",
     "mongodb": "^2.2.16",
     "mongoose": "^4.7.3",
     "morgan": "^1.7.0",
+    "multer": "^1.3.0",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
     "ui-router": "^1.0.0-alpha.3"
   }

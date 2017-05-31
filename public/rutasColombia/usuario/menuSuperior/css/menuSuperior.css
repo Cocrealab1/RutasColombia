@@ -124,9 +124,9 @@ body {
     margin-bottom: 0;
 }
 
-.form-group {
+#sidemenu .form-group {
     margin-top: 25px;
-}
+  }
 
 #menuwrapper a:hover:after {
     /*este es el apuntador*/
@@ -302,4 +302,8 @@ label {
 
 .imgSVG {
     max-height: 52.17px;
+}
+
+.form-horizontal .control-label {
+    text-align: left !important;
 }

@@ -2,9 +2,10 @@
 'use strict';
 
 /*cargar el módulo Mongoose y el objeto Schema */
-var mongoose = require('mongoose'),
-    crypto = require('crypto'),
-    Schema = mongoose.Schema;
+var bcrypt = require('bcrypt-nodejs'),
+  mongoose = require('mongoose'),
+  crypto = require('crypto'),
+  Schema = mongoose.Schema;
 
 
 // var password_validation = {
@@ -16,44 +17,62 @@ var mongoose = require('mongoose'),
 
 /*Definir un nuevo UserSchema*/
 var UsuarioSchema = new Schema({
-    nombre: String,
-    apellido: String,
-    correo: {
-        type: String,
-        unique: 'correo ya existente',
-        match: [/.\@.+\..+/, "Por favor escribe una direccion de email correcta"]
-    },
-    contrasenia: {
-        type: String,
-        minlength: [6, "la contraseña es muy corta"],
-        validate: {
-            validator: function(p) {
-                return this.confirmacionContrasenia == p;
-            },
-            message: "las contraseñas no son iguales"
-        }
-    },
-    salt: {
-        type: String,
-    },
-    provider: {
-        type: String,
-        required: 'Provider es obigatorio'
-    },
-    providerId: String,
-    providerData: {},
-    created: {
-        type: Date,
-        default: Date.now
+  id: String,
+  token: String,
+  nombre: {
+    type: String,
+    required:"El nombre es requerido",
+  },
+  apellido: String,
+  correo: {
+    type: String,
+    required:"El correo es requerido",
+    unique: 'correo ya existente',
+    match: [/.\@.+\..+/, "Por favor escribe una direccion de email correcta"]
+  },
+  contrasenia: {
+    type: String,
+    required:"La contraseña es requerida",
+    minlength: [6, "la contraseña es muy corta"],
+    validate: {
+      validator: function(p) {
+        return this.confirmacionContrasenia == p;
+      },
+      message: "las contraseñas no son iguales"
     }
+  },
+  terminosyCondiciones:{
+    type: String,
+    required:"se necesita aceptar Terminos y condiciones",
+    validate: {
+      validator: function(s) {
+        console.log(s)
+        return  (s ==  "true");
+      },
+      message: "se necesita aceptar Terminos y condiciones2"
+    }
+  },
+  salt: {
+    type: String,
+  },
+  provider: {
+    type: String,
+    required: 'Provider es obigatorio'
+  },
+  providerId: String,
+  providerData: {},
+  created: {
+    type: Date,
+    default: Date.now
+  }
 }, {
-    collection: 'users'
+  collection: 'users'
 }); ///cambiar por cualquier base de datos
 
 UsuarioSchema.virtual("confirmacionContrasenia").get(function() {
-    return this.c_C;
+  return this.c_C;
 }).set(function(contrasenia) {
-    this.c_C = contrasenia;
+  this.c_C = contrasenia;
 });
 
 //usar middleware pre-save para hash la contaseña
@@ -65,14 +84,15 @@ UsuarioSchema.pre('save', function(next) {
     next();
 })
 
-//Crear un metodo instania para hashin uyna contraseña
 UsuarioSchema.methods.hashPassword = function(contrasenia) {
-    return crypto.pbkdf2Sync(contrasenia, this.salt, 10000, 64, 'sha1').toString('base64');
+  return bcrypt.hashSync(contrasenia, bcrypt.genSaltSync(8), null);
 }
-
 //Crear un metodo instancia para autentificar usuario
 UsuarioSchema.methods.authenticate = function(contrasenia) {
-    return this.contrasenia === this.hashPassword(contrasenia);
+  return this.contrasenia === this.hashPassword(contrasenia);
+}
+UsuarioSchema.methods.validaContrasenia = function(contrasenia) {
+  return bcrypt.compareSync(contrasenia, this.contrasenia);
 }
 
 /*crear el modelo 'user' a partir de 'UserSchema'*/
