@@ -4,7 +4,7 @@ angular.module('menuLateral').factory('MenuLateral', ['$resource',
   function($resource) {
     return $resource('/registroImagenes', {}, {
       update: {
-        method: 'post'
+        method: 'POST'
       }
     });
   }

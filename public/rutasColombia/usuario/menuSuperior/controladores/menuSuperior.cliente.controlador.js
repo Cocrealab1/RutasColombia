@@ -28,7 +28,8 @@ angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http'
                 apellido: $scope.registrar.apellido,
                 correo: $scope.registrar.correo,
                 contrasenia: $scope.registrar.contrasenia,
-                confirmacionContrasenia: $scope.registrar.confirmacionContrasenia
+                confirmacionContrasenia: $scope.registrar.confirmacionContrasenia,
+                terminosyCondiciones: $scope.registrar.terminosyCondiciones
             });
             resgistrar.$save(function(respuesta) {
               $scope.registrar.nombre = '';
@@ -36,6 +37,7 @@ angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http'
               $scope.registrar.correo = '';
               $scope.registrar.contrasenia = '';
               $scope.registrar.confirmacionContrasenia ='';
+              $scope.registrar.terminosyCondiciones = false;
             }, function(respuesta) {
                 console.log(respuesta.data);
                 $scope.error = respuesta.data;

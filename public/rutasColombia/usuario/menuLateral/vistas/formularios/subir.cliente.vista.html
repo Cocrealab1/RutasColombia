@@ -3,12 +3,14 @@
   <div>
     <ul id="u2">
       <li>
-        <form class="form-horizontal" data-ng-submit="agregarImagen()">
+        <form action=""></form>
+
+        <form method="POST" class="form-horizontal" data-ng-submit="agregarImagen()" enctype="multipart/form-data" >
           <div class="form-group">
             <div>
               <label class="btn btn-warning btn-file">
-                      Buscar <input type="file" multiple="true">
-                  </label>
+                      Buscar <input type="file" name='archivoImagen' value="archivoImagen">
+              </label>
             </div>
             <br>
             <br>
@@ -66,7 +68,7 @@
             </div>
           </div>
           <!--<button type="submit" class="btn btn-warning" ng-click="agregarImagen()"><span class="icon-Guardar"></button>-->
-          <button type="submit" class="btn btn-warning"><span class="icon-Guardar"></button>
+          <button type="submit" name="submit" value="submit" class="btn btn-warning"><span class="icon-Guardar"></button>
         </form>
       </li>
     </ul>

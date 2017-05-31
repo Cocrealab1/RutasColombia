@@ -1,6 +1,7 @@
-<ul>
+<!--<formulario login -->
+<!--<ul>
     <li>
-        <!--<formulario login -->
+
         <div class="container">
             <div class="jumbotron forlogin">
                 <form action="/signin" method="POST" id="login" name="login">
@@ -19,3 +20,65 @@
         </div>
     </li>
 </ul>
+-->
+
+<li>
+  <ul>
+    <li>
+      <!--<formulario login -->
+      <div class="container">
+        <div class="forlogin">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <form role="form" class="form-horizontal" action="/signin" method="POST" id="login" name="login">
+                </br>
+                <!-- habilitar mensajes-->
+                <div class="mensaje">
+                  <div class="alerta alerta-danger text-center" style="display:none;" id="error">
+                    <strong>No debe dejar campos vacios </strong>
+                  </div>
+                  <div class="alerta alerta-suc text-center" style="display:none;" id="exito">
+                    <strong>Login exitoso </strong>
+                  </div>
+                  <div class="alerta alerta-danger text-center" style="display:none;" id="usuarionovalido">
+                    <strong>usuario no valido </strong>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="usuario" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Usuario:</label>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input id="usuario" name="correo" type="text" class="form-control" placeholder="Ingrese su usuario">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Password:</label>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input id="password" name="contrasenia"  type="password" class="form-control" placeholder="Ingrese su contraseña" >
+
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="codigo" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3"></label>
+                  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                    <button type="reset" class="btn btn-default"> Limpiar</button>
+                    <button type="submit" class="btn btn-default" style="background-color: #E3C83A"><span class="glyphicon glyphicon-lock"></span> Entrar</button>
+                  </div>
+                </div>
+                <div class="social">
+                  <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook">
+													<span class="fa fa-facebook"></span>  Inicia Sesión con Facebook
+													</a>
+                  </br>
+                  <a class="btn btn-block btn-social btn-google">
+													<span class="fa fa-google"></span>  Inicia Sesión con Google
+													</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</li>

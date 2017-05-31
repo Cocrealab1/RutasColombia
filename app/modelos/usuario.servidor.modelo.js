@@ -19,7 +19,10 @@ var bcrypt = require('bcrypt-nodejs'),
 var UsuarioSchema = new Schema({
   id: String,
   token: String,
-  nombre: String,
+  nombre: {
+    type: String,
+    required:"El nombre es requerido",
+  },
   apellido: String,
   correo: {
     type: String,
@@ -29,12 +32,24 @@ var UsuarioSchema = new Schema({
   },
   contrasenia: {
     type: String,
+    required:"La contraseña es requerida",
     minlength: [6, "la contraseña es muy corta"],
     validate: {
       validator: function(p) {
         return this.confirmacionContrasenia == p;
       },
       message: "las contraseñas no son iguales"
+    }
+  },
+  terminosyCondiciones:{
+    type: String,
+    required:"se necesita aceptar Terminos y condiciones",
+    validate: {
+      validator: function(s) {
+        console.log(s)
+        return  (s ==  "true");
+      },
+      message: "se necesita aceptar Terminos y condiciones2"
     }
   },
   salt: {
