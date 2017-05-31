@@ -112,12 +112,22 @@
 .icon-cinematografico:before {
   content: "\e906";
 }
+
+.icon-cinematografico1:before {
+  content: "\e906";
+  font-size: 25px;
+}
 .icon-aventura:before {
   content: "\e907";
 }
 .icon-contactos:before {
   content: "\e908";
   font-size: 30px;
+}
+
+.icon-contactos1:before {
+  content: "\e908";
+  font-size: 25px;
 }
 .icon-folclorico:before {
   content: "\e909";
@@ -923,6 +933,11 @@
 }
 .icon-religioso:before {
   content: "\e9af";
+}
+
+.icon-religioso1:before {
+  content: "\e9af";
+  font-size: 25px;
 }
 .icon-Bus:before {
   content: "\e9b0";
