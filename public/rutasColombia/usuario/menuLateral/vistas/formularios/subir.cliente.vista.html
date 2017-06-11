@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
 <div>
     <ul id="u2">
 
@@ -8,6 +10,9 @@
      <div class="form-group">
     <input id="file-3" type="file" multiple=true>
     </div> -->
+
+<div ng-app="app" ng-controller="FileUploadController">
+  <form ng-submit="sendFile()">
             <form class="form-horizontal">
                 <div class="form-group">
                     <div>
@@ -70,8 +75,13 @@
                         <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar"></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-warning" ng-click="agregarImagen()"><span class="icon-Guardar"></button>
+                <button type="submit" class="btn btn-warning" ng-click="agregarImagen()" g-disabled="!file"><span class="icon-Guardar"></button>
             </form>
+             <div>
+     
+    </div>
+  </form>
+</div>
         </li>
     </ul>
 </div>
