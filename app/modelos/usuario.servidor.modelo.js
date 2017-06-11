@@ -2,6 +2,7 @@
 'use strict';
 
 /*cargar el módulo Mongoose y el objeto Schema */
+var bcrypt   = require('bcrypt-nodejs');
 var mongoose = require('mongoose'),
     crypto = require('crypto'),
     Schema = mongoose.Schema;
@@ -16,10 +17,12 @@ var mongoose = require('mongoose'),
 
 /*Definir un nuevo UserSchema*/
 var UsuarioSchema = new Schema({
+    
     nombre: String,
     apellido: String,
     correo: {
-        type: String,
+        type: String, 
+        required:"El correo es requerido",
         unique: 'correo ya existente',
         match: [/.\@.+\..+/, "Por favor escribe una direccion de email correcta"]
     },
@@ -66,14 +69,27 @@ UsuarioSchema.pre('save', function(next) {
 })
 
 //Crear un metodo instania para hashin uyna contraseña
-UsuarioSchema.methods.hashPassword = function(contrasenia) {
-    return crypto.pbkdf2Sync(contrasenia, this.salt, 10000, 64, 'sha1').toString('base64');
-}
+
+//UsuarioSchema.methods.hashPassword = function(contrasenia) {
+  //  return crypto.pbkdf2Sync(contrasenia, this.salt, 10000, 64, 'sha1').toString('base64');
+//}
 
 //Crear un metodo instancia para autentificar usuario
-UsuarioSchema.methods.authenticate = function(contrasenia) {
-    return this.contrasenia === this.hashPassword(contrasenia);
+//UsuarioSchema.methods.authenticate = function(contrasenia) {
+//    return this.contrasenia === this.hashPassword(contrasenia);
+//}
+
+UsuarioSchema.methods.hashPassword = function(contrasenia) {
+    return bcrypt.hashSync(contrasenia, bcrypt.genSaltSync(8), null);
 }
+//Crear un metodo instancia para autentificar usuario
+UsuarioSchema.methods.authenticate = function(contrasenia) {
+   return this.contrasenia === this.hashPassword(contrasenia);
+}
+UsuarioSchema.methods.validaContrasenia = function(contrasenia) {
+    return  bcrypt.compareSync(contrasenia, this.contrasenia);
+}
+
 
 /*crear el modelo 'user' a partir de 'UserSchema'*/
 mongoose.model('User', UsuarioSchema);

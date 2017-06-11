@@ -12,6 +12,7 @@ module.exports = function(){
   var db = mongoose.connect(config.db);
 
   //cargar el modelo'usuario'
+  
   require('../app/modelos/usuario.servidor.modelo');
   require('../app/modelos/imagen.servidor.modelo');
 

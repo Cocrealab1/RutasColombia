@@ -8,6 +8,7 @@ var config = require('./config'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     flash = require('connect-flash'),
+    formidable = require('express-formidable'),
     passport = require('passport');
 
 /*Definir el método de configuración de Express*/
@@ -23,11 +24,13 @@ module.exports = function() {
     }
 
     //configurar el middleware 'body-parser' y el 'method-override'
+   
     app.use(bodyParser.urlencoded({
         extended: true
     }));
     app.use(bodyParser.json());
     app.use(methodOverride());
+    app.use(formidable.parse({ keepExtensions: true}));
 
     //configurar el middleware 'session''
     app.use(session({
@@ -49,7 +52,7 @@ module.exports = function() {
     //Cargar los archivos de enrutamiento
     require('../app/routes/imagenes.servidor.routes.js')(app);
     require('../app/routes/index.servidor.routes.js')(app);
-    require('../app/routes/usuarios.servidor.routes.js')(app);
+    require('../app/routes/usuarios.servidor.routes.js')(app,passport);
 
     //Configurar el serviddor de archivos estáticos
     app.use (express.static('./public'));

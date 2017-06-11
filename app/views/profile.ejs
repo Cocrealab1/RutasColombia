@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Perfil</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Bienbenido ala pagina de Perfil</h1>
+       <a href="/logout" class="btn btn-default btn-sm">Cerrar Sesión</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Usuario Local</h3>
+
+                <% if (user.correo) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>Nombre</strong>: <%= user.nombre %><br>
+                        <strong>Correo</strong>: <%= user.correo %><br>
+                        <strong>Contraseña</strong>: <%= user.contrasenia %>
+                    </p>
+                    
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+ 
+
+</div>
+</body>
+</html>

@@ -76,6 +76,28 @@ exports.signup = function(solicidud, respuesta, next) {
 
 }
 
+
+exports.signin = function(solicidud, respuesta, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err || !user) {
+            respuesta.status(400).send(info);
+        } else {
+            // Remove sensitive data before login
+            user.password = undefined;
+            user.salt = undefined;
+
+            solicidud.login(user, function(err) {
+                if (err) {
+                    res.status(400).send(err);
+                } else {
+                    respuesta.json(user);
+                }
+            });
+        }
+    })(solicidud, respuesta, next);
+};
+
+
 /*Crear un nuevo método controller 'create'*/
 exports.create = function(solicidud, respuesta, next) {
     //Crear una nueva intancia del model Mongoose 'user'
@@ -93,22 +115,21 @@ exports.create = function(solicidud, respuesta, next) {
 }
 
 /*Crear un nuevo método controller 'create'*/
-exports.list = function(solicidud, respuesta, next) {
-    //Usa el método static 'user' 'find' para recuperrar la lista de usuarios
-    User.find({}, function(err, users) {
+exports.list = function(req, res) {
+    User.find().sort('-created').populate('user', 'displayName').exec(function(err, user) {
         if (err) {
-            //Llamar al siguiente meddleware con el mensaje de error
-            return (next(err));
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
         } else {
-            //Usar el objeto 'response' para enviar una respuesta JSON
-            respuesta.json(users);
+            res.jsonp(user);
         }
-    })
-}
+    });
+};
 
-exports.read = function(solicidud, respuesta) {
-    respuesta.json(solicidud.user);
-}
+exports.read = function(req, res) {
+    res.jsonp(req.User);
+};
 
 /*Crear un nuevo método controller 'userByID'*/
 exports.userByID = function(solicidud, respuesta, next, id) {
@@ -143,19 +164,18 @@ exports.upDate = function(solicidud, respuesta, next, id) {
     })
 }
 
-/*Crear un nuevo método controller 'update'*/
-exports.delete = function(solicidud, respuesta, next, id) {
-    //Usar el método 'remove' de la instancia 'User' para eliminar documentos
-    solicidud.user.remover(function(err) {
+exports.delete = function(req, res) {
+    var user = req.user;
+    user.remove(function(err) {
         if (err) {
-            //Llamar al siguiente meddleware con el mensaje de error
-            return (next(err));
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
         } else {
-            //Usar el objeto 'response' para enviar una respuesta JSON
-            respuesta.json(solicidud.users);
+            res.jsonp(user);
         }
-    })
-}
+    });
+};
 
 exports.signout = function(solicidud, respuesta) {
     solicidud.logout();

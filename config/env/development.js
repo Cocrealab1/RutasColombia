@@ -2,7 +2,7 @@
 
 module.exports = {
   //cambiar puesto que es un palabra secreta
-  db: 'mongodb://localhost/rutas',
+  db: 'mongodb://localhost/rutasColombiaa',
   sessionSecreta: 'developmentSessionSecret'
 };
 
