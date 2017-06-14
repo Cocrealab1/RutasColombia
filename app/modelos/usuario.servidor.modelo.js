@@ -49,7 +49,7 @@ var UsuarioSchema = new Schema({
         console.log(s)
         return  (s ==  "true");
       },
-      message: "se necesita aceptar Terminos y condiciones2"
+      message: "Se necesita aceptar terminos y condiciones2"
     }
   },
   salt: {
