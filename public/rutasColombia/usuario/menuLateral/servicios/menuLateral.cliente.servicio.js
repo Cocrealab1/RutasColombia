@@ -9,3 +9,10 @@ angular.module('menuLateral').factory('MenuLateral', ['$resource',
     });
   }
 ])
+
+angular.module('menuLateral').service('subir', ['$http', '$q',
+  function($http, $q) {
+    var deferred = $q.defer();
+    var formData= new forinormData();
+  }
+])
