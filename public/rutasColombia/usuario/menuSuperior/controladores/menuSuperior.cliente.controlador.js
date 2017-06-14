@@ -1,25 +1,3 @@
-/*angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http', 'MenuSuperior',
-    function($scope, $http, MenuSuperior) {
-
-      $scope.agregar = function () {
-         MenuSuperior.add({
-            nombre: $scope.registrar.nombre,
-            apellido: $scope.registrar.apellido,
-            correo: $scope.registrar.correo,
-            contrasenia: $scope.registrar.contrasenia,
-            confirmacionContrasenia: $scope.registrar.confirmacionContrasenia
-         })
-
-         $scope.registrar.nombre = '';
-         $scope.registrar.apellido = '';
-         $scope.registrar.correo = '';
-         $scope.registrar.contrasenia = '';
-         $scope.registrar.confirmacionContrasenia ='';
-      }
-    }
-]);*/
-
-
 angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http', 'MenuSuperior',
     function($scope, $http, MenuSuperior) {
         $scope.agregar = function() {
@@ -38,6 +16,7 @@ angular.module('menuSuperior').controller('menuSuperiorCtrl', ['$scope', '$http'
               $scope.registrar.contrasenia = '';
               $scope.registrar.confirmacionContrasenia ='';
               $scope.registrar.terminosyCondiciones = false;
+              $scope.error = '';
             }, function(respuesta) {
                 console.log(respuesta.data);
                 $scope.error = respuesta.data;

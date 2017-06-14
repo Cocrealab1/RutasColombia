@@ -3,13 +3,11 @@
   <div>
     <ul id="u2">
       <li>
-        <form action=""></form>
-
-        <form method="POST" class="form-horizontal" data-ng-submit="agregarImagen()" enctype="multipart/form-data" >
+        <form method="POST" class="form-horizontal" data-ng-submit="agregarImagen()" enctype="multipart/form-data">
           <div class="form-group">
             <div>
               <label class="btn btn-warning btn-file">
-                      Buscar <input type="file" name='archivoImagen' value="archivoImagen">
+                      Buscar <input type="file" name='archivoImagen' value="archivoImagen" uploader-model="file"/>
               </label>
             </div>
             <br>
@@ -53,8 +51,8 @@
             <input type="text" class="form-control" name="name1">
           </div>
           <div class="pull-right">
-          <input type="button" class="btn btn-warning" id="btnAdd" value="+">
-          <input type="button" class="btn btn-warning" id="btnDel" value="-">
+            <input type="button" class="btn btn-warning" id="btnAdd" value="+">
+            <input type="button" class="btn btn-warning" id="btnDel" value="-">
           </div>
           <div class="form-group">
             <label class="control-label col-xs-1">Teléfono</label>
