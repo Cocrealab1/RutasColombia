@@ -112,3 +112,15 @@ body {
 {
     margin: 0 0 11px;
 }
+#footer {
+  
+  height: 7%;
+  background-color: black;
+  text-align: center;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  padding-top: .5em;
+
+  
+}
