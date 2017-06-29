@@ -1,6 +1,7 @@
 angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 'MenuLateral',
   function($scope, $http, MenuLateral) {
 
+    var categorida;
     /*Geolocalizacion*/
     $BtnUbicActual = false;
     $BtnUbicActual2 = false;
@@ -18,6 +19,7 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
     $scope.BtnUbicActualImg = function() {
       $BtnUbicActual3 = true;
     }
+
 
     $scope.agregarImagen = function() {
       var file = $scope.file;

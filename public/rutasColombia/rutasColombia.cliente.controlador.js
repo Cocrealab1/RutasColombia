@@ -1,18 +1,16 @@
 angular.module('rutasColombia').controller('rutasColombiaCtrl', ['$scope', '$http',
     function($scope, $http) {
         $scope.inicializarMapa = function() {
-            //funcion por el cual se calcula el medio de transporte
             var calcularMedTransporte = new google.maps.DirectionsService;
-            // Funcion que sirve para mostrar la ruta
             var mostrarMedTransporte = new google.maps.DirectionsRenderer;
-            //genera un mapa en determina div
+
+            //Seleccion el div mapa para agregar un determinado mapa
             mapa = new google.maps.Map(document.getElementById('mapa'), {
                 zoom: 6,
                 center: {
                     lat: 4.776735,
                     lng: -74.166030
                 }
-
             });
 
             mostrarMedTransporte.setMap(mapa);
@@ -79,9 +77,6 @@ angular.module('rutasColombia').controller('rutasColombiaCtrl', ['$scope', '$htt
                     }
                 });
             }
-
-
-
 
             function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
                 calcularMedTransporte.route({

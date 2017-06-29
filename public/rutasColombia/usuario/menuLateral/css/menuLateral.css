@@ -359,8 +359,9 @@ margin-left: -40px;
   color: #FFF223;
 }
 
-
-
+#ul1 > li > form > div > label > input[type="radio"]:checked + span {
+    color: #E3C83A !important;
+}
 
 
 .espacio{
