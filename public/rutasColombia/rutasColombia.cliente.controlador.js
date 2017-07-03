@@ -2,7 +2,7 @@ angular.module('rutasColombia').controller('rutasColombiaCtrl', ['$scope', '$htt
   function($scope, $http) {
     $scope.inicializarMapa = function() {
       var mostrarMedTransporte = new google.maps.DirectionsRenderer;
-      
+
       //incializa el div 'mapa' con todas las funcionalidades de GOOGLE MAPS y se centra en colombia
       mapa = new google.maps.Map(document.getElementById('mapa'), {
         zoom: 6,
