@@ -1,7 +1,10 @@
 angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 'MenuLateral',
   function($scope, $http, MenuLateral) {
 
-    var categorida;
+    var mostrarMedTransporte = new google.maps.DirectionsRenderer;
+    var geocoder = new google.maps.Geocoder();
+    var calcularMedTransporte = new google.maps.DirectionsService;
+
     /*Geolocalizacion*/
     $BtnUbicActual = false;
     $BtnUbicActual2 = false;
@@ -16,6 +19,7 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
       $scope.BtnUbicActual2 = true;
       $scope.BtnUbicActual = false;
     }
+
     $scope.BtnUbicActualImg = function() {
       $BtnUbicActual3 = true;
     }
@@ -40,6 +44,78 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
       }, function(respuesta) {
         console.log(respuesta.data);
         $scope.error = respuesta.data;
+      });
+    }
+
+
+    /******Función de geolocalización******/
+    $scope.localizacion = function(punto) {
+      //marca los inputs
+      if (punto === "origen") {
+          $scope.origen = "gps";
+      } else {
+        $scope.destino = "gps";
+      }
+
+      //calcular gps
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+          var posicion = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          //marcador para Gps
+          var marker = new google.maps.Marker({
+            position: posicion,
+            map: mapa,
+            title: 'Ubicación actual',
+            icon: 'rutasColombia/usuario/mapa/img/apuntadorN.png'
+          });
+          marker.setMap(mapa);
+
+        }, function() {
+          handleLocationError(true, infoWindow, mapa.getCenter());
+        });
+      } else {
+        window.alert('El navegador no admite Geolocalización ');
+        handleLocationError(false, infoWindow, mapa.getCenter());
+      }
+    }
+
+    /******Función de busqueda entre el punto A y el punto B******/
+    $scope.buscar = function() {
+      console.log($scope.categoria)
+      calcularRuta(calcularMedTransporte, mostrarMedTransporte);
+    };
+
+    function calcularRuta(calcularMedTransporte, mostrarMedTransporte) {
+      //console.log($scope.destino, $scope.origen)
+      calcularMedTransporte.route({
+        origin: $scope.origen + ",colombia",
+        destination: $scope.destino + ",colombia",
+        travelMode: google.maps.TravelMode.DRIVING
+      }, function(respuesta, estado) {
+        if (estado === google.maps.DirectionsStatus.OK) {
+          mostrarMedTransporte.setDirections(respuesta);
+        } else {
+          window.alert('Direccion no encotrada ');
+        }
+      });
+    }
+
+    function calcularRutaCarro(calcularMedTransporte, mostrarMedTransporte) {
+      calcularMedTransporte.route({
+        origin: $scope.origen + ",colombia",
+        destination: $scope.destino + ",colombia",
+        travelMode: google.maps.TravelMode.DRIVING
+      }, function(respuesta, estado) {
+        if (estado === google.maps.DirectionsStatus.OK) {
+          mostrarMedTransporte.setDirections(respuesta);
+        } else {
+          window.alert('Direccion no encotrada');
+        }
       });
     }
   }
