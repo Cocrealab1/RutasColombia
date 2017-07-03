@@ -1,9 +1,10 @@
 angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 'MenuLateral',
   function($scope, $http, MenuLateral) {
 
-    var mostrarMedTransporte = new google.maps.DirectionsRenderer;
+    var mostrarMedTransporte = new google.maps.DirectionsRenderer({ polylineOptions: {strokeColor:"#8b0013"} });
     var geocoder = new google.maps.Geocoder();
-    var calcularMedTransporte = new google.maps.DirectionsService;
+    var calcularMedTransporte = new google.maps.DirectionsService();
+    var ctrl = this;
 
     $scope.categoria = "1";
 
@@ -11,9 +12,9 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
     $scope.localizacion = function(punto) {
       //marca los inputs
       if (punto === "origen") {
-        $scope.origen = "gps";
+        ctrl.origen = "gps";
       } else {
-        $scope.destino = "gps";
+        ctrl.destino = "gps";
       }
 
       //calcular gps
@@ -44,20 +45,18 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
     }
 
     /******Función de busqueda entre el punto A y el punto B******/
-    var ctrl = this;
     ctrl.buscar = function() {
       calcularRuta();
     };
 
     function calcularRuta() {
-      console.log(ctrl.origen, ctrl.destino);
       calcularMedTransporte.route({
         origin: ctrl.origen + ",colombia",
         destination: ctrl.destino + ",colombia",
         travelMode: google.maps.TravelMode.DRIVING
       }, function(respuesta, estado) {
         if (estado === google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setMap(mapa);
+          mostrarMedTransporte.setMap(mapa);
           mostrarMedTransporte.setDirections(respuesta);
         } else {
           window.alert('Direccion no encotrada ');
