@@ -151,6 +151,11 @@
     width: 20%;
 }
 
+input:checked{
+  color: #FFF223;
+  background-color: #FFF223;
+}
+
 
 /*estilos para formulario de login*/
 

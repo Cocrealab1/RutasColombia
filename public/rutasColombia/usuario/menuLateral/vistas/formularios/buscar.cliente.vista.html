@@ -1,53 +1,82 @@
-<!--icono de vehiculo con funcion que ejecuta que se vean las opciones de este menu-->
+<!--Menu lateral referente a la busqueda de las rutas-->
 <div>
-    <!--div que contiene todas las opciones del menu vehiculo-->
     <ul id="ul1">
-        <!-- id que controla el estilo de las opciones del menu vehiculo-->
         <li>
-            <form class="form-horizonal">
+            <form class="form-horizonal" >
                 <!--radioButton Categorias-->
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" name="options">
-                        <span class=" icon-peaje_categoria_1"></span>
+                        <input type="radio" ng-model="$parent.categoria" value="1"/>
+                        <span class="icon-peaje_categoria_1"></span>
                     </label>
 
                     <label class="btn btn-default">
-                        <input type="radio" name="options">
+                        <input type="radio" ng-model="$parent.categoria" value="2"/>
                         <span class="icon-peaje_categoria_2"></span>
                     </label>
 
                     <label class="btn btn-default">
-                        <input type="radio" name="options">
+                        <input type="radio" ng-model="$parent.categoria" value="3"/>
                         <span class="icon-peaje_categoria_3"></span>
                     </label>
+
                     <label class="btn btn-default">
-                        <input type="radio" name="options">
+                        <input type="radio" ng-model="$parent.categoria" value="4"/>
                         <span class="icon-peaje_categoria_4"></span>
                     </label>
+                    <div>Categoria: {{categoria}}</div>
                 </div>
 
                 <!--Origen y destino-->
                 <div class="form-group">
                     <div class="input-group" id="origen">
                         <div class="input-group-addon" id="PuntoA">A</div>
-                        <input ng-model="origen" type="text" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen" ng-click="BtnUbicActualA()">
+                        <input type="text" ng-model="$ctrl.origen" ng-click="BtnUbicActualA()" placeholder="Ingrese origen" class="form-control input-lg" id="ingreseOrigen">
                     </div>
 
-                    <button ng-show="BtnUbicActual" class="btn-warning btn-xs" ng-click="localizacion()"> <span class="icon-gps"></button>
+                    <button ng-show="BtnUbicActual" class="btn-warning btn-xs" ng-click="localizacion('origen')"> <span class="icon-gps"></button>
                     <br>
 
                     <div class="input-group" id="Destino">
                         <div class="input-group-addon" id="PuntoB">B</div>
-                        <input ng-model="destino" type="text" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" ng-click="BtnUbicAactualD()">
+                        <input type="text" ng-model="$ctrl.destino" ng-click="BtnUbicAactualD()" placeholder="Ingrese destino" class="form-control input-lg" id="ingreseDestino" >
                     </div>
 
-                    <button ng-show="BtnUbicActual2" class="btn-warning btn-xs" ng-click="localizacion()"> <span class="icon-gps"></button>
+                    <button ng-show="BtnUbicActual2" class="btn-warning btn-xs" ng-click="localizacion('destino')"> <span class="icon-gps"></button>
                     <br>
                 </div>
-                <button ng-clic="buscar()" type="button" class="btn btn-warning">Buscar</button>
+
+                <!--btn Buscar-->
+                <button ng-click="buscar()" class="btn btn-warning">Buscar</button>
             </form>
+        </li>
+        <li ng-show="planViaje">
+          <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><div class="iw-title">Planeando su viaje</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="alinearud"><span class="icon-vehiculo"></span></td>
+                            <td><div id="distancia"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="alinearud"><img src="rutasColombia\usuario\menuLateral\img/time.png" width="20px"></td>
+                            <td><div id="tiempo"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="alinearud"><span class="icon-peajee" ></span></td>
+                            <td><span>N </span><span>peajes</span></td>
+                        </tr>
+                        <tr>
+                            <td class="alinearud"><span class="glyphicon glyphicon-usd"></span></td>
+                            <td><span>$ </span><span>valor</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
         </li>
     </ul>
 </div>
-<!-- Fin div que contiene todas las opciones del menu vehiculo-->
