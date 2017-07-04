@@ -6,22 +6,22 @@
                 <!--radioButton Categorias-->
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" ng-model="$parent.categoria" value="1" name="cate" />
+                        <input type="radio" ng-model="$parent.categoria" value="1"/>
                         <span class="icon-peaje_categoria_1"></span>
                     </label>
 
                     <label class="btn btn-default">
-                        <input type="radio" ng-model="$parent.categoria" value="2" name="cate"  />
+                        <input type="radio" ng-model="$parent.categoria" value="2"/>
                         <span class="icon-peaje_categoria_2"></span>
                     </label>
 
                     <label class="btn btn-default">
-                        <input type="radio" ng-model="$parent.categoria" value="3" name="cate"  />
+                        <input type="radio" ng-model="$parent.categoria" value="3"/>
                         <span class="icon-peaje_categoria_3"></span>
                     </label>
 
                     <label class="btn btn-default">
-                        <input type="radio" ng-model="$parent.categoria" value="4" name="cate"  />
+                        <input type="radio" ng-model="$parent.categoria" value="4"/>
                         <span class="icon-peaje_categoria_4"></span>
                     </label>
                     <div>Categoria: {{categoria}}</div>
@@ -47,8 +47,36 @@
                 </div>
 
                 <!--btn Buscar-->
-                <button ng-click="$ctrl.buscar()" class="btn btn-warning">Buscar</button>
+                <button ng-click="buscar()" class="btn btn-warning">Buscar</button>
             </form>
+        </li>
+        <li ng-show="planViaje">
+          <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><div class="iw-title">Planeando su viaje</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="alinearud"><span class="icon-vehiculo"></span></td>
+                            <td><div id="distancia"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="alinearud"><img src="rutasColombia\usuario\menuLateral\img/time.png" width="20px"></td>
+                            <td><div id="tiempo"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="alinearud"><span class="icon-peajee" ></span></td>
+                            <td><span>N </span><span>peajes</span></td>
+                        </tr>
+                        <tr>
+                            <td class="alinearud"><span class="glyphicon glyphicon-usd"></span></td>
+                            <td><span>$ </span><span>valor</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
         </li>
     </ul>
 </div>

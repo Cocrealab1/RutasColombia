@@ -1,10 +1,13 @@
 angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 'MenuLateral',
   function($scope, $http, MenuLateral) {
 
-    var mostrarMedTransporte = new google.maps.DirectionsRenderer({ polylineOptions: {strokeColor:"#8b0013"} });
+    var ctrl = this;
+
+    var mostrarMedTransporte = new google.maps.DirectionsRenderer({polylineOptions: {strokeColor: "#8b0013"}});
     var geocoder = new google.maps.Geocoder();
     var calcularMedTransporte = new google.maps.DirectionsService();
-    var ctrl = this;
+    var polyline = new google.maps.Polyline({path: [],strokeWeight: 10});
+    var bounds = new google.maps.LatLngBounds();
 
     $scope.categoria = "1";
 
@@ -16,16 +19,13 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
       } else {
         ctrl.destino = "gps";
       }
-
       //calcular gps
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-
           var posicion = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-
           //marcador para Gps
           var marker = new google.maps.Marker({
             position: posicion,
@@ -34,7 +34,6 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
             icon: 'rutasColombia/usuario/mapa/img/apuntadorN.png'
           });
           marker.setMap(mapa);
-
         }, function() {
           handleLocationError(true, infoWindow, mapa.getCenter());
         });
@@ -44,9 +43,12 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
       }
     }
 
+
+
     /******Función de busqueda entre el punto A y el punto B******/
-    ctrl.buscar = function() {
+    $scope.buscar = function() {
       calcularRuta();
+      $scope.planViaje="true";
     };
 
     function calcularRuta() {
@@ -58,8 +60,33 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
         if (estado === google.maps.DirectionsStatus.OK) {
           mostrarMedTransporte.setMap(mapa);
           mostrarMedTransporte.setDirections(respuesta);
+
+          // obtener la infromacion de los peajes, distancia, duracion
+          var infoRuta = respuesta.routes[0].legs;
+          var contaPeajes=0;
+
+          for (var i = 0; i < infoRuta.length; i++) {
+            var pasos = infoRuta[i].steps;
+            for (var j = 0; j < pasos.length; j++) {
+              var siguienteSegmento = pasos[j].path;
+              for (var k = 0; k < siguienteSegmento.length; k++) {
+                polyline.getPath().push(siguienteSegmento[k]);
+                bounds.extend(siguienteSegmento[k]);
+              }
+            }
+          }
+          /*for (var i = 0; i < peajes.length; i++) {
+            var positions = new google.maps.LatLng(peajes[i][1], peajes[i][2]);
+            if (google.maps.geometry.poly.isLocationOnEdge(positions, polyline, 10e-3)) {
+              contaPeajes = contaPeajes + 1;
+            }
+          }*/
+          for (var i = 0; i < infoRuta.length; i++) {
+            $('#distancia').text(infoRuta[i].distance.text);
+            $('#tiempo').text(infoRuta[i].duration.text) ;
+          }
         } else {
-          window.alert('Direccion no encotrada ');
+          window.alert('Direccion no encotrada');
         }
       });
     }
