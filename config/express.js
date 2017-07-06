@@ -10,7 +10,7 @@ var config = require('./config'),
   //methodOverride = require('method-override'),
   //flash = require('connect-flash'),
   //multer = require('multer'),
-  //formidable = require('express-formidable'),
+  formidable = require('express-formidable'),
   passport = require('passport');
 
 //upload = multer({ dest: '/uploads'});
@@ -70,6 +70,7 @@ module.exports = function() {
   //Configurar el serviddor de archivos estáticos
   app.use(express.static('./public'));
 
+  app.use(formidable({keepExtensions: true, uploadDir:"app"}));
   //Devolver la instancia de la aplicación Express
   return app;
 }

@@ -6,7 +6,7 @@ function($scope, $http, Usuarios) {
   $('#tabla').hide();
 
   $scope.find = function() {
-      $scope.users = Usuarios.query();
+      $scope.personas = Usuarios.query();
   }
 
   $scope.findOne = function(userI) {
@@ -40,7 +40,7 @@ function($scope, $http, Usuarios) {
       }
   };
 
-  $scope.personas = [{
+  /*$scope.personas = [{
       "Nombre": "Caño Cristales",
       "avatar": "prueba.jpg",
       "Descripcion": "Caño Cristales. También es conocido por el nombre del “Río de los cinco colores” (amarillo, azul, verde, rojo y negro), pues en sus aguas transparentes y puras se dejan ver plantas acuáticas, la arena y las hermosas formaciones rocosas de su lecho.",
@@ -59,5 +59,5 @@ function($scope, $http, Usuarios) {
       "Descripcion": "Boyacá también tiene su mar, un lugar sorprendente a donde se llega después de atravesar los campos verdes y los sembrados de papa y cebolla, La laguna de Tota es un Mar en el interior de Colombia, el único mar de Colombia donde la gente usa ruana en vez de ropa de baño. Aunque no es propiamente un mar, sus aguas son azules y forman suaves olas que golpean su playa de arena blanca.",
       "ubicacion": "Boyacá",
     },
-  ];
+  ];*/
 }]);

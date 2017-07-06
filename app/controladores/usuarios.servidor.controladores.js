@@ -81,7 +81,7 @@ exports.create = function(solicidud, respuesta, next) {
     //Crear una nueva intancia del model Mongoose 'user'
     var user = new User(solicidud.body);
     //usar el metodo 'save' para salvar el nuevo documento user
-    user.save(function() {
+    user.save(function(err) {
         if (err) {
             //Llamar al siguiente meddleware con el mensaje de error
             return (next(err));

@@ -16,14 +16,16 @@
               <input type="text" class="form-control" placeholder="Ingrese aqui su busqueda">
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
-                            <span class="icon-buscar">
-                          </button>
+                  <span class="icon-buscar">
+                  </button>
               </div>
             </div>
           </form>
         </div>
 
 
+
+        <!--vistas-->
         <a href="#" id="Botonlist" class="btn btn-warning btn-sm pull-right">
           <img src="rutasColombia/administrador/conteAdministrador/img/tipo2.png">
         </a>
@@ -32,32 +34,21 @@
         </a>
         <a href="#" id="Botontabla" class="btn btn-warning btn-sm pull-right"><img src="rutasColombia/administrador/conteAdministrador/img/tipo1.png"></a>
 
-
-
     </div>
-    <br><br><br>
 
+    <!--vista 2-->
+    <br><br><br>
     <div id="tabla" class="container">
       <table class="table table-sm">
         <tr ng-repeat="persona in personas">
-          <!--| filter:busqueda | -->
-          <!--   |   orderBy:'nombre':revers-->
           <td> <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }} " class="avatar img-rounded"></td>
-          <td>{{ persona.Nombre }}</td><br>
+          <td>{{ persona.nombre }}</td><br>
           <td><button class="btn btn-warning btn-sm"> Mas info</button></td>
-          <td> <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }} " class="avatar img-rounded"></td>
-          <td>{{ persona.Nombre }}</td><br>
-          <td><button class="btn btn-warning btn-sm"> Mas info</button></td>
-          <td> <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }} " class="avatar img-rounded"></td>
-          <td>{{ persona.Nombre }}</td><br>
-          <td><button class="btn btn-warning btn-sm"> Mas info</button></td>
-
         </tr>
-
       </table>
     </div>
 
-
+    <!--vista 3-->
     <br>
     <div id="ListayGrid" class="container">
       <div id="products" class="row list-group" ng-repeat="persona in personas">
@@ -65,14 +56,11 @@
           <div class="thumbnail">
             <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }}">
             <div class="caption">
-              <h4 class="group inner list-group-item-heading">
-                              {{persona.Nombre}}</h4>
-              <p class="group inner list-group-item-text">
-                {{persona.Descripcion}}</p>
+              <h4 class="group inner list-group-item-heading">{{persona.nombre }}</h4>
+              <p class="group inner list-group-item-text">{{persona.apellido }}</p>
               <div class="row">
                 <div class="col-xs-12 col-md-6">
-                  <p class="lead">
-                    {{ persona.ubicacion }}</p>
+                  <p class="lead">{{ persona.ubicacion }}</p>
                 </div>
                 <div class="col-xs-12 col-md-6">
                   <a class="btn btn-warning" href="">Más info</a>
@@ -81,86 +69,23 @@
             </div>
           </div>
         </div>
-        <div class="item  col-xs-3 col-lg-3">
-          <div class="thumbnail">
-            <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }}">
-            <div class="caption">
-              <h4 class="group inner list-group-item-heading">
-                              {{persona.Nombre}}</h4>
-              <p class="group inner list-group-item-text">
-                {{persona.Descripcion}}</p>
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                  <p class="lead">
-                    {{ persona.ubicacion }}</p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <a class="btn btn-warning" href="">Más info</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item  col-xs-3 col-lg-3">
-          <div class="thumbnail">
-            <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }}">
-            <div class="caption">
-              <h4 class="group inner list-group-item-heading">
-                              {{persona.Nombre}}</h4>
-              <p class="group inner list-group-item-text">
-                {{persona.Descripcion}}</p>
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                  <p class="lead">
-                    {{ persona.ubicacion }}</p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <a class="btn btn-warning" href="http://www.jquery2dotnet.com">Más info</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item  col-xs-3 col-lg-3">
-          <div class="thumbnail">
-            <img ng-src="rutasColombia/administrador/conteAdministrador/img/{{ persona.avatar }}">
-            <div class="caption">
-              <h4 class="group inner list-group-item-heading">
-                              {{persona.Nombre}}</h4>
-              <p class="group inner list-group-item-text">
-                {{persona.Descripcion}}</p>
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                  <p class="lead">
-                    {{ persona.ubicacion }}</p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <a class="btn btn-warning" href="http://www.jquery2dotnet.com">Más info</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
 
 
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="pager">
-          <ul>
-            <li><a href="">&larr; Volver</a></li>
-            <li class="active"><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href="">5</a></li>
-            <li><a href="">Siguiente &rarr;</a></li>
-          </ul>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="pager">
+            <ul>
+              <li><a href="">&larr; Volver</a></li>
+              <li class="active"><a href="">1</a></li>
+              <li><a href="">2</a></li>
+              <li><a href="">3</a></li>
+              <li><a href="">4</a></li>
+              <li><a href="">5</a></li>
+              <li><a href="">Siguiente &rarr;</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-
-  </div>
 </section>

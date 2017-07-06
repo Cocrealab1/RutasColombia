@@ -1,4 +1,4 @@
-//llamado a Javascrip "strict"
+/*//llamado a Javascrip "strict"
 
 'user strict';
 //cargar mongoose y el Schema
@@ -55,3 +55,15 @@ var ImagenesSchema = new Schema({
 });
 
       mongoose.model('Imagen', ImagenesSchema);
+*/
+
+'user strict';
+//cargar mongoose y el Schema
+var mongoose = require("mongoose"),
+    Schema = mongoose.Schema;
+
+var img_schema= new Schema({
+    title:{type: String,required:true}
+ });
+ var Imagen = mongoose.model("Imagen", img_schema);
+ module.exports= Imagen;

@@ -10,6 +10,7 @@ body {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
+    cursor: pointer;
 }
 
 .item.list-group-item
@@ -113,7 +114,7 @@ body {
     margin: 0 0 11px;
 }
 #footer {
-  
+
   height: 7%;
   background-color: black;
   text-align: center;
@@ -122,5 +123,5 @@ body {
   width: 100%;
   padding-top: .5em;
 
-  
+
 }

@@ -2,7 +2,6 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
   function($scope, $http, MenuLateral) {
 
     var ctrl = this;
-
     var mostrarMedTransporte = new google.maps.DirectionsRenderer({polylineOptions: {strokeColor: "#8b0013"}});
     var geocoder = new google.maps.Geocoder();
     var calcularMedTransporte = new google.maps.DirectionsService();
@@ -10,6 +9,7 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
     var bounds = new google.maps.LatLngBounds();
 
     $scope.categoria = "1";
+
 
     /******Función de geolocalización******/
     $scope.localizacion = function(punto) {
@@ -48,10 +48,11 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
     /******Función de busqueda entre el punto A y el punto B******/
     $scope.buscar = function() {
       calcularRuta();
-      $scope.planViaje="true";
+      $scope.planViaje = "true";
     };
 
     function calcularRuta() {
+      var contaPeajes = 0;
       calcularMedTransporte.route({
         origin: ctrl.origen + ",colombia",
         destination: ctrl.destino + ",colombia",
@@ -63,8 +64,6 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
 
           // obtener la infromacion de los peajes, distancia, duracion
           var infoRuta = respuesta.routes[0].legs;
-          var contaPeajes=0;
-
           for (var i = 0; i < infoRuta.length; i++) {
             var pasos = infoRuta[i].steps;
             for (var j = 0; j < pasos.length; j++) {
@@ -75,21 +74,36 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
               }
             }
           }
-          /*for (var i = 0; i < peajes.length; i++) {
-            var positions = new google.maps.LatLng(peajes[i][1], peajes[i][2]);
-            if (google.maps.geometry.poly.isLocationOnEdge(positions, polyline, 10e-3)) {
-              contaPeajes = contaPeajes + 1;
-            }
-          }*/
+
+          // calcular el total de peajes
+          $http.get('rutasColombia/usuario/mapa/json/peajes.json')
+            .then(function(respuesta) {
+              for (var i = 0; i < respuesta.data.length; i++) {
+                var posicionPeajes = new google.maps.LatLng(respuesta.data[i].coordenadas.lat, respuesta.data[i].coordenadas.lng);
+                if (google.maps.geometry.poly.isLocationOnEdge(posicionPeajes, polyline, 10e-4)) {
+                  contaPeajes = contaPeajes + 1;
+                  var marker = new google.maps.Marker({
+                    position: posicionPeajes,
+                    map: mapa,
+                  });
+                }
+              }
+              $('#nPeajes').text(contaPeajes + " peajes");
+            })
+
+          // esciribir en los divs el resultado
           for (var i = 0; i < infoRuta.length; i++) {
             $('#distancia').text(infoRuta[i].distance.text);
-            $('#tiempo').text(infoRuta[i].duration.text) ;
+            $('#tiempo').text(infoRuta[i].duration.text);
           }
         } else {
           window.alert('Direccion no encotrada');
         }
       });
     }
+
+
+
 
     /*Geolocalizacion*/
     $BtnUbicActual = false;
