@@ -8,7 +8,7 @@ module.exports = function(passport){
   var User = mongoose.model('User');
 
   passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user);
   });
 
   passport.deserializeUser(function(id, done){

@@ -1,5 +1,5 @@
-angular.module('conteAdministrador').controller('conteAdministradorCtrl', ['$scope', '$http', 'Usuarios',
-function($scope, $http, Usuarios) {
+angular.module('conteAdministrador').controller('conteAdministradorCtrl', ['$scope', '$http', 'Usuarios', 'Imagenes',
+function($scope, $http, Usuarios, Imagenes) {
   $('#Botonlist').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');$('#tabla').hide();$('#ListayGrid').show();});
   $('#Botongrid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#tabla').hide();$('#ListayGrid').show();$('#products .item').addClass('grid-group-item');});
   $('#Botontabla').click(function(event){event.preventDefault();$('#tabla').show();$('#ListayGrid').hide();});
@@ -7,6 +7,7 @@ function($scope, $http, Usuarios) {
 
   $scope.find = function() {
       $scope.personas = Usuarios.query();
+      //$scope.imagenes = Imagenes.query();
   }
 
   $scope.findOne = function(userI) {
