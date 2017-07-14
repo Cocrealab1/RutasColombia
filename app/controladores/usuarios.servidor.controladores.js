@@ -97,6 +97,22 @@ exports.ingresarUsuario = function(solicidud, respuesta, next) {
   })(solicidud, respuesta, next);
 };
 
+/*Controlador para ingresar a los usuarios de facebook*/
+exports.ingresarUsuarioFacebook = function(solicidud, respuesta, next) {
+  passport.authenticate('facebook', { scope: ['email'] }),
+  function (solicidud, respuesta) {
+    respuesta.end("jei error")
+  };
+};
+
+/*Controlador para ingresar a los usuarios de facebook*/
+exports.ingresarUsuarioFacebookCallback = function(solicidud, respuesta, next) {
+  passport.authenticate('facebook', {
+    successRedirect: 'http://localhost:8080/#!/admin',
+    failureRedirect: '/'
+  });
+};
+
 exports.solicitarLogin = function(req, res, next) {
   if (!req.isAuthenticated()) {
     return res.status(401).send({

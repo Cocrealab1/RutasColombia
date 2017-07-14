@@ -6,12 +6,15 @@ var passport = require('passport'),
     User = require('mongoose').model('User');
 
 module.exports = function() {
+
     passport.use(new FacebookStrategy({
-            clientID: config.facebookAuth.clientID,
-            clientSecret: config.facebookAuth.clientSecret,
-            callbackURL: config.facebookAuth.callbackURL
+            clientID: config.facebook.clientID,
+            clientSecret: config.facebook.clientSecret,
+            callbackURL: config.facebook.callbackURL,
+            passReqToCallback: true
         },
         function(req, token, refreshToken, profile, done) {
+console.log("hola");
             // asynchronous
             process.nextTick(function() {
 
@@ -23,13 +26,15 @@ module.exports = function() {
                     if (user) {
                         return done(null, user);
                     } else {
+
                         var newUser = new User();
                         newUser.ids = profile.ids;
                         newUser.token = token;
                         newUser.nombre = profile.name.givenName ;
                         newUser.apellido = profile.name.familyName;
                         newUser.correo = profile.emails[0].value;
-                        newUser.contrasenia = '123456789';
+                        newUser.contrasenia = 'facebook';
+                        newUser.terminosyCondiciones = true;
                         newUser.provider = 'facebook',
                         newUser.providerId = profileId,
                         newUser.providerData = profile._json;

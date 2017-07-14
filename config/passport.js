@@ -20,5 +20,5 @@ module.exports = function(passport){
   });
 
   require('./strategies/local.js')();
-   //require('./strategies/facebook.js')();
+  require('./strategies/facebook.js')();
 }

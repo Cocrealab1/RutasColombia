@@ -12,14 +12,20 @@ module.exports = function(app, passport) {
   app.route('/ingresarUsuario')
     .post(usuarios.ingresarUsuario);
 
+  app.route('/ingresarUsuarioFacebook')
+    .get(usuarios.ingresarUsuarioFacebook);
+
+  app.route('/ingresarUsuarioFacebook/callback')
+    .get(usuarios.ingresarUsuarioFacebookCallback);
+
   app.route('/users')
     .post(usuarios.solicitarLogin, usuarios.create)
     .get(usuarios.solicitarLogin, usuarios.list);
 
   app.route('/users/:userId')
-    .get(usuarios.read)
-    .put(usuarios.upDate)
-    .delete(usuarios.delete);
+    .get(usuarios.solicitarLogin, usuarios.read)
+    .put(usuarios.solicitarLogin, usuarios.upDate)
+    .delete(usuarios.solicitarLogin, usuarios.delete);
 
   app.param('userId', usuarios.userByID);
 };
