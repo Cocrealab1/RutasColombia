@@ -99,16 +99,50 @@ exports.ingresarUsuario = function(solicidud, respuesta, next) {
 
 /*Controlador para ingresar a los usuarios de facebook*/
 exports.ingresarUsuarioFacebook = function(solicidud, respuesta, next) {
-  passport.authenticate('facebook', { scope: ['email'] }),
+  /*passport.authenticate('facebook', { scope: ['email'] }),
   function (solicidud, respuesta) {
     respuesta.end("jei error")
-  };
+  };*/
+
+  passport.authenticate('facebook', { scope:['email']});
 };
 
 /*Controlador para ingresar a los usuarios de facebook*/
 exports.ingresarUsuarioFacebookCallback = function(solicidud, respuesta, next) {
-  passport.authenticate('facebook', {
+  /**passport.authenticate('facebook', {
     successRedirect: 'http://localhost:8080/#!/admin',
+    failureRedirect: 'http://localhost:8080/#!/admin'
+  });*/
+
+  passport.authenticate('facebook', function(err, user) {
+    if (err || !user) {
+      return res.redirect('/#!/signin');
+    }
+    req.login(user, function(err) {
+      if (err) {
+        return res.redirect('/#!/signin');
+      }
+      return res.redirect('#!/admin');
+    });
+  })(solicidud, respuesta, next);
+};
+
+
+/*Controlador para ingresar a los usuarios de facebook*/
+exports.ingresarUsuarioGoogle = function(solicidud, respuesta, next) {
+  passport.authenticate('google', {
+    scope:[
+      'http://www.googleapis.com/auth/userinfo.profile',
+       'http://www.googleapis.com/auth/userinfo.profile'
+     ],
+     failureRedirect: "/#!/admin"
+   });
+};
+
+/*Controlador para ingresar a los usuarios de facebook*/
+exports.ingresarUsuarioGoogleCallback = function(solicidud, respuesta, next) {
+  passport.authenticate('google', {
+    successRedirect: '/#!/admin',
     failureRedirect: '/'
   });
 };

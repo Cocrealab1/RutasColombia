@@ -9,6 +9,11 @@ module.exports = {
 		clientID: '1292572167502585',
 		clientSecret: 'c98f452171270bcc9f2d8ecc03d52df4',
 		callbackURL: 'http://localhost:8080/ingresarUsuarioFacebook/callback'
+	},
+  google: {
+		clientID: '984560851030-22r2h31pn1oeemg5mcpoj1nutgcu40n1.apps.googleusercontent.com',
+		clientSecret: 'rC2tSw5EB4UxfmMmEW10l-1u',
+		callbackURL: 'https://localhost:8080/ingresarUsuarioGoogle/callback'
 	}
 };
 
