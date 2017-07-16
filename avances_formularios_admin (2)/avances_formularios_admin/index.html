@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>RUTAS POR COLOMBIA</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="css/estilos.css">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="fonts/style.css">
+<link rel="stylesheet" href="css/iconos.css">
+
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/bootstrap-social.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/registro_usuario.js"></script>
+<script src="js/valida_login.js"></script>
+<script src="js/boton_idioma.js"></script>
+
+
+</head>
+<body>
+	<div class="menu">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#"><img src="img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></a>
+				</div>
+			<div class="logo-sombrero">
+				<a href="#"><img src="img/logo_movil1.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></a>
+			</div>
+				<ul class="nav navbar-nav navbar-right">
+							<li><a href="#" ><span class="glyphicon glyphicon-user"></span> Ingresar</a>
+								<ul  >
+									<li>
+									<!--<formulario login -->
+									<div class="container">
+										<div class="forlogin">
+										<div class="row">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+												<form role="form" class="form-horizontal">
+													</br>
+														<div class="mensaje">
+														<div class="alerta alerta-danger text-center" style="display:none;" id="error">
+														<strong >No debe dejar campos vacios </strong>
+														</div>
+														<div class="alerta alerta-suc text-center" style="display:none;" id="exito">
+														<strong>Login exitoso </strong>
+														</div> 
+														<div class="alerta alerta-danger text-center" style="display:none;" id="usuarionovalido">
+														<strong>usuario no valido </strong>
+														</div>					
+													</div> 
+													<div class="form-group">
+														<label for="usuario" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Usuario:</label>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<input id="usuario" name="usuario" type="text" class="form-control" placeholder="Ingrese su usuario" onkeyup="validacion('usuario');" aria-describedby="inputSuccess2Status">
+														
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="password" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Password:</label>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<input id="password" name="password" type="password" class="form-control" placeholder="Ingrese su contraseña" onkeyup="validacion('password');">
+														
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="codigo" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3"></label>
+														<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+														<button type="reset" class="btn btn-default" > Limpiar</button>
+														<button type="button" class="btn btn-default" style="background-color: #E3C83A"  onclick='verificar();'><span class="glyphicon glyphicon-lock"></span> Entrar</button>   
+														</div>
+													</div> 
+													<div class="social">
+													<a class="btn btn-block btn-social btn-facebook">
+													<span class="fa fa-facebook"></span>  Inicia Sesión con Facebook
+													</a>
+													</br>
+													<a class="btn btn-block btn-social btn-google">
+													<span class="fa fa-google"></span>  Inicia Sesión con Google
+													</a>
+													</div>													
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+									</li>
+								</ul>
+							</li>
+							
+						<li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Registrarse</a>
+							<ul>
+								<li>
+								<!--<formulario registro -->
+										
+										<div class="formregistro">
+										<div class="row" >
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+												<form role="form" class="form-horizontal">
+													</br>
+														<div class="mensaje">
+														<div class="alerta alerta-danger text-center" style="display:none;" id="negativo">
+														<strong >No debe dejar campos vacios </strong>
+														</div>
+														<div class="alerta alerta-suc text-center" style="display:none;" id="positivo">
+														<strong>Registro exitoso </strong>
+														</div>
+														<div class="alerta alerta-danger text-center" style="display:none;" id="correonovalido">
+														<strong>Correo no valido </strong>
+														</div>
+														<div class="alerta alerta-danger text-center" style="display:none;" id="mal">
+														<strong>Las contraseñas no coinciden </strong>
+														</div>  
+														<div class="alerta alerta-danger text-center" style="display:none;" id="herror">
+														<strong>Debe aceptar terminos y condiciones </strong>
+														</div>  									
+													</div>
+													
+													<div class="form-group" >
+														<label for="nombres" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Nombres:</label>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<input id="nombres" name="nombres" type="text" class="form-control" placeholder="Ingrese su nombre" onkeyup="validar('nombres');" aria-describedby="inputSuccess2Status">
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="apellidos" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Apellidos:</label>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<input id="apellidos" name="apellidos" type="text" class="form-control" placeholder="Ingrese su apellido" onkeyup="validar('apellidos');">
+														</div>
+													</div>
+												<div class="form-group">
+														<label for="email" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2 ">Email:</label>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<input id="email" name="email" type="text" class="form-control" placeholder="Ingrese su email" onkeyup="validar('email');" >
+														
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="pass" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Contraseña:</label>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<input id="pass" name="pass" type="text" class="form-control" placeholder="Ingrese su contraseña" onkeyup="validar('pass');">
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="pass1" class="control-label col-xs7 col-sm-7 col-md-7 col-lg-7">Confirmar Contraseña:</label>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<input id="pass1" name="pass1" type="text" class="form-control" placeholder="Repetir contraseña" onkeyup="validar('pass1');">
+														
+														</div>
+													</div>
+													<div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
+													<div class="form-group">
+													<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+													<input id="check" name="check" type="checkbox"  onclick="validar('check');"><a href="#" > Aceptar terminos y condiciones</a> 
+													
+													</div>
+													</div>
+													</br>
+													
+													<div class="form-group">
+														<label for="codigo" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2"></label>
+														<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+														<button type="reset" class="btn btn-default" >Limpiar</button>
+														<button type="button" class="btn btn-default" style="background-color: #E3C83A" onclick='verificar_usuario();'><span class="glyphicon glyphicon-pencil"></span>  Registrarse</button>   
+														
+														</div>
+													</div>
+													<div class="social">
+													<a class="btn btn-block btn-social btn-facebook">
+													<span class="fa fa-facebook"></span>  Registrarse con Facebook
+													</a>
+													</br>
+													<a class="btn btn-block btn-social btn-google">
+													<span class="fa fa-google"></span>  Registrarse con Google
+													</a>
+													</div>
+													
+												</form>
+											</div>
+										</div>
+									</div>
+									
+									</li>
+								</ul>
+							</li>
+							<li id="boton1">
+							<a href="admin.html"> 
+							<span class="glyphicon icon-Español"></span></a>
+							</li>
+							<li id="contenido-2" >
+							<a href="#"> 
+							<span class="glyphicon icon-Ingles_path18"></span></a>
+							</li>
+										
+							<li class="espacio"></li>
+							<li class="espacio"></li>
+							<li class="espacio"></li>
+							
+							
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+</body>
+</html>

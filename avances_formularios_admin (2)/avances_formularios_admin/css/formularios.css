@@ -1,0 +1,23 @@
+﻿
+.formulario table tr td{
+	padding:10px;
+}
+.formulario table tr td input{
+	width:100%;
+	outline:none;
+	
+}
+.formulario table tr td select{
+	width:100%;
+	height:30px;
+	outline:none;
+}
+.bien{
+	background-color:#3CBE34;
+	text-align:center;
+	font-size:14px;
+	color:#FFF;
+	padding:5px;
+}
+
+

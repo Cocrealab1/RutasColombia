@@ -2,6 +2,21 @@ body {
     font-family: Roboto;
 }
 
+
+#tablaUsuarios::before{
+  display: flex;
+}
+
+#tablaUsuarios  tr{
+  display: flex;
+  justify-content: center;
+}
+
+#tablaUsuarios td{
+  justify-content: center;
+  text-align: center;
+}
+
 .glyphicon { margin-right:5px; }
 .thumbnail
 {
@@ -114,7 +129,6 @@ body {
     margin: 0 0 11px;
 }
 #footer {
-
   height: 7%;
   background-color: black;
   text-align: center;
@@ -122,6 +136,4 @@ body {
   bottom: 0;
   width: 100%;
   padding-top: .5em;
-
-
 }

@@ -79,7 +79,6 @@ exports.registrarUsuario = function(solicidud, respuesta, next) {
 /*Controlador para ingresar a los usuarios*/
 exports.ingresarUsuario = function(solicidud, respuesta, next) {
   passport.authenticate('local', function(err, user, info) {
-    console.log(user)
     if (err || !user) {
       respuesta.status(400).send(info);
     } else {
@@ -204,7 +203,7 @@ exports.delete = function(solicidud, respuesta, next, id) {
   })
 }
 
-exports.signout = function(solicidud, respuesta) {
+exports.salir = function(solicidud, respuesta) {
   solicidud.logout();
   respuesta.redirect('/');
 }

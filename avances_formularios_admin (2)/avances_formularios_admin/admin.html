@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>RUTAS POR COLOMBIA</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/formularios.css">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="fonts/style.css">
+<link rel="stylesheet" href="css/iconos.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="htpps://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/formulario.js"></script>
+</head>
+ <div class="menu">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#"><img src="img/logo.svg" class="imgSVG" alt="imagen SVG" title="imagen SVG" /></a>
+			</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="idioma"><a href="#"><span class="icon-Ingles_path1"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span>Cerrar sesion</a>
+					</li>
+							
+							
+				</ul>
+			</div>
+		</div>
+ 
+ 
+<body>
+	
+
+<center>
+	<h1></h1>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	<div class="container">
+		<a href="#ventana_usuarios" class="btn btn-primary btn-large" data-toggle="modal">usuarios</a>
+			<div class="modal fade" id="ventana_usuarios" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document" >
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Formulario usuarios</h4>
+						</div>
+							<div id="consultadatos">
+							<div class="modal-body">
+								<form id="formulario" class="formulario" onsubmit="return actualizar_usuario();">
+									<table border="0" width="100%">
+										<tr>
+									<td colspan="2"><input type="text" required="required" readonly="readonly" id="id-usuario" name="id-usuario" readonly="readonly" style="visibility:hidden; height:5px;"/></td>
+										</tr>
+									<tr>
+									<td>Nombres: </td>
+									<td><label name="nombres" id="nombres" maxlength="100">Nombre del usuario</label></td>
+									</tr>
+										<tr>
+									<td>Apellidos: </td>
+									<td><label name="apellidos" id="apellidos" maxlength="100">Apellidos del usuario</label></td>
+										</tr>
+									<tr>
+									<td>Email: </td>
+									<td><label name="email" id="email" maxlength="100">email del usuario</label></td>
+									</tr>
+										<tr>
+									<td>Usuario: </td>
+									<td><label name="usuario" id="usuario" maxlength="100">usuario</label></td>
+										</tr>
+									<tr>
+									<td>Password: </td>
+									<td><label name="password" id="password" maxlength="100">Constraseña</label></td>
+									</tr>
+															
+									<tr>
+									<td colspan="2">
+									<div id="mensaje"></div>
+									</td>
+									</tr>
+									</table>
+            
+						</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" style="background-color: #E3C83A" onclick='();'><span class="glyphicon glyphicon-edit"></span> Actualizar</button>
+					</div>
+						</form>
+							
+							</div>
+							
+							<div id="actualizardatos">
+							<div class="modal-body">
+								<form id="formulario" class="formulario" onsubmit="return actualizar_usuario();">
+									<table border="0" width="100%">
+										<tr>
+									<td colspan="2"><input type="text" required="required" readonly="readonly" id="id-usuario" name="id-usuario" readonly="readonly" style="visibility:hidden; height:5px;"/></td>
+										</tr>
+									<tr>
+									<td>Nombres: </td>
+									<td><input type="text" required="required" name="nombre" id="nombre" maxlength="100"/></td>
+									</tr>
+										<tr>
+									<td>Apellidos: </td>
+									<td><input type="text" required="required" name="apellidos" id="apellidos" maxlength="100"/></td>
+										</tr>
+									<tr>
+									<td>Email: </td>
+									<td><input type="mail" required="required" name="email" id="email" maxlength="100"/></td>
+									</tr>
+										<tr>
+									<td>Usuario: </td>
+									<td><input type="mail" required="required" name="usuario" id="usuario" maxlength="100"/></td>
+										</tr>
+									<tr>
+									<td>Password: </td>
+									<td><input type="text" required="required" name="password" id="password" maxlength="100"/></td>
+									</tr>
+															
+									<tr>
+									<td colspan="2">
+									<div id="mensaje"></div>
+									</td>
+									</tr>
+									</table>
+            
+						</div>
+							
+						<div class="modal-footer">
+						<button type="button" class="btn btn-default" ><span class="glyphicon glyphicon-remove"></span> Eliminar</button>
+						<button type="button" class="btn btn-default" style="background-color: #E3C83A" onclick='();'><span class="glyphicon glyphicon-edit"></span> Actualizar</button>
+					</div>
+						</div>
+								</form>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+
+<div class="container">
+		<a href="#ventana_info" class="btn btn-primary btn-large" data-toggle="modal">Sitios de interes</a>
+			<div class="modal fade" id="ventana_info" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document" >
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Actualizar sitios de interes</h4>
+						</div>
+							<div class="modal-body">
+								<form id="formulario" class="formulario" onsubmit="return actualizar_info();">
+									<table border="0" width="100%">
+									<tr>
+									<td>Titulo: </td>
+									<td><input type="text" required="required" name="titulo" id="titulo" maxlength="50" placeholder="Nombre sitio de interes"/></td>
+									</tr>
+									<tr>
+									<td></td>
+									<td>
+										<div align="center">
+									<img src="img/logos.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"/>
+										</div>
+									</td>
+									</tr>
+									<tr>
+									<td>Fecha publicacion: </td>
+									<td><label>Mayo 20 de 2017</label></td>
+									</tr>
+									<tr>
+									<td>Ubicacion: </td>
+									<td><label>Latitud 30 </label></td>
+									</tr>
+									<tr>
+									<td>Descripcion: </td>
+									<td><TEXTAREA required="required" NAME="descripcion" id="descripcion" ROWS="6" COLS="53"></TEXTAREA></td>
+									</tr>
+																		
+									<tr>
+									<td colspan="2">
+									<div id="mensaje"></div>
+									</td>
+									</tr>
+									</table>
+            
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-default" ><span class="glyphicon glyphicon-remove"></span> Eliminar</button>
+						<button type="button" class="btn btn-default" style="background-color: #E3C83A" onclick='();'><span class="glyphicon glyphicon-edit"></span> Actualizar</button>
+						</div>
+								</form>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+
+
+</body>
+</html>
