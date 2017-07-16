@@ -41,17 +41,6 @@ var UsuarioSchema = new Schema({
       message: "las contraseñas no son iguales"
     }
   },
-  role:{
-    type: [{
-        type: String,
-        enum: {
-          values: ['usuario', 'admin'],
-          message: 'Los valores disponibles son usuario, admin'
-        },
-        required:"el role es requerido",
-    }],
-    default: 'usuario'
-  },
   terminosyCondiciones:{
     type: String,
     required:"se necesita aceptar Terminos y condiciones",

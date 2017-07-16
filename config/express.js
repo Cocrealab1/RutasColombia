@@ -46,9 +46,8 @@ module.exports = function() {
   //configurar el middleware 'session''
   app.use(session({
     saveUninitializaed: true,
-    resave: false,
-    secret: config.sessionSecreta,
-    cookie: {secure: true}
+    resave: true,
+    secret: config.sessionSecreta
   }))
 
   //Configuarar el motor view de la aplicacion y el directorio de 'views'

@@ -12,17 +12,11 @@ module.exports = function(app, passport) {
   app.route('/ingresarUsuario')
     .post(usuarios.ingresarUsuario);
 
-  app.route('/auth/facebook')
+  app.route('/ingresarUsuarioFacebook')
     .get(usuarios.ingresarUsuarioFacebook);
 
   app.route('/ingresarUsuarioFacebook/callback')
     .get(usuarios.ingresarUsuarioFacebookCallback);
-
-  app.route('/auth/google')
-    .get(usuarios.ingresarUsuarioGoogle);
-
-  app.route('/ingresarUsuarioGoogle/callback')
-    .get(usuarios.ingresarUsuarioGoogleCallback);
 
   app.route('/users')
     .post(usuarios.solicitarLogin, usuarios.create)
