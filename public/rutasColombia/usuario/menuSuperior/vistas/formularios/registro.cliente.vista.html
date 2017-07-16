@@ -28,7 +28,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="correo" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2 ">Email:</label>
+                <label for="correo" class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2 ">Correo:</label>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <input id="email" name="correo" type="text" class="form-control" ng-model="registrar.correo" placeholder="Ingrese su email">
 
@@ -47,9 +47,29 @@
                 </div>
               </div>
               <div class="g-recaptcha" data-sitekey="6LeoZBIUAAAAALek3LbfJQjW-yPOTAJTvO8WSv03"></div>
+
               <div class="form-group">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <input id="check" name="terminosyCondiciones" ng-model="registrar.terminosyCondiciones" type="checkbox"><a href="#"> Aceptar terminos y condiciones</a>
+                  <div class="contenedor-modal">
+                    <input id="check" name="terminosyCondiciones" ng-model="registrar.terminosyCondiciones" type="checkbox"><a data-toggle="modal" data-target="#miModal" style="cursor: pointer;"> Aceptar terminos y condiciones</a>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Términos y Condiciones</h4>
+                      </div>
+                      <div class="modal-body" style="text-align:justify;">
+                        <b>Derechos de Propiedad.</b> Rutas por Colombia es dueño único y exclusivo, de todos los derechos, título e intereses del Sitio Web, de todo el contenido (incluyendo, por ejemplo, audio, fotografías, ilustraciones, gráficos, otros medios visuales, videos, copias, textos, títulos, etc.), códigos, datos y materiales del mismo, el aspecto y el ambiente, el diseño y la organización del Sitio Web y la compilación de los contenidos, códigos, datos y los materiales en el Sitio Web, incluyendo pero no limitado a, cualesquiera derechos de autor, derechos de marca, derechos de patente, derechos de base de datos, derechos morales, derechos sui generis y otras propiedades intelectuales y derechos patrimoniales del mismo. Su uso del Sitio Web no le otorga propiedad de ninguno de los contenidos, códigos, datos o materiales a los que pueda acceder en o a través del Sitio Web.</br>
+                         <b>Información del Usuario.</b> En el curso del uso que usted haga del Sitio Web y/o de los servicios puestos a su disposición en o a través del Sitio Web, se le puede pedir que nos proporcione cierta información personalizada (dicha información en lo sucesivo "Información del Usuario"). Las políticas de uso y recopilación de información de Rutas por Colombia.  Usted reconoce y acepta ser el único responsable de la exactitud del contenido de la Información del Usuario e imagenes subidas.
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               </br>
