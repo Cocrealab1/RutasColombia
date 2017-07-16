@@ -79,6 +79,7 @@ exports.registrarUsuario = function(solicidud, respuesta, next) {
 /*Controlador para ingresar a los usuarios*/
 exports.ingresarUsuario = function(solicidud, respuesta, next) {
   passport.authenticate('local', function(err, user, info) {
+    console.log(user)
     if (err || !user) {
       respuesta.status(400).send(info);
     } else {
@@ -90,7 +91,7 @@ exports.ingresarUsuario = function(solicidud, respuesta, next) {
         if (err) {
           respuesta.status(400).send(err);
         } else {
-          return respuesta.redirect('/#!/admin');
+          return respuesta.json(user);
         }
       });
     }

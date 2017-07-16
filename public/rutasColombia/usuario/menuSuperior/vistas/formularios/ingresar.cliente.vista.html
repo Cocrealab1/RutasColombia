@@ -1,37 +1,30 @@
 <!--<formulario login -->
 <li>
-  <ul>
+  <ul ng-controller="menuSuperiorIngCtrl">
     <li>
       <div class="container">
         <div class="forlogin">
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <form role="form" class="form-horizontal" action="/ingresarUsuario" method="POST" id="login" name="login">
+              <form role="form" class="form-horizontal" ng-submit="ingresar()" method="POST" id="login" name="login">
                 </br>
-                <!-- habilitar mensajes-->
+                <!-- mensajes de error-->
                 <div class="mensaje">
-                  <div class="alerta alerta-danger text-center" style="display:none;" id="error">
-                    <strong>No debe dejar campos vacios </strong>
-                  </div>
-                  <div class="alerta alerta-suc text-center" style="display:none;" id="exito">
-                    <strong>Login exitoso </strong>
-                  </div>
-                  <div class="alerta alerta-danger text-center" style="display:none;" id="usuarionovalido">
-                    <strong>usuario no valido </strong>
+                  <div data-ng-show="error2" class="alert alert-warning text-center">
+                    <strong data-ng-bind="error2"></strong>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="usuario" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Usuario:</label>
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <input id="usuario" name="correo" type="text" class="form-control" placeholder="Ingrese su usuario">
+                    <input id="usuario" name="correo" ng-model="ingresarD.correo" type="text" class="form-control" placeholder="Ingrese su usuario">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="password" class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Password:</label>
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <input id="password" name="contrasenia"  type="password" class="form-control" placeholder="Ingrese su contraseña" >
-
+                    <input id="password" name="contrasenia" ng-model="ingresarD.contrasenia" type="password" class="form-control" placeholder="Ingrese su contraseña" >
                   </div>
                 </div>
                 <div class="form-group">
