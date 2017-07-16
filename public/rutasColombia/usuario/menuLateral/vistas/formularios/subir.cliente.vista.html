@@ -2,13 +2,20 @@
 <section ng-controller="MenuLateralCtrl">
   <div>
     <ul id="u2">
-      <li>
-        <!--<form method="POST" class="form-horizontal" data-ng-submit="agregarImagen()" enctype="multipart/form-data">-->
+
+      <!--Mensaje de necesidad de login para subir fotos-->
+      <div data-ng-hide="subir">
+        <label class="form-group">
+          Debes de Ingresar para <br>poder subir fotos
+        </label>
+      </div>
+
+      <li data-ng-show="subir">
         <form method="POST" class="form-horizontal" action="/views" enctype="multipart/form-data">
           <div class="form-group">
             <div>
               <label class="btn btn-warning btn-file">
-                      Buscar <!--<input type="file" name='archivoImagen' value="archivoImagen" uploader-model="file"/>-->
+                      Buscar
                       <input type="file" name='archivo' id="archivo" class="form-control"/>
               </label>
             </div>
