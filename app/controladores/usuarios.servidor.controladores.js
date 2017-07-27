@@ -99,7 +99,9 @@ exports.ingresarUsuario = function(solicidud, respuesta, next) {
 
 /*Controlador para ingresar a los usuarios de facebook*/
 exports.ingresarUsuarioFacebook = function(solicidud, respuesta, next) {
-  passport.authenticate('facebook', {scope: ['email']})(solicidud, respuesta, next);
+  passport.authenticate('facebook', {
+    scope: ['email']
+  })(solicidud, respuesta, next);
 };
 
 /*Controlador para ingresar a los usuarios de facebook*/
@@ -117,6 +119,15 @@ exports.solicitarLogin = function(req, res, next) {
     });
   }
   next();
+};
+
+exports.logeado = function(req, res, next) {
+  console.log('holaloco');
+  if (req.isAuthenticated()) {
+    return res.send(true);
+  } else {
+    return res.send(false);
+  }
 };
 
 /*Crear un nuevo método controller 'create'*/

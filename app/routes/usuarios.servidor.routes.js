@@ -27,7 +27,10 @@ module.exports = function(app, passport) {
     .put(usuarios.solicitarLogin, usuarios.upDate)
     .delete(usuarios.solicitarLogin, usuarios.delete);
 
-    app.route('/salir')
+  app.route('/logeado')
+    .get(usuarios.logeado);
+
+  app.route('/salir')
     .get(usuarios.solicitarLogin, usuarios.salir);
 
   app.param('userId', usuarios.userByID);

@@ -103,6 +103,12 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
     }
 
 
+  /******Habilitar el boton de subir fotos******/
+  $scope.subirBtn = function(){
+       $http.get('/logeado').then(function (respuesta) {
+            $scope.subir = respuesta.data;
+      });
+    }
 
 
     /*Geolocalizacion*/
