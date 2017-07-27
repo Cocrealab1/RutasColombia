@@ -11,6 +11,7 @@ var config = require('./config'),
   //flash = require('connect-flash'),
   //multer = require('multer'),
   formidable = require('express-formidable'),
+  cookieParser = require('cookie-parser'),
   passport = require('passport');
 
 //upload = multer({ dest: '/uploads'});
@@ -44,11 +45,12 @@ module.exports = function() {
   //app.use(methodOverride());
 
   //configurar el middleware 'session''
+  app.use(cookieParser());
   app.use(session({
-    saveUninitializaed: true,
-    resave: true,
+    //saveUninitializaed: true,
+    //resave: true,
     secret: config.sessionSecreta
-  }))
+  }));
 
   //Configuarar el motor view de la aplicacion y el directorio de 'views'
   app.set('views', './app/views');
@@ -57,18 +59,17 @@ module.exports = function() {
 
   //app.use(flash());
 
-
   //configurar el middleware 'passport'
   app.use(passport.initialize());
   app.use(passport.session());
+
+  //Configurar el serviddor de archivos estáticos
+  app.use(express.static('./public'));
 
   //Cargar los archivos de enrutamiento
   require('../app/routes/imagenes.servidor.routes.js')(app, passport);
   require('../app/routes/index.servidor.routes.js')(app);
   require('../app/routes/usuarios.servidor.routes.js')(app, passport);
-
-  //Configurar el serviddor de archivos estáticos
-  app.use(express.static('./public'));
 
   app.use(formidable({keepExtensions: true, uploadDir:"app"}));
   //Devolver la instancia de la aplicación Express

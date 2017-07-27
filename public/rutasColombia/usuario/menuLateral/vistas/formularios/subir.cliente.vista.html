@@ -1,84 +1,81 @@
 <!--Formulario para subir imagenes a la plataforma-->
 <section ng-controller="MenuLateralCtrl">
-  <div>
-    <ul id="u2">
+   <div>
+      <ul id="u2">
+         <!--Mensaje de necesidad de login para subir fotos-->
+         <div data-ng-hide="subir">
+            <label class="form-group">
+            Debes de registrarte para <br>poder subir fotos
+            </label>
+         </div>
 
-      <!--Mensaje de necesidad de login para subir fotos-->
-      <div data-ng-hide="subir">
-        <label class="form-group">
-          Debes de registrarte para <br>poder subir fotos
-        </label>
-      </div>
-
-      <li data-ng-show="subir">
-        <form method="POST" class="form-horizontal" action="/views" enctype="multipart/form-data">
-          <div class="form-group">
-            <div>
-              <label class="btn btn-warning btn-file">
-                      Buscar
-                      <input type="file" name='archivo' id="archivo" class="form-control"/>
-              </label>
-            </div>
-            <br>
-            <br>
-            <br>
-
-            <label class="control-label col-xs-8">Titulo de la imagen</label>
-            <div class="col-xs-12">
-              <input type="text" class="form-control" name="titulo" placeholder="Ingrese aquí el titulo" ng-model="imagen.titulo">
-            </div>
-
-            <label class="control-label col-xs-8">Donde tomaste la foto</label>
-            <div class="col-xs-12">
-              <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUbicActualImg" ng-model="imagen.lugar"></input>
-            </div>
-            <button ng-show="BtnUbicActual3" class="btn-warning btn-xs" ng-click="localizacion()"> <span class="icon-gps"></button>
-          </div>
-
-          <!--Tipo de sitio Turistico-->
-          <select class="form-control" ng-model="imagen.tipo">
-            <option value="" disabled selected>Tipo de sitio turistico</option>
-            <option>1. Monumentos historicos<span class="icon-Carro"></option>
-            <button>2. Gastronómico <span class="icon-Carro" ></button>
-            <option>3. Folclórico</option>
-            <option>4. Estadios</option>
-            <option>5. Parques de atracción</option>
-            <option>6. Aventura</option>
-            <option>7. Naturaleza</option>
-            <option>8. Etnografico</option>
-            <option>9. Cinematografico</option>
-            <option>10. Cultural</option>
-            <option>11. Ecoturismo</option>
-            <option>12. Deportivo</option>
-            <option>13. Religioso</option>
-            <option>14. Mochilero</option>
-        </select>
-
-          <br>
-          <label class="control-label">Actividades a realizar</label>
-          <div id="input1" class="clonedInput ">
-            <input type="text" class="form-control" name="name1">
-          </div>
-          <div class="pull-right">
-            <input type="button" class="btn btn-warning" id="btnAdd" value="+">
-            <input type="button" class="btn btn-warning" id="btnDel" value="-">
-          </div>
-          <div class="form-group">
-            <label class="control-label col-xs-1">Teléfono</label>
-            <div class="col-xs-12">
-              <input type="text" class="form-control" placeholder="Ingrese aquí su Teléfono" ng-model="imagen.telefono">
-            </div>
-
-            <label class="control-label col-xs-1">Descripción</label>
-            <div class="col-xs-12">
-              <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar" ng-model="imagen.descripcion"></textarea>
-            </div>
-          </div>
-          <!--<button type="submit" class="btn btn-warning" ng-click="agregarImagen()"><span class="icon-Guardar"></button>-->
-          <!--<button type="submit" name="submit" value="submit" class="btn btn-warning"><span class="icon-Guardar"></button>-->
-          <button type="submit" name="submit" value="guardar" class="btn btn-warning"><span class="icon-Guardar"></button>
-        </form>
-      </li>
-    </ul>
-  </div>
+         <!--formulario para poder subir la imagen-->
+         <li data-ng-show="subir">
+            <form method="POST" class="form-horizontal"  enctype="multipart/form-data">
+               <div class="form-group">
+                  <!--subir imagen-->
+                  <div>
+                     <label class="btn btn-warning btn-file">
+                         Buscar
+                         <input type="file" name='archivo' id="archivo" class="form-control"/>
+                     </label>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <!--Infromacion General de la imagen-->
+                  <label class="control-label col-xs-8">Titulo de la imagen</label>
+                  <div class="col-xs-12">
+                     <input type="text" class="form-control" name="titulo" placeholder="Ingrese aquí el titulo" ng-model="imagen.titulo">
+                  </div>
+                  <label class="control-label col-xs-8">Donde tomaste la foto</label>
+                  <div class="col-xs-12">
+                     <input type="text" class="form-control" placeholder="Ingrese aquí la ubicacion" ng-click="BtnUbicActualImg" ng-model="imagen.lugar"></input>
+                  </div>
+                  <button ng-show="BtnUbicActual3" class="btn-warning btn-xs" ng-click="localizacion()"> <span class="icon-gps"></button>
+               </div>
+               <!--Tipo de sitio Turistico-->
+               <select class="form-control" ng-model="imagen.tipo">
+                  <option value="" disabled selected>Tipo de sitio turistico</option>
+                  <option>1. Monumentos historicos<span class="icon-Carro"></option>
+                  <button>2. Gastronómico <span class="icon-Carro" ></button>
+                  <option>3. Folclórico</option>
+                  <option>4. Estadios</option>
+                  <option>5. Parques de atracción</option>
+                  <option>6. Aventura</option>
+                  <option>7. Naturaleza</option>
+                  <option>8. Etnografico</option>
+                  <option>9. Cinematografico</option>
+                  <option>10. Cultural</option>
+                  <option>11. Ecoturismo</option>
+                  <option>12. Deportivo</option>
+                  <option>13. Religioso</option>
+                  <option>14. Mochilero</option>
+               </select>
+               <br>
+               <label class="control-label">Actividades a realizar</label>
+               <div id="input1" class="clonedInput ">
+                  <input type="text" class="form-control" name="name1">
+               </div>
+               <div class="pull-right">
+                  <input type="button" class="btn btn-warning" id="btnAdd" value="+">
+                  <input type="button" class="btn btn-warning" id="btnDel" value="-">
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-xs-1">Teléfono</label>
+                  <div class="col-xs-12">
+                     <input type="text" class="form-control" placeholder="Ingrese aquí su Teléfono" ng-model="imagen.telefono">
+                  </div>
+                  <label class="control-label col-xs-1">Descripción</label>
+                  <div class="col-xs-12">
+                     <textarea rows="3" class="form-control" placeholder="Ingrese una breve descripción del lugar" ng-model="imagen.descripcion"></textarea>
+                  </div>
+               </div>
+               <button type="submit" class="btn btn-warning" ng-click="agregarImagen()"><span class="icon-Guardar"></button>
+               <!--<button type="submit" name="submit" value="submit" class="btn btn-warning"><span class="icon-Guardar"></button>-->
+               <!--<button type="submit" name="submit" value="guardar" class="btn btn-warning"><span class="icon-Guardar"></button>-->
+            </form>
+         </li>
+      </ul>
+   </div>
 </section>

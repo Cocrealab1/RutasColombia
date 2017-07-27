@@ -99,18 +99,15 @@ exports.ingresarUsuario = function(solicidud, respuesta, next) {
 
 /*Controlador para ingresar a los usuarios de facebook*/
 exports.ingresarUsuarioFacebook = function(solicidud, respuesta, next) {
-  passport.authenticate('facebook', { scope: ['email'] }),
-  function (solicidud, respuesta) {
-    respuesta.end("jei error")
-  };
+  passport.authenticate('facebook', {scope: ['email']})(solicidud, respuesta, next);
 };
 
 /*Controlador para ingresar a los usuarios de facebook*/
 exports.ingresarUsuarioFacebookCallback = function(solicidud, respuesta, next) {
   passport.authenticate('facebook', {
-    successRedirect: 'http://localhost:8080/#!/admin',
+    successRedirect: 'http://localhost:8080/#!/admin/',
     failureRedirect: '/'
-  });
+  })(solicidud, respuesta, next);;
 };
 
 exports.solicitarLogin = function(req, res, next) {

@@ -126,8 +126,7 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
 
 
     $scope.agregarImagen = function() {
-      var file = $scope.file;
-      console.log("hola", file);
+      //var file = $scope.file;
       var resgistrar = new MenuLateral({
         titulo: $scope.imagen.titulo,
         lugar: $scope.imagen.lugar,

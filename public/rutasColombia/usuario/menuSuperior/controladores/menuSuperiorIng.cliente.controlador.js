@@ -10,14 +10,12 @@ angular.module('menuSuperior').controller('menuSuperiorIngCtrl', ['$scope', '$ht
           }
         }).then(function exito(respuesta) {
               if(respuesta.data.role[1]){
-                console.log("hola")
                   $location.path('/admin');
               }
               else{
                   $location.path('/');
               }
         }, function error(respuesta) {
-          console.log(respuesta);
           $scope.error2 = respuesta.data.message;
         });
       }

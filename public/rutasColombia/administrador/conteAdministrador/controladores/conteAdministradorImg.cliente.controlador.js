@@ -1,17 +1,16 @@
-angular.module('conteAdministrador').controller('conteAdministradorCtrl', ['$scope', '$http', 'Usuarios', 'Imagenes',
-function($scope, $http, Usuarios, Imagenes) {
+angular.module('conteAdministrador').controller('conteAdministradorCtrl', ['$scope', '$http', 'Imagenes',
+function($scope, $http, Imagenes) {
   $('#Botonlist').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');$('#tabla').hide();$('#ListayGrid').show();});
   $('#Botongrid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#tabla').hide();$('#ListayGrid').show();$('#products .item').addClass('grid-group-item');});
   $('#Botontabla').click(function(event){event.preventDefault();$('#tabla').show();$('#ListayGrid').hide();});
   $('#tabla').hide();
 
   $scope.find = function() {
-      $scope.personas = Usuarios.query();
-      //$scope.imagenes = Imagenes.query();
+      $scope.personas = Imagenes.query();
   }
 
   $scope.findOne = function(userI) {
-      var user = Usuarios.get({
+      var imagenes = Imagenes.get({
           userId: $routeParams.userId
       });
   };
@@ -25,9 +24,9 @@ function($scope, $http, Usuarios, Imagenes) {
   };
 
   $scope.delete = function(user) {
-      $scope.users = Usuarios.query();
+      $scope.imagenes = Imagenes.query();
       if (user) {
-          user.$remove(function() {
+          imagenes.$remove(function() {
               for (var i in $scope.users) {
                   if ($scope.users[i] === user) {
                       $scope.users.splice(i, 1);
@@ -35,8 +34,8 @@ function($scope, $http, Usuarios, Imagenes) {
               }
           });
       } else {
-          $scope.user.$remove(function() {
-              alert('usuario borrado');
+          $scope.imagenes.$remove(function() {
+              alert('Imagen borrada');
           });
       }
   };
