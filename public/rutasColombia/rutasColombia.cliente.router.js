@@ -97,7 +97,7 @@ angular.module('rutasColombia').config(['$stateProvider', '$urlRouterProvider',
                 url: '/admini/imagenes',
                 views: {
                     'gestorView': {
-                        templateUrl: 'rutasColombia/administrador/conteAdministrador/vistas/perfiles/administradorImagenes.cliente.vista.html'
+                        templateUrl: 'rutasColombia/administrador/conteAdministrador/vistas/perfiles/administradorImagenes2.cliente.vista.html'
                     }
                 }
             })

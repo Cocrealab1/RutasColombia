@@ -133,14 +133,16 @@ angular.module('menuLateral').controller('MenuLateralCtrl', ['$scope', '$http', 
 
     $scope.agregarImagen = function() {
       //var file = $scope.file;
-      var resgistrar = new MenuLateral({
+      var registrar = new MenuLateral({
         titulo: $scope.imagen.titulo,
         lugar: $scope.imagen.lugar,
         descripcion: $scope.imagen.descripcion,
         telefono: $scope.imagen.telefono,
         tipo: $scope.imagen.tipo
       });
-      resgistrar.$save(function(respuesta) {
+
+      registrar.$save(function(respuesta) {
+        console.log(resgistrar);
         $scope.imagen.titulo = '';
         $scope.imagen.lugar = '';
         $scope.imagen.descripcion = '';
